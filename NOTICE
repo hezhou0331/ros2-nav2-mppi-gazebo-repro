@@ -1,0 +1,11 @@
+ROS 2 Nav2 MPPI Gazebo Reproduction
+Copyright 2026 hezhou
+
+The mppi_waffle.yaml configuration is derived from the TurtleBot3
+Navigation2 Waffle parameters distributed with ROS 2 Jazzy.
+
+TurtleBot3 is developed by ROBOTIS CO., LTD. and contributors and is
+distributed under the Apache License 2.0.
+
+Nav2 is developed by Open Navigation LLC and contributors and is
+distributed under the Apache License 2.0.

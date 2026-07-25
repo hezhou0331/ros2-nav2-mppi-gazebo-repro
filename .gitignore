@@ -1,0 +1,18 @@
+# ROS 2 / colcon
+build/
+install/
+log/
+
+# Runtime output
+*.bag
+*.db3
+*.mcap
+*.log
+*.pyc
+__pycache__/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+*~
