@@ -30,7 +30,7 @@
 ### A2 + P7 仿真模型
 
 <p align="center">
-  <video controls width="720" src="https://raw.githubusercontent.com/hezhou0331/ros2-nav2-mppi-gazebo-repro/main/docs/media/atec_a2_p7_robot_showcase.mp4">
+  <video controls width="720" src="https://cdn.jsdelivr.net/gh/hezhou0331/ros2-nav2-mppi-gazebo-repro@main/docs/media/atec_a2_p7_robot_showcase.mp4">
     A2 + P7 仿真模型视频
   </video>
 </p>
