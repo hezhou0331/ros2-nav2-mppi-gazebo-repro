@@ -18,8 +18,8 @@ sudo apt-get install -y \
   ros-jazzy-pointcloud-to-laserscan \
   ros-jazzy-ros-gz-sim \
   ros-jazzy-ros-gz-bridge \
-  ros-jazzy-turtlebot3-description \
-  ros-jazzy-turtlebot3-gazebo \
-  ros-jazzy-turtlebot3-navigation2
+  ros-jazzy-joint-state-publisher \
+  ros-jazzy-robot-state-publisher \
+  ros-jazzy-xacro
 
-echo "Dependencies installed. Run ./validate_config.sh, then ./run_nav.sh."
+echo "Dependencies installed. Run ./build_atec_a2_p7_nav.sh, then ./validate_atec_a2_p7_nav.sh."

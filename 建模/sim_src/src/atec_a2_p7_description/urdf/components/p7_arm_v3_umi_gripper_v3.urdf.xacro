@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="p7_arm_v3_umi_gripper_v3_component">
+  <!--Generated from the team-supplied P7 v3 model; passive UMI joints are locked.-->
+  <link name="p7_base_link">
+    <inertial>
+      <origin xyz="-0.0001338700 0.0000323100 0.0642712000" rpy="0 0 0" />
+      <mass value="1.0651846300" />
+      <inertia ixx="0.0016215400" ixy="0.0000014400" ixz="0.0000002600" iyy="0.0015872800" iyz="-0.0000191400" izz="0.0013331600" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.065" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.055" length="0.13" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="p7_link1">
+    <inertial>
+      <origin xyz="-0.0000049800 -0.0066806700 -0.0038860200" rpy="0 0 0" />
+      <mass value="0.8674122500" />
+      <inertia ixx="0.0011053300" ixy="0.0000014200" ixz="-0.0000040500" iyy="0.0009584200" iyz="0.0000139300" izz="0.0008760500" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.055" length="0.12" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint1" type="revolute">
+    <origin xyz="0 0 0.16452" rpy="0 0 0" />
+    <parent link="p7_base_link" />
+    <child link="p7_link1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.9669" upper="2.9669" effort="30" velocity="30" />
+  </joint>
+  <link name="p7_link2">
+    <inertial>
+      <origin xyz="-0.0000333900 -0.0761963800 0.0010885100" rpy="0 0 0" />
+      <mass value="0.7307583200" />
+      <inertia ixx="0.0010906000" ixy="-0.0000016500" ixz="-0.0000013600" iyy="0.0006664300" iyz="-0.0000467300" izz="0.0009529500" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.12 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.043" length="0.24" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint2" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0.87266 3.1416" />
+    <parent link="p7_link1" />
+    <child link="p7_link2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.5831" upper="0.83775" effort="30" velocity="30" />
+  </joint>
+  <link name="p7_link3">
+    <inertial>
+      <origin xyz="0.0061775800 0.0014579900 -0.0743792800" rpy="0 0 0" />
+      <mass value="0.2608916100" />
+      <inertia ixx="0.0007031400" ixy="0.0000019500" ixz="0.0000067100" iyy="0.0006063700" iyz="-0.0000310000" izz="0.0002296400" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.040" length="0.20" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint3" type="revolute">
+    <origin xyz="0 -0.249 0" rpy="1.5708 0 0" />
+    <parent link="p7_link2" />
+    <child link="p7_link3" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.9669" upper="2.9669" effort="30" velocity="30" />
+  </joint>
+  <link name="p7_link4">
+    <inertial>
+      <origin xyz="-0.0000880700 -0.0393530800 -0.0030127800" rpy="0 0 0" />
+      <mass value="1.0434241800" />
+      <inertia ixx="0.0034578700" ixy="0.0000048700" ixz="0.0000023400" iyy="0.0007773600" iyz="0.0001205500" izz="0.0034520600" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.155 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.045" length="0.31" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint4" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 0.69813 0" />
+    <parent link="p7_link3" />
+    <child link="p7_link4" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.4435" upper="0.17452" effort="30" velocity="30" />
+  </joint>
+  <link name="p7_link5">
+    <inertial>
+      <origin xyz="0.0002475700 -0.0024121400 -0.0912600200" rpy="0 0 0" />
+      <mass value="0.5431436300" />
+      <inertia ixx="0.0011613300" ixy="0.0000061200" ixz="-0.0000064100" iyy="0.0010735800" iyz="0.0000246700" izz="0.0003694900" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.038" length="0.20" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint5" type="revolute">
+    <origin xyz="0 -0.329 0" rpy="1.5708 1.5708 0" />
+    <parent link="p7_link4" />
+    <child link="p7_link5" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.9669" upper="2.9669" effort="10" velocity="10" />
+  </joint>
+  <link name="p7_link6">
+    <inertial>
+      <origin xyz="0.0000000000 -0.0012842200 0.0000000000" rpy="0 0 0" />
+      <mass value="0.3623577500" />
+      <inertia ixx="0.0002249800" ixy="0.0000012200" ixz="-0.0000008200" iyy="0.0002049600" iyz="-0.0000005700" izz="0.0002075500" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.055" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint6" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5705 0" />
+    <parent link="p7_link5" />
+    <child link="p7_link6" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.78539" upper="0.78539" effort="10" velocity="10" />
+  </joint>
+  <link name="p7_link7">
+    <inertial>
+      <origin xyz="-0.0335918100 -0.0000576300 0.0035662500" rpy="0 0 0" />
+      <mass value="0.0850190700" />
+      <inertia ixx="0.0000732700" ixy="-0.0000000900" ixz="-0.0000115200" iyy="0.0001035000" iyz="0.0000000200" izz="0.0000737200" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/link7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.035 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.10 0.07 0.07" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_joint7" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 3.1416" />
+    <parent link="p7_link6" />
+    <child link="p7_link7" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.2217" effort="10" velocity="10" />
+  </joint>
+  <link name="p7_tool">
+    <inertial>
+      <origin xyz="0.0002500000 0.0000000000 0.0000000000" rpy="0 0 0" />
+      <mass value="0.0000003600" />
+      <inertia ixx="0.0000000000" ixy="0.0000000000" ixz="0.0000000000" iyy="0.0000000000" iyz="0.0000000000" izz="0.0000000000" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/p7/tool.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.49804 0.49804 0.49804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.045 0 0" rpy="0 1.5708 0" />
+      <geometry>
+        <cylinder radius="0.030" length="0.09" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_tool_fixed" type="fixed">
+    <origin xyz="-0.062 0 0" rpy="-1.5708 0 3.1416" />
+    <parent link="p7_link7" />
+    <child link="p7_tool" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="p7_connect_eef_joint" type="fixed">
+    <parent link="p7_tool" />
+    <child link="p7_umi_base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+  </joint>
+  <link name="p7_umi_base_link">
+    <inertial>
+      <origin xyz="0.0350821032875479 -1.48524382687598E-05 -0.000230033784513324" rpy="0 0 0" />
+      <mass value="0.101391632557358" />
+      <inertia ixx="3.14256026773612E-05" ixy="-1.68934909268776E-08" ixz="5.09475277219824E-08" iyy="1.94713558465293E-05" iyz="-3.56025389634812E-08" izz="2.02288670759876E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.055 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.12 0.10 0.07" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="p7_umi_claw">
+    <inertial>
+      <origin xyz="-2.8385851127055E-07 8.13070667338757E-11 -0.00156128599097642" rpy="0 0 0" />
+      <mass value="0.0158760211812033" />
+      <inertia ixx="5.0869931280287E-07" ixy="-7.9151437654382E-14" ixz="5.0562732994291E-11" iyy="5.17054938050139E-06" iyz="2.41690819296868E-14" izz="4.90682255955071E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/claw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.01 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.09 0.08 0.035" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="p7_umi_clawj" type="prismatic">
+    <origin xyz="0.051 0 -6.849E-05" rpy="1.5708 0 1.5708" />
+    <parent link="p7_umi_base_link" />
+    <child link="p7_umi_claw" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.017" effort="20" velocity="0.10" />
+  </joint>
+  <link name="p7_umi_l11">
+    <inertial>
+      <origin xyz="-0.00411686019662614 -0.00205462167577538 0.000777050363666031" rpy="0 0 0" />
+      <mass value="0.00525970079284492" />
+      <inertia ixx="1.04402537015084E-07" ixy="-6.90000713837262E-08" ixz="-9.97054761713995E-10" iyy="2.08330869597079E-07" iyz="-4.97604942756831E-10" izz="2.19924730228339E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L11.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l11j" type="fixed">
+    <origin xyz="-0.035 0 -0.013931" rpy="1.5708 1.5708 0" />
+    <parent link="p7_umi_claw" />
+    <child link="p7_umi_l11" />
+  </joint>
+  <link name="p7_umi_l12">
+    <inertial>
+      <origin xyz="4.87137077637839E-13 -2.29261054585095E-13 -6.27865814895255E-14" rpy="0 0 0" />
+      <mass value="0.00254770597835518" />
+      <inertia ixx="3.38413679487892E-08" ixy="9.6473036778184E-25" ixz="-1.29301207772468E-21" iyy="3.38413679487892E-08" iyz="3.93531176422193E-22" izz="6.38608063472555E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L12.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l12j" type="fixed">
+    <origin xyz="-0.014316 -0.0071448 0" rpy="0 0 0" />
+    <parent link="p7_umi_l11" />
+    <child link="p7_umi_l12" />
+  </joint>
+  <link name="p7_umi_l61">
+    <inertial>
+      <origin xyz="-0.0041168602005187 0.00205462166444562 0.000777050361853809" rpy="0 0 0" />
+      <mass value="0.00525970079163624" />
+      <inertia ixx="1.04696619009917E-07" ixy="6.89968267609897E-08" ixz="-9.9705468773241E-10" iyy="2.08036787576569E-07" iyz="4.97605072866491E-10" izz="2.19924730220459E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L61.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l61j" type="fixed">
+    <origin xyz="0.035 0 -0.013931" rpy="1.5708 1.5708 0" />
+    <parent link="p7_umi_claw" />
+    <child link="p7_umi_l61" />
+  </joint>
+  <link name="p7_umi_l62">
+    <inertial>
+      <origin xyz="1.2534405479693E-12 5.89188420274667E-13 6.21985102312043E-14" rpy="0 0 0" />
+      <mass value="0.00254770597835518" />
+      <inertia ixx="3.38413679487892E-08" ixy="-7.77528801735932E-25" ixz="1.20228883537696E-21" iyy="3.38413679487892E-08" iyz="1.36960429923477E-21" izz="6.38608063472555E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L62.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l62j" type="fixed">
+    <origin xyz="-0.014316 0.0071448 0" rpy="0 0 0" />
+    <parent link="p7_umi_l61" />
+    <child link="p7_umi_l62" />
+  </joint>
+  <link name="p7_umi_l21">
+    <inertial>
+      <origin xyz="0.00762332532888542 0.0180030600490627 0.0030326955732624" rpy="0 0 0" />
+      <mass value="0.0140600890704588" />
+      <inertia ixx="8.94775178910603E-07" ixy="-2.35897044495238E-07" ixz="-1.03538621527213E-09" iyy="4.8397343865992E-07" iyz="-1.297233660082E-09" izz="7.95427562568086E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L21.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l21j" type="fixed">
+    <origin xyz="0.0565 -0.017 -6.849E-05" rpy="0 0 -3.1416" />
+    <parent link="p7_umi_base_link" />
+    <child link="p7_umi_l21" />
+  </joint>
+  <link name="p7_umi_l22">
+    <inertial>
+      <origin xyz="-0.0133052609440579 0.0115878051584534 0.000358544368814038" rpy="0 0 0" />
+      <mass value="0.0095254119442433" />
+      <inertia ixx="5.57775699977504E-07" ixy="3.16682354617946E-07" ixz="-1.77576627749782E-09" iyy="5.65501681175693E-07" iyz="1.9852790246381E-09" izz="7.7912223470953E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L22.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l22j" type="fixed">
+    <origin xyz="0.012788 0.027138 0" rpy="0 0 0" />
+    <parent link="p7_umi_l21" />
+    <child link="p7_umi_l22" />
+  </joint>
+  <link name="p7_umi_l23">
+    <inertial>
+      <origin xyz="-0.0100098117693161 -0.00851050332782811 1.91958771019826E-09" rpy="0 0 0" />
+      <mass value="0.00530382203844404" />
+      <inertia ixx="1.04079536644664E-07" ixy="-3.19186264179905E-08" ixz="1.43962404702395E-14" iyy="2.46691219593914E-07" iyz="1.87860641588947E-14" izz="2.70147264692838E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L23.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l23j" type="fixed">
+    <origin xyz="-0.02456 0.023512 0" rpy="0 0 0" />
+    <parent link="p7_umi_l22" />
+    <child link="p7_umi_l23" />
+  </joint>
+  <link name="p7_umi_l31">
+    <inertial>
+      <origin xyz="-0.00159741740402453 0.0264724631985424 -7.26753345310895E-05" rpy="0 0 0" />
+      <mass value="0.0200205534567901" />
+      <inertia ixx="4.39135505415398E-06" ixy="9.92802471611361E-07" ixz="-1.4207753295127E-08" iyy="1.1010908903205E-06" iyz="2.99577780317195E-08" izz="4.51901039219809E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L31.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l31j" type="fixed">
+    <origin xyz="0.0615 -0.007 -6.849E-05" rpy="0 0 -3.1416" />
+    <parent link="p7_umi_base_link" />
+    <child link="p7_umi_l31" />
+  </joint>
+  <link name="p7_umi_l32">
+    <inertial>
+      <origin xyz="-1.64115919659702E-07 7.78744820299077E-07 -3.12250854907487E-15" rpy="0 0 0" />
+      <mass value="0.000966906820551252" />
+      <inertia ixx="4.70687618054365E-09" ixy="-1.03222309409647E-26" ixz="-1.1146258754152E-22" iyy="4.70687618054365E-09" iyz="-1.344364385564E-23" izz="8.73697425280164E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L32.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l32j" type="fixed">
+    <origin xyz="-0.011773 0.05065 0" rpy="0 0 -1.5708" />
+    <parent link="p7_umi_l31" />
+    <child link="p7_umi_l32" />
+  </joint>
+  <link name="p7_umi_l41">
+    <inertial>
+      <origin xyz="-0.00162115537136832 -0.0265067136820258 0.000111647685968015" rpy="0 0 0" />
+      <mass value="0.0201008563924379" />
+      <inertia ixx="4.39393540909323E-06" ixy="-9.94314930880898E-07" ixz="1.36738946430291E-08" iyy="1.10250254385473E-06" iyz="2.91395639544733E-08" izz="4.52196565799203E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L41.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l41j" type="fixed">
+    <origin xyz="0.0615 0.007 -6.849E-05" rpy="0 0 3.1416" />
+    <parent link="p7_umi_base_link" />
+    <child link="p7_umi_l41" />
+  </joint>
+  <link name="p7_umi_l42">
+    <inertial>
+      <origin xyz="1.80426191043193E-07 7.7631584696064E-07 5.37382949292072E-14" rpy="0 0 0" />
+      <mass value="0.000966906820551252" />
+      <inertia ixx="4.70687618054365E-09" ixy="5.79914661643484E-26" ixz="2.21684404164218E-22" iyy="4.70687618054365E-09" iyz="-1.14896856951086E-22" izz="8.73697425280164E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L42.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l42j" type="fixed">
+    <origin xyz="-0.011772 -0.05065 0" rpy="0 0 -1.5708" />
+    <parent link="p7_umi_l41" />
+    <child link="p7_umi_l42" />
+  </joint>
+  <link name="p7_umi_l51">
+    <inertial>
+      <origin xyz="0.00706991673956199 -0.0166579701362714 -0.00165507560737397" rpy="0 0 0" />
+      <mass value="0.0155104493012857" />
+      <inertia ixx="9.01773690586828E-07" ixy="2.35847686321348E-07" ixz="1.03538621540541E-09" iyy="4.91095555525325E-07" iyz="-1.2972336597819E-09" izz="8.08533023947289E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L51.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.631372549019608 0.686274509803922 0.749019607843137 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l51j" type="fixed">
+    <origin xyz="0.0565 0.017 -6.849E-05" rpy="0 0 3.1416" />
+    <parent link="p7_umi_base_link" />
+    <child link="p7_umi_l51" />
+  </joint>
+  <link name="p7_umi_l52">
+    <inertial>
+      <origin xyz="-0.012078990677311 -0.0105201081793995 -0.000104074753644401" rpy="0 0 0" />
+      <mass value="0.0104923187647917" />
+      <inertia ixx="5.62489106258644E-07" ixy="-3.16682434395475E-07" ixz="1.77574567616472E-09" iyy="5.70202026900735E-07" iyz="1.98529753054398E-09" izz="7.87859209317215E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L52.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l52j" type="fixed">
+    <origin xyz="0.012788 -0.027138 0" rpy="0 0 0" />
+    <parent link="p7_umi_l51" />
+    <child link="p7_umi_l52" />
+  </joint>
+  <link name="p7_umi_l53">
+    <inertial>
+      <origin xyz="-0.00851077926527934 -0.0100090996075058 -1.91954159819897E-09" rpy="0 0 0" />
+      <mass value="0.00530382203850477" />
+      <inertia ixx="2.46687639916702E-07" ixy="-3.19266221843596E-08" ixz="-1.87869189577042E-14" iyy="1.04083116327319E-07" iyz="-1.43953755080285E-14" izz="2.70147264697453E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://atec_a2_p7_description/meshes/umi_gripper_v3/L53.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="p7_umi_l53j" type="fixed">
+    <origin xyz="-0.02456 -0.023512 0" rpy="0 0 -1.5708" />
+    <parent link="p7_umi_l52" />
+    <child link="p7_umi_l53" />
+  </joint>
+  <link name="p7_end_link" />
+  <joint name="p7_end_joint" type="fixed">
+    <parent link="p7_tool" />
+    <child link="p7_end_link" />
+    <origin xyz="0.10867 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+</robot>

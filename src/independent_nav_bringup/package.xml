@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>independent_nav_bringup</name>
+  <version>0.1.0</version>
+  <description>Single-head-lidar ATEC A2 plus P7 mapping and navigation reference stack.</description>
+  <maintainer email="student@example.com">student</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>action_msgs</exec_depend>
+  <exec_depend>lifecycle_msgs</exec_depend>
+  <exec_depend>nav2_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>atec_a2_p7_description</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

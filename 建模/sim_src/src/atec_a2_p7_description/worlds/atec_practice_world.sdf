@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="atec_practice_world">
+    <gravity>0 0 -9.81</gravity>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <physics name="default_physics" type="ignored">
+      <max_step_size>0.002</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>500</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.48 0.48 0.46 1</ambient>
+      <background>0.70 0.78 0.84 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <light name="sun" type="directional">
+      <pose>0 0 12 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <diffuse>0.85 0.82 0.75 1</diffuse>
+      <specular>0.15 0.15 0.15 1</specular>
+      <direction>-0.45 0.20 -0.87</direction>
+    </light>
+
+    <model name="ground">
+      <static>true</static>
+      <link name="ground_link">
+        <collision name="ground_collision">
+          <geometry><plane><normal>0 0 1</normal><size>16 12</size></plane></geometry>
+          <surface><friction><ode><mu>0.9</mu><mu2>0.9</mu2></ode></friction></surface>
+        </collision>
+        <visual name="ground_visual">
+          <geometry><plane><normal>0 0 1</normal><size>16 12</size></plane></geometry>
+          <material><ambient>0.35 0.37 0.34 1</ambient><diffuse>0.42 0.44 0.40 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Competition boundary is visual tape, not a fake physical wall. -->
+    <model name="red_boundary_tape">
+      <static>true</static>
+      <link name="tape">
+        <visual name="north"><pose>0 5.4 0.003 0 0 0</pose><geometry><box><size>14.8 0.40 0.006</size></box></geometry><material><ambient>0.85 0.02 0.02 1</ambient><diffuse>0.85 0.02 0.02 1</diffuse></material></visual>
+        <visual name="south"><pose>0 -5.4 0.003 0 0 0</pose><geometry><box><size>14.8 0.40 0.006</size></box></geometry><material><ambient>0.85 0.02 0.02 1</ambient><diffuse>0.85 0.02 0.02 1</diffuse></material></visual>
+        <visual name="east"><pose>7.4 0 0.003 0 0 0</pose><geometry><box><size>0.40 10.4 0.006</size></box></geometry><material><ambient>0.85 0.02 0.02 1</ambient><diffuse>0.85 0.02 0.02 1</diffuse></material></visual>
+        <visual name="west"><pose>-7.4 0 0.003 0 0 0</pose><geometry><box><size>0.40 10.4 0.006</size></box></geometry><material><ambient>0.85 0.02 0.02 1</ambient><diffuse>0.85 0.02 0.02 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="start_finish_markings">
+      <static>true</static>
+      <link name="markings">
+        <visual name="start"><pose>-6.2 0 0.005 0 0 0</pose><geometry><box><size>0.10 2.0 0.01</size></box></geometry><material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse></material></visual>
+        <visual name="finish"><pose>6.2 0 0.005 0 0 0</pose><geometry><box><size>0.10 2.0 0.01</size></box></geometry><material><ambient>1 0.85 0 1</ambient><diffuse>1 0.85 0 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Three 56.7 mm risers make the maximum 170 mm competition step. -->
+    <model name="step_170mm">
+      <static>true</static>
+      <pose>-2.2 2.9 0 0 0 0</pose>
+      <link name="steps">
+        <collision name="step1_collision"><pose>-0.70 0 0.02835 0 0 0</pose><geometry><box><size>0.70 1.4 0.0567</size></box></geometry></collision>
+        <visual name="step1_visual"><pose>-0.70 0 0.02835 0 0 0</pose><geometry><box><size>0.70 1.4 0.0567</size></box></geometry><material><ambient>0.52 0.52 0.50 1</ambient><diffuse>0.58 0.58 0.56 1</diffuse></material></visual>
+        <collision name="step2_collision"><pose>0 0 0.0567 0 0 0</pose><geometry><box><size>0.70 1.4 0.1134</size></box></geometry></collision>
+        <visual name="step2_visual"><pose>0 0 0.0567 0 0 0</pose><geometry><box><size>0.70 1.4 0.1134</size></box></geometry><material><ambient>0.50 0.50 0.48 1</ambient><diffuse>0.56 0.56 0.54 1</diffuse></material></visual>
+        <collision name="step3_collision"><pose>0.70 0 0.085 0 0 0</pose><geometry><box><size>0.70 1.4 0.17</size></box></geometry></collision>
+        <visual name="step3_visual"><pose>0.70 0 0.085 0 0 0</pose><geometry><box><size>0.70 1.4 0.17</size></box></geometry><material><ambient>0.48 0.48 0.46 1</ambient><diffuse>0.54 0.54 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- 9 degree ramp stays below the competition's 10 degree limit. -->
+    <model name="ramp_9deg">
+      <static>true</static>
+      <pose>1.8 3.0 0.20 0 0.15708 0</pose>
+      <link name="ramp_link">
+        <collision name="collision"><geometry><box><size>2.4 1.4 0.08</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>2.4 1.4 0.08</size></box></geometry><material><ambient>0.43 0.44 0.45 1</ambient><diffuse>0.50 0.51 0.52 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <model name="grass_patch">
+      <static>true</static><pose>-1.8 -2.9 0.015 0 0 0</pose>
+      <link name="grass">
+        <collision name="collision"><geometry><box><size>2.2 1.5 0.03</size></box></geometry><surface><friction><ode><mu>0.75</mu><mu2>0.65</mu2></ode></friction></surface></collision>
+        <visual name="visual"><geometry><box><size>2.2 1.5 0.03</size></box></geometry><material><ambient>0.12 0.38 0.10 1</ambient><diffuse>0.16 0.46 0.13 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="mud_patch">
+      <static>true</static><pose>0.7 -2.9 0.012 0 0 0</pose>
+      <link name="mud">
+        <collision name="collision"><geometry><box><size>2.0 1.5 0.024</size></box></geometry><surface><friction><ode><mu>0.32</mu><mu2>0.26</mu2></ode></friction></surface></collision>
+        <visual name="visual"><geometry><box><size>2.0 1.5 0.024</size></box></geometry><material><ambient>0.23 0.12 0.06 1</ambient><diffuse>0.30 0.17 0.08 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Representative 1-2 cm gravel; tune density per the organizer's lane. -->
+    <model name="gravel_patch">
+      <static>true</static><pose>3.2 -2.9 0 0 0 0</pose>
+      <link name="gravel">
+        <visual name="bed"><pose>0 0 0.006 0 0 0</pose><geometry><box><size>2.0 1.5 0.012</size></box></geometry><material><ambient>0.35 0.34 0.32 1</ambient><diffuse>0.42 0.41 0.38 1</diffuse></material></visual>
+        <collision name="stone1"><pose>-0.70 -0.35 0.012 0 0 0</pose><geometry><sphere><radius>0.012</radius></sphere></geometry></collision>
+        <collision name="stone2"><pose>-0.40 0.22 0.010 0 0 0</pose><geometry><sphere><radius>0.010</radius></sphere></geometry></collision>
+        <collision name="stone3"><pose>-0.05 -0.28 0.015 0 0 0</pose><geometry><sphere><radius>0.015</radius></sphere></geometry></collision>
+        <collision name="stone4"><pose>0.25 0.31 0.011 0 0 0</pose><geometry><sphere><radius>0.011</radius></sphere></geometry></collision>
+        <collision name="stone5"><pose>0.62 -0.15 0.014 0 0 0</pose><geometry><sphere><radius>0.014</radius></sphere></geometry></collision>
+      </link>
+    </model>
+
+    <!-- Lidless bin outer dimensions: 0.40 x 0.26 x 0.47 m. -->
+    <model name="blue_recycling_bin">
+      <static>true</static><pose>5.55 1.15 0 0 0 0</pose>
+      <link name="bin">
+        <collision name="bottom"><pose>0 0 0.015 0 0 0</pose><geometry><box><size>0.32 0.195 0.03</size></box></geometry></collision>
+        <collision name="front"><pose>0.19 0 0.235 0 0 0</pose><geometry><box><size>0.02 0.26 0.47</size></box></geometry></collision>
+        <collision name="back"><pose>-0.19 0 0.235 0 0 0</pose><geometry><box><size>0.02 0.26 0.47</size></box></geometry></collision>
+        <collision name="left"><pose>0 0.12 0.235 0 0 0</pose><geometry><box><size>0.40 0.02 0.47</size></box></geometry></collision>
+        <collision name="right"><pose>0 -0.12 0.235 0 0 0</pose><geometry><box><size>0.40 0.02 0.47</size></box></geometry></collision>
+        <visual name="body"><pose>0 0 0.235 0 0 0</pose><geometry><box><size>0.40 0.26 0.47</size></box></geometry><material><ambient>0.02 0.18 0.72 0.65</ambient><diffuse>0.03 0.24 0.82 0.65</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="green_food_waste_bin">
+      <static>true</static><pose>5.55 2.05 0 0 0 0</pose>
+      <link name="bin">
+        <collision name="bottom"><pose>0 0 0.015 0 0 0</pose><geometry><box><size>0.32 0.195 0.03</size></box></geometry></collision>
+        <collision name="front"><pose>0.19 0 0.235 0 0 0</pose><geometry><box><size>0.02 0.26 0.47</size></box></geometry></collision>
+        <collision name="back"><pose>-0.19 0 0.235 0 0 0</pose><geometry><box><size>0.02 0.26 0.47</size></box></geometry></collision>
+        <collision name="left"><pose>0 0.12 0.235 0 0 0</pose><geometry><box><size>0.40 0.02 0.47</size></box></geometry></collision>
+        <collision name="right"><pose>0 -0.12 0.235 0 0 0</pose><geometry><box><size>0.40 0.02 0.47</size></box></geometry></collision>
+        <visual name="body"><pose>0 0 0.235 0 0 0</pose><geometry><box><size>0.40 0.26 0.47</size></box></geometry><material><ambient>0.02 0.50 0.12 0.65</ambient><diffuse>0.03 0.62 0.16 0.65</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!--
+      Manipulable waste masses are training assumptions because the 2026 guide
+      specifies appearance and approximate dimensions, but not physical data.
+    -->
+    <model name="yellow_330ml_can">
+      <static>false</static>
+      <pose>4.45 1.15 0.057 0 1.5708 0</pose>
+      <link name="can">
+        <inertial>
+          <mass>0.080</mass>
+          <inertia>
+            <ixx>0.000109947</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.000109947</iyy><iyz>0</iyz><izz>0.000043560</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay><linear>0.02</linear><angular>0.04</angular></velocity_decay>
+        <collision name="collision">
+          <geometry><cylinder><radius>0.033</radius><length>0.115</length></cylinder></geometry>
+          <surface>
+            <friction><ode><mu>0.42</mu><mu2>0.42</mu2></ode></friction>
+            <bounce><restitution_coefficient>0.08</restitution_coefficient><threshold>0.10</threshold></bounce>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><cylinder><radius>0.033</radius><length>0.115</length></cylinder></geometry>
+          <material><ambient>0.95 0.75 0.02 1</ambient><diffuse>1 0.82 0.03 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="watermelon_rind">
+      <static>false</static>
+      <pose>4.45 1.65 0.025 0 0 0.3</pose>
+      <link name="rind">
+        <inertial>
+          <mass>0.090</mass>
+          <inertia>
+            <ixx>0.000037500</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.000079500</iyy><iyz>0</iyz><izz>0.000079500</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay><linear>0.03</linear><angular>0.05</angular></velocity_decay>
+        <collision name="collision">
+          <geometry><box><size>0.09 0.05 0.05</size></box></geometry>
+          <surface>
+            <friction><ode><mu>0.35</mu><mu2>0.30</mu2></ode></friction>
+            <bounce><restitution_coefficient>0.02</restitution_coefficient><threshold>0.10</threshold></bounce>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.09 0.05 0.05</size></box></geometry>
+          <material><ambient>0.08 0.48 0.12 1</ambient><diffuse>0.10 0.58 0.15 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="meal_box">
+      <static>false</static>
+      <pose>4.45 2.10 0.035 0 0 -0.2</pose>
+      <link name="box">
+        <inertial>
+          <mass>0.120</mass>
+          <inertia>
+            <ixx>0.000170000</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.000305000</iyy><iyz>0</iyz><izz>0.000377000</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay><linear>0.03</linear><angular>0.06</angular></velocity_decay>
+        <collision name="collision">
+          <geometry><box><size>0.16 0.11 0.07</size></box></geometry>
+          <surface>
+            <friction><ode><mu>0.52</mu><mu2>0.48</mu2></ode></friction>
+            <bounce><restitution_coefficient>0.03</restitution_coefficient><threshold>0.10</threshold></bounce>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.16 0.11 0.07</size></box></geometry>
+          <material><ambient>0.85 0.83 0.76 1</ambient><diffuse>0.92 0.90 0.82 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Rigid low-profile proxy: deformable plastic is outside rigid-body SDF. -->
+    <model name="red_plastic_bag">
+      <static>false</static>
+      <pose>4.45 2.55 0.012 0 0 0.25</pose>
+      <link name="bag">
+        <inertial>
+          <mass>0.050</mass>
+          <inertia>
+            <ixx>0.000084067</ixx><ixy>0</ixy><ixz>0</ixz>
+            <iyy>0.000169067</iyy><iyz>0</iyz><izz>0.000248333</izz>
+          </inertia>
+        </inertial>
+        <velocity_decay><linear>0.05</linear><angular>0.08</angular></velocity_decay>
+        <collision name="collision">
+          <geometry><box><size>0.20 0.14 0.024</size></box></geometry>
+          <surface>
+            <friction><ode><mu>0.68</mu><mu2>0.62</mu2></ode></friction>
+            <bounce><restitution_coefficient>0.01</restitution_coefficient><threshold>0.10</threshold></bounce>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>0.20 0.14 0.024</size></box></geometry>
+          <material><ambient>0.80 0.02 0.04 0.85</ambient><diffuse>0.90 0.03 0.05 0.85</diffuse></material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

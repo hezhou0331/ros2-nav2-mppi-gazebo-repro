@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="atec_a2_p7">
+  <xacro:include filename="components/a2.urdf.xacro"/>
+  <xacro:include filename="components/p7_arm_v3_umi_gripper_v3.urdf.xacro"/>
+  <xacro:include filename="plugins/gazebo_sim.xacro"/>
+
+  <!--
+    The shell top is z=0.1303 m in the official A2 mesh. This provisional
+    0.145 m adapter datum is simulation-only. Replace it with the approved
+    reserved-hole drawing, measured plate stack and verified fastener model.
+  -->
+  <xacro:arg name="arm_mount_z" default="0.145"/>
+  <xacro:arg name="simulation_plugins" default="true"/>
+
+  <material name="mount_black">
+    <color rgba="0.08 0.09 0.10 1"/>
+  </material>
+  <material name="safety_red">
+    <color rgba="0.75 0.03 0.03 1"/>
+  </material>
+
+  <!-- Center-back adapter plate, independent from the A2 shell geometry. -->
+  <link name="a2_p7_mount_link">
+    <visual>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <geometry><box size="0.30 0.24 0.018"/></geometry>
+      <material name="mount_black"/>
+    </visual>
+    <visual>
+      <origin xyz="0 0.105 0.025" rpy="0 0 0"/>
+      <geometry><box size="0.18 0.018 0.032"/></geometry>
+      <material name="safety_red"/>
+    </visual>
+    <visual>
+      <origin xyz="0 -0.105 0.025" rpy="0 0 0"/>
+      <geometry><box size="0.18 0.018 0.032"/></geometry>
+      <material name="safety_red"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <geometry><box size="0.30 0.24 0.018"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.009" rpy="0 0 0"/>
+      <mass value="1.20"/>
+      <inertia ixx="0.00579" ixy="0" ixz="0"
+               iyy="0.00903" iyz="0" izz="0.01476"/>
+    </inertial>
+  </link>
+  <joint name="a2_p7_mount_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="a2_p7_mount_link"/>
+    <!-- x=0, y=0 is the A2 body and hip-anchor center. -->
+    <origin xyz="0 0 $(arg arm_mount_z)" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="p7_mount_joint" type="fixed">
+    <parent link="a2_p7_mount_link"/>
+    <child link="p7_base_link"/>
+    <origin xyz="0 0 0.018" rpy="0 0 0"/>
+  </joint>
+
+  <!--
+    A single navigation lidar is attached to the official A2 front_lidar_link.
+    Its fixed transform is imported unchanged from the pinned Unitree A2 URDF:
+    xyz="0.33767 0 0.08134", rpy="1.5708 0 1.5708" in base_link.
+
+    The vendor link's z axis points forward, while Gazebo's GPU lidar scans in
+    its local xy plane around local z. This child frame preserves the physical
+    mounting datum while restoring conventional x-forward, y-left, z-up sensor
+    axes for the simulation. Real-driver extrinsics still require measurement.
+  -->
+  <link name="front_lidar_sensor_link">
+    <!-- Non-zero inertia is required when preserving this fixed link in SDF. -->
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0"
+               iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+  </link>
+  <joint name="front_lidar_sensor_joint" type="fixed">
+    <parent link="front_lidar_link"/>
+    <child link="front_lidar_sensor_link"/>
+    <!-- Inverse of the official front_lidar_joint rotation. -->
+    <origin xyz="0 0 0" rpy="-1.5708 -1.5708 0"/>
+  </joint>
+
+  <!-- The simulator holds a conservative navigation stance. -->
+  <xacro:macro name="hold_joint" params="joint position gain effort">
+    <gazebo>
+      <plugin filename="gz-sim-joint-position-controller-system"
+              name="gz::sim::systems::JointPositionController">
+        <joint_name>${joint}</joint_name>
+        <initial_position>${position}</initial_position>
+        <p_gain>${gain}</p_gain>
+        <d_gain>2.0</d_gain>
+        <cmd_min>-${effort}</cmd_min>
+        <cmd_max>${effort}</cmd_max>
+      </plugin>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:if value="$(arg simulation_plugins)">
+    <xacro:hold_joint joint="FL_hip_joint" position="0.0" gain="350" effort="120"/>
+    <xacro:hold_joint joint="FL_thigh_joint" position="0.45" gain="350" effort="120"/>
+    <xacro:hold_joint joint="FL_calf_joint" position="-0.90" gain="420" effort="180"/>
+    <xacro:hold_joint joint="FR_hip_joint" position="0.0" gain="350" effort="120"/>
+    <xacro:hold_joint joint="FR_thigh_joint" position="0.45" gain="350" effort="120"/>
+    <xacro:hold_joint joint="FR_calf_joint" position="-0.90" gain="420" effort="180"/>
+    <xacro:hold_joint joint="RL_hip_joint" position="0.0" gain="350" effort="120"/>
+    <xacro:hold_joint joint="RL_thigh_joint" position="0.45" gain="350" effort="120"/>
+    <xacro:hold_joint joint="RL_calf_joint" position="-0.90" gain="420" effort="180"/>
+    <xacro:hold_joint joint="RR_hip_joint" position="0.0" gain="350" effort="120"/>
+    <xacro:hold_joint joint="RR_thigh_joint" position="0.45" gain="350" effort="120"/>
+    <xacro:hold_joint joint="RR_calf_joint" position="-0.90" gain="420" effort="180"/>
+
+    <!-- P7 is held in the vendor zero pose for mobile navigation. -->
+    <xacro:hold_joint joint="p7_joint1" position="0.0" gain="80" effort="30"/>
+    <xacro:hold_joint joint="p7_joint2" position="0.0" gain="80" effort="30"/>
+    <xacro:hold_joint joint="p7_joint3" position="0.0" gain="80" effort="30"/>
+    <xacro:hold_joint joint="p7_joint4" position="0.0" gain="80" effort="30"/>
+    <xacro:hold_joint joint="p7_joint5" position="0.0" gain="60" effort="10"/>
+    <xacro:hold_joint joint="p7_joint6" position="0.0" gain="60" effort="10"/>
+    <xacro:hold_joint joint="p7_joint7" position="0.0" gain="60" effort="10"/>
+    <xacro:hold_joint joint="p7_umi_clawj" position="0.0" gain="35" effort="20"/>
+
+    <xacro:atec_gazebo_sim base_link="base_link"
+                           lidar_link="front_lidar_sensor_link"
+                           lidar_joint="front_lidar_sensor_joint"/>
+  </xacro:if>
+</robot>

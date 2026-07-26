@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="atec_gazebo_sim" params="base_link lidar_link lidar_joint">
+    <!--
+      This is a navigation integration proxy, not an A2 gait controller.
+      VelocityControl moves the complete model from Twist commands while the
+      official leg geometry remains visible. Replace this macro with the
+      verified Unitree A2 controller before any sim-to-real work.
+    -->
+    <gazebo>
+      <plugin filename="gz-sim-velocity-control-system"
+              name="gz::sim::systems::VelocityControl">
+        <!-- Commands use the plugin's dedicated canonical-link topic. -->
+        <link_name>${base_link}</link_name>
+      </plugin>
+      <plugin filename="gz-sim-odometry-publisher-system"
+              name="gz::sim::systems::OdometryPublisher">
+        <odom_frame>a2/odom</odom_frame>
+        <robot_base_frame>${base_link}</robot_base_frame>
+        <dimensions>2</dimensions>
+        <odom_publish_frequency>30</odom_publish_frequency>
+        <odom_topic>/odom</odom_topic>
+        <tf_topic>/tf</tf_topic>
+      </plugin>
+      <plugin filename="gz-sim-joint-state-publisher-system"
+              name="gz::sim::systems::JointStatePublisher"/>
+    </gazebo>
+
+    <!--
+      VelocityControl is a planar navigation proxy and does not articulate a
+      walking gait. The held feet must therefore slide when the commanded
+      model twists; otherwise four high-friction contacts fight the velocity
+      command. Zero tangential friction retains vertical contact support while
+      making the limitation explicit. This is not A2 traction.
+    -->
+    <gazebo reference="FL_foot">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+    </gazebo>
+    <gazebo reference="FR_foot">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+    </gazebo>
+    <gazebo reference="RL_foot">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+    </gazebo>
+    <gazebo reference="RR_foot">
+      <mu1>0.0</mu1>
+      <mu2>0.0</mu2>
+    </gazebo>
+
+    <!-- Preserve the sensor child link during URDF-to-SDF conversion. Without
+         this Gazebo collapses it into base_link and emits an internal frame. -->
+    <gazebo reference="${lidar_joint}">
+      <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <!--
+      The physical platform has one lidar. Keep one 3D sensor here and let
+      pointcloud_to_laserscan derive the 2D navigation scan from its ROS topic.
+      The bridge injects this link's canonical TF frame into PointCloud2;
+      Gazebo's sensor-scoped transport header is not exposed downstream.
+    -->
+    <gazebo reference="${lidar_link}">
+      <sensor name="lidar_points" type="gpu_lidar">
+        <topic>/lidar/points</topic>
+        <update_rate>10</update_rate>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-${pi}</min_angle>
+              <max_angle>${pi}</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.261799</min_angle>
+              <max_angle>0.261799</max_angle>
+            </vertical>
+          </scan>
+          <range><min>0.20</min><max>20.0</max><resolution>0.01</resolution></range>
+          <noise><type>gaussian</type><mean>0.0</mean><stddev>0.01</stddev></noise>
+        </lidar>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+      </sensor>
+    </gazebo>
+  </xacro:macro>
+</robot>

@@ -10,6 +10,9 @@ log/
 *.log
 *.pyc
 __pycache__/
+artifacts/
+maps/*.pgm
+maps/*.yaml
 
 # Editors and OS
 .vscode/

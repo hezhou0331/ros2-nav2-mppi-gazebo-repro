@@ -1,0 +1,10 @@
+platform:
+  name: x30
+  adapter_package: TODO_x30_velocity_adapter
+  command_topic: /platform/cmd_vel
+  ready_topic: /platform/ready
+  manual_override_topic: /platform/manual_override
+  max_linear_x: 0.20
+  max_angular_z: 0.30
+  footprint_radius_m: 0.60
+  adapter_verified: false

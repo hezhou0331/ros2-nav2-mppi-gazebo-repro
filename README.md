@@ -1,159 +1,201 @@
-# ROS 2 Jazzy + Gazebo + Nav2 MPPI 复现实验
+# ATEC A2 + P7 | ROS 2 Nav2 + MPPI Gazebo Reproduction
 
-基于 TurtleBot3 的二维导航复现实验，使用 AMCL、NavFn、Nav2 MPPI 和 VoxelLayer，在 Gazebo Sim 中完成差速机器人定位、全局规划与局部避障。
+> **ATEC 2026 导航仿真与验证仓库**
+>
+> 用一颗 A2 头部 3D 雷达，在 Gazebo 中复现 **点云投影、SLAM 建图、AMCL 定位、Nav2 规划、MPPI 控制和安全速度门**的完整闭环。
 
-## 环境
+<p align="center">
+  <img src="https://img.shields.io/badge/ROS%202-Jazzy-22314E?logo=ros" alt="ROS 2 Jazzy" />
+  <img src="https://img.shields.io/badge/Gazebo-Harmonic-FF6F00" alt="Gazebo Harmonic" />
+  <img src="https://img.shields.io/badge/Nav2-MPPI-0F766E" alt="Nav2 MPPI" />
+  <img src="https://img.shields.io/badge/Platform-Unitree%20A2%20%2B%20P7-7C3AED" alt="A2 P7" />
+</p>
 
-- Ubuntu 24.04
-- ROS 2 Jazzy
-- Gazebo Sim 8
-- TurtleBot3 Waffle
-- Nav2 1.3
+## 一句话介绍
 
-原始实验环境是 Ubuntu 22.04 + ROS 2 Humble。本仓库针对 Ubuntu 24.04 + Jazzy 验证；Nav2 核心流程相同，但用于目标 Humble 设备时仍需重新验证参数和接口。
+这是一个面向汇报和回归测试的导航系统复现工程：**传感器只接入导航计算机，Nav2 只输出安全速度，平台控制通过独立 adapter 隔离**。当前 Gazebo 运动部分是平面代理，用于验证导航软件链路，不代表真实 A2 步态控制器。
 
-## 安装
+## 你可以展示什么
 
-ROS 2 Jazzy 尚未安装时，先按照 ROS 2 官方文档添加软件源，然后运行：
+| 展示主题 | 仓库中的实现 | 汇报时的结论 |
+| --- | --- | --- |
+| 单雷达导航 | `/lidar/points -> /scan` | 一颗 3D 雷达同时服务 2D SLAM 和 3D 局部障碍层 |
+| 建图与重定位 | `slam_toolbox` + `AMCL` | 建图、保存地图、重启后定位是两个明确阶段 |
+| 全局与局部规划 | `NavFn` + `MPPIController` | 全局路径负责绕行，MPPI 负责实时跟踪和避障 |
+| 安全控制 | `velocity_gate.py` | Nav2 不直连底盘，enable/ready/healthy 任一失效即归零 |
+| 可重复验收 | `run_atec_end_to_end_demo.sh` | 自动巡航、保存地图、导航目标和 JSON 工件全部可审计 |
 
-```bash
-./install_dependencies.sh
+## 系统总览
+
+```mermaid
+flowchart LR
+    L[单颗 A2 头部 3D LiDAR] --> P[/lidar/points\nPointCloud2]
+    P --> V[局部 VoxelLayer]
+    P --> C[pointcloud_to_laserscan]
+    C --> S[/scan\nLaserScan]
+    S --> SLAM[slam_toolbox\n建图]
+    S --> AMCL[AMCL\n已知地图定位]
+    S --> GC[Global Costmap]
+    O[/odom\nGazebo/LIO] --> TF[TF: map -> odom -> base_link]
+    SLAM --> TF
+    AMCL --> TF
+    TF --> GC
+    GC --> NF[NavFn\n全局规划]
+    V --> LC[Local Costmap]
+    LC --> MPPI[MPPI\n局部控制]
+    NF --> MPPI
+    MPPI --> CMD[/cmd_vel]
+    CMD --> G[velocity_gate\n限速 + 超时归零]
+    G --> PC[/platform/cmd_vel]
+    PC --> A[platform adapter]
+    A --> SIM[/sim/cmd_vel\nGazebo proxy]
 ```
 
-脚本会安装 Nav2、MPPI、SLAM Toolbox、点云投影、Gazebo bridge、RViz 和 TurtleBot3 仿真组件。
+### TF 责任边界
 
-## 1. 启动仿真
-
-本机 VS Code 是 Snap 版本。集成终端会继承 Snap core20 的 GTK/GIO 环境，直接启动 Ubuntu 24.04 的 RViz/Gazebo 会产生 `libpthread.so.0: undefined symbol: __libc_pthread_init`。因此请使用已经准备好的干净环境启动脚本：
-
-```bash
-./run_nav.sh
+```mermaid
+flowchart LR
+    M[map] -->|slam_toolbox 或 AMCL，二选一| D[a2/odom]
+    D -->|Gazebo 里程计；实机由 LIO/融合里程计| B[base_link]
+    B --> X[front_lidar_link]
+    X --> Y[front_lidar_sensor_link]
 ```
 
-脚本会自动加载 ROS、设置 TurtleBot3 型号、清除 Snap 污染的动态库环境，然后启动 Gazebo、RViz 和 Nav2。
+同一时刻只能有一个节点发布 `map -> a2/odom`。建图阶段使用 slam_toolbox，导航阶段使用 AMCL；平台 adapter 不得发布定位 TF。
 
-无图形界面测试时使用：
+## 关键设计
 
-```bash
-NAV_GUI=0 ./run_nav.sh
+### 一颗雷达，两种数据表示
+
+`/lidar/points` 是原始 3D 点云：用于局部 VoxelLayer，保留高度信息。`/scan` 是从同一颗雷达投影出的二维扫描：用于 slam_toolbox、AMCL 和全局代价地图。投影高度带为 `-0.50 ~ 0.12 m`，最小量程 `0.40 m`，用于过滤 A2/P7 自身回波。
+
+### Nav2 不直接控制机器人
+
+```mermaid
+sequenceDiagram
+    participant N as Nav2 / MPPI
+    participant G as velocity_gate
+    participant A as platform adapter
+    participant R as Robot/Gazebo
+    N->>G: /cmd_vel
+    G->>G: 检查 enable + ready + healthy
+    G->>A: /platform/cmd_vel（限幅）
+    A->>R: 厂商协议或仿真命令
+    Note over G,A: 指令超过 200 ms 未更新时持续输出零
 ```
 
-当前配置使用官方 TurtleBot3 世界和静态地图，局部控制器为 MPPI，局部代价地图包含 VoxelLayer。终端保持运行，不要关闭。
+`velocity_gate` 的默认仿真限速为 `0.15 m/s` 和 `0.25 rad/s`。这套边界可复用到实机，但 `simulation_platform_adapter.py` 和 Gazebo `VelocityControl` 不能用于真实 A2。
 
-## 2. 其他终端中的 ROS 命令
-
-只运行不带 GUI 的 `ros2 topic`、`ros2 action` 等命令时，正常加载环境即可：
-
-```bash
-source /opt/ros/jazzy/setup.bash
-```
-
-## 3. 在 RViz 中设置初始位姿和目标
-
-1. 在 RViz 点击 `2D Pose Estimate`，在机器人当前位置点击并拖动，发布初始位姿。
-2. 等待地图、激光、TF 和 AMCL 稳定，确认 `map -> odom -> base_link` 链路存在。
-3. 点击 `Nav2 Goal`，在地图上点击目标位置并拖动设置朝向。
-4. 观察机器人是否沿全局路径运动并绕开障碍；再次发送第二个目标，检查连续导航。
-
-AMCL 没有初始位姿时会看到 `AMCL cannot publish a pose`，这是预期现象，不是 Gazebo 故障。
-
-## 4. 命令行检查
-
-新开终端并加载环境：
-
-```bash
-source /opt/ros/jazzy/setup.bash
-
-ros2 topic list | grep -E '(^/scan$|/odom|/tf|cmd_vel|costmap|plan)'
-ros2 topic hz /scan
-ros2 topic echo /amcl_pose --once
-ros2 lifecycle get /controller_server
-ros2 param get /controller_server FollowPath.plugin
-ros2 param get /controller_server FollowPath.batch_size
-```
-
-预期关键结果：
+## 目录结构
 
 ```text
-FollowPath.plugin: nav2_mppi_controller::MPPIController
-FollowPath.batch_size: 512
+ros2_nav_repro/
+├── src/independent_nav_bringup/
+│   ├── launch/                 # mapping.launch.py / navigation.launch.py
+│   ├── config/                 # SLAM、AMCL、Nav2、MPPI 参数
+│   ├── scripts/                # gate、health、任务编排、仿真 adapter
+│   ├── platforms/              # A2 + P7 / X30 平台契约
+│   └── rviz/                   # 建图与导航 RViz 配置
+├── 建模/sim_src/                # A2 + P7 URDF、网格、雷达、练习场
+├── maps/                       # 保存后的 PGM/YAML 地图
+├── docs/END_TO_END_DEMO.md     # 自动闭环与录屏验收
+├── run_mapping.sh              # 启动建图
+├── run_navigation.sh           # 启动定位与导航
+└── run_atec_end_to_end_demo.sh # 一键回归演示
 ```
 
-发送目标也可以使用 ROS 2 action（姿态四元数这里表示 yaw=0）：
+## 快速开始
+
+环境：Ubuntu 24.04、ROS 2 Jazzy、Gazebo Harmonic。
 
 ```bash
-ros2 action send_goal /navigate_to_pose nav2_msgs/action/NavigateToPose \
-  "{pose: {header: {frame_id: map}, pose: {position: {x: 1.0, y: 0.0, z: 0.0}, orientation: {w: 1.0}}}}"
+cd /home/hezhou/公共/ros2_nav_repro
+./install_dependencies.sh
+./build_atec_a2_p7_nav.sh
+./validate_atec_a2_p7_nav.sh
 ```
 
-目标坐标必须位于地图可通行区域；不确定时优先使用 RViz 点击目标。
-
-## 5. 当前参数与 demo2 的对应关系
-
-`mppi_waffle.yaml` 已设置：
-
-- MPPI DiffDrive 控制器
-- `batch_size: 512`
-- `iteration_count: 5`
-- `wz_max: 0.8`
-- `wz_std: 0.40`
-- `PreferForwardCritic.cost_weight: 5.0`
-- `visualize: false`
-- 局部和全局 VoxelLayer
-- NavFn 全局规划器，`use_astar: false`
-- AMCL + 静态地图 + NavigateToPose
-
-为了满足 Jazzy MPPI 的时间约束，控制频率设为 20 Hz，`model_dt` 为 0.05 秒。这样控制周期不大于模型步长，控制器可以正常激活。
-
-## 6. 从官方 LaserScan 仿真迁移到 PointCloud2
-
-当前 TurtleBot3 仿真默认提供 `/scan`（LaserScan），所以 VoxelLayer 的观测源也是 LaserScan。这已经能复现“MPPI 读取 Costmap、VoxelLayer 参与避障”的控制链，但还不是你记录里的 `/lidar/points` 三维点云链。
-
-接入真实或自定义仿真的 PointCloud2 后，需要在 VoxelLayer 的观测源改为：
-
-```yaml
-observation_sources: points
-points:
-  topic: /lidar/points
-  data_type: PointCloud2
-  marking: true
-  clearing: true
-  obstacle_max_range: 3.0
-  raytrace_max_range: 3.5
-  min_obstacle_height: 0.05
-  max_obstacle_height: 2.0
-```
-
-AMCL 仍然继续使用 `/scan`。如果只有 PointCloud2，没有 LaserScan，则保留 `pointcloud_to_laserscan` 节点把点云投影成 `/scan`，同时让 VoxelLayer 直接订阅原始点云。
-
-## 7. 故障排查
-
-- `AMCL cannot publish a pose`：在 RViz 发布 `2D Pose Estimate`。
-- `libpthread.so.0: undefined symbol: __libc_pthread_init`：从 Snap 版 VS Code 终端直接启动了 GUI；改用 `./run_nav.sh`。
-- `Controller period more then model dt`：确保 `controller_frequency >= 1/model_dt`；本配置是 20 Hz 与 0.05 s。
-- 没有 `/scan`：检查 `TURTLEBOT3_MODEL=waffle` 和 Gazebo bridge 是否启动。
-- 没有 `map -> odom`：确认 `slam:=False` 时使用的地图存在，并已经发布初始位姿。
-- RViz/Gazebo 黑屏或很慢：先用 `headless:=True use_rviz:=False` 验证节点，再单独启动图形界面。
-- 机器人不动：检查 `/cmd_vel`、控制器 lifecycle，以及是否把目标放在障碍物或未知区域。
-
-## 8. 复现实验记录
-
-每次实验建议保存：
+### 1. 启动建图
 
 ```bash
-ros2 bag record -o ~/bags/mppi_run /tf /tf_static /scan /odom /amcl_pose /plan /cmd_vel
+./run_mapping.sh use_gui:=true
 ```
 
-记录参数文件、Gazebo 世界、目标点、成功/失败结果和导航耗时。先完成 10 次静态目标导航，再加入动态障碍和连续目标测试。
-
-## 参数校验
+在仿真中完成一圈巡航后保存地图：
 
 ```bash
-./validate_config.sh
+source /opt/ros/jazzy/setup.bash
+source /home/hezhou/公共/ros2_nav_repro/install/setup.bash
+ros2 run independent_nav_bringup save_map.py \
+  --output /home/hezhou/公共/ros2_nav_repro/maps/atec_practice_world
 ```
 
-该检查验证 YAML 语法、MPPI 插件、关键低资源参数、20 Hz 时间约束以及 VoxelLayer 是否启用。
+### 2. 启动 AMCL + Nav2
 
-## 许可证
+```bash
+./run_navigation.sh \
+  /home/hezhou/公共/ros2_nav_repro/maps/atec_practice_world.yaml \
+  use_gui:=true
+```
 
-本仓库使用 Apache License 2.0。`mppi_waffle.yaml` 基于 TurtleBot3 Navigation2 的 Waffle 参数修改，详见 `NOTICE`。
+在 RViz 使用 `2D Pose Estimate` 初始化 AMCL，再使用 `Nav2 Goal` 发送目标。默认出生点为 `(-5.8, 0, 0)`。
+
+### 3. 一键闭环演示
+
+```bash
+./run_atec_end_to_end_demo.sh
+```
+
+脚本自动完成：
+
+```mermaid
+flowchart LR
+    A[启动仿真建图] --> B[自动巡航采集扫描]
+    B --> C[保存并验证地图]
+    C --> D[停止建图栈]
+    D --> E[重启 Gazebo + AMCL + Nav2]
+    E --> F[发送两个 NavigateToPose 目标]
+    F --> G[生成 JSON 验收报告]
+```
+
+工件写入 `artifacts/atec_demo_<UTC时间戳>_<PID>/`，重点查看：
+
+- `run_report.json`：总流程、失败阶段、ROS/Gazebo 隔离信息
+- `map_validation.json`：地图尺寸、已知像素、占用像素
+- `mapping_patrol.json`：巡航航点和到点误差
+- `navigation_mission.json`：目标状态和最终位姿误差
+- `demo_report.json`：完整闭环验收结论
+
+## 汇报建议
+
+推荐按下面的 5 页顺序展示：
+
+1. **问题与目标**：从 A2 + P7 模型出发，用单雷达完成独立导航验证。
+2. **系统架构**：展示上面的数据链和安全控制链，强调 Nav2 与平台 adapter 解耦。
+3. **关键技术**：解释 PointCloud2/ LaserScan 双表示、TF 单一所有者、NavFn + MPPI。
+4. **演示流程**：建图 -> 保存 -> AMCL 重定位 -> 两个导航目标 -> JSON 验收。
+5. **边界与下一步**：仿真运动是平面代理；实机还需要 LIO、雷达外参、A2 协议、watchdog、急停和低速验收。
+
+## 实机边界
+
+本仓库验证的是导航软件闭环，不是 A2 的真实运动学。以下内容进入实机前必须重新完成：
+
+- `base_link -> lidar` 实测外参和时间同步
+- LIO/融合里程计及 `odom -> base_link`
+- A2 官方连续速度接口、自动模式和手柄抢占
+- 200 ms 内 watchdog、实体急停和通信丢失策略
+- P7 安装板载荷、重心、footprint 和限速
+- 扫描匹配、回环检测、AMCL 噪声参数和地图质量
+
+因此，本仓库适合仿真、录包、离线回放、规划验证和汇报演示；在完成平台 adapter 与 G1-G6 验收前，不得连接实体 A2。
+
+## 进一步阅读
+
+- [自动闭环与录屏验收](docs/END_TO_END_DEMO.md)
+- [平台 adapter 契约](src/independent_nav_bringup/docs/PLATFORM_ADAPTER_CONTRACT.md)
+- [A2/P7 模型与安全边界](建模/sim_src/src/atec_a2_p7_description/docs/MODEL_AND_SAFETY.md)
+- [模型来源与许可证](建模/sim_src/src/atec_a2_p7_description/docs/MODEL_PROVENANCE.md)
+
+## License
+
+详见 [LICENSE](LICENSE) 与 [NOTICE](NOTICE)。

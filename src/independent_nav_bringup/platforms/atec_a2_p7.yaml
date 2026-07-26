@@ -1,0 +1,20 @@
+platform:
+  name: atec_a2_p7
+  base_model: unitree_a2
+  manipulator: p7
+  lidar:
+    count: 1
+    frame: front_lidar_sensor_link
+    pointcloud_topic: /lidar/points
+    scan_topic: /scan
+  adapter_package: TODO_atec_a2_velocity_adapter
+  command_topic: /platform/cmd_vel
+  ready_topic: /platform/ready
+  manual_override_topic: /platform/manual_override
+  max_linear_x: 0.15
+  max_angular_z: 0.25
+  footprint_radius_m: 0.60
+  motion_model_note: >-
+    DiffDrive is a planar navigation proxy only; it is not an A2 gait or
+    hardware controller.
+  adapter_verified: false
