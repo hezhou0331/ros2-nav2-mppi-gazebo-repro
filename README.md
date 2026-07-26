@@ -29,36 +29,40 @@
 
 ```mermaid
 flowchart LR
-    L[单颗 A2 头部 3D LiDAR] --> P[/lidar/points\nPointCloud2]
-    P --> V[局部 VoxelLayer]
-    P --> C[pointcloud_to_laserscan]
-    C --> S[/scan\nLaserScan]
-    S --> SLAM[slam_toolbox\n建图]
-    S --> AMCL[AMCL\n已知地图定位]
-    S --> GC[Global Costmap]
-    O[/odom\nGazebo/LIO] --> TF[TF: map -> odom -> base_link]
+    L["单颗 A2 头部 3D LiDAR"] --> P["/lidar/points<br/>PointCloud2"]
+    P --> V["局部 VoxelLayer"]
+    P --> C["pointcloud_to_laserscan"]
+    C --> S["/scan<br/>LaserScan"]
+    S --> SLAM["slam_toolbox<br/>建图"]
+    S --> AMCL["AMCL<br/>已知地图定位"]
+    S --> SF["0.60 m 机体内部回波过滤"]
+    SF --> GC["Global Costmap"]
+    SF --> CM["Collision Monitor"]
+    O["/odom<br/>Gazebo/LIO"] --> TF["TF: map -> odom -> base_link"]
     SLAM --> TF
     AMCL --> TF
     TF --> GC
-    GC --> NF[NavFn\n全局规划]
-    V --> LC[Local Costmap]
-    LC --> MPPI[MPPI\n局部控制]
+    GC --> NF["NavFn<br/>全局规划"]
+    V --> LC["Local Costmap"]
+    LC --> MPPI["MPPI<br/>局部控制"]
     NF --> MPPI
-    MPPI --> CMD[/cmd_vel]
-    CMD --> G[velocity_gate\n限速 + 超时归零]
-    G --> PC[/platform/cmd_vel]
-    PC --> A[platform adapter]
-    A --> SIM[/sim/cmd_vel\nGazebo proxy]
+    MPPI --> VS["Velocity Smoother"]
+    VS --> CM
+    CM --> CMD["/cmd_vel"]
+    CMD --> G["velocity_gate<br/>限速 + 超时归零"]
+    G --> PC["/platform/cmd_vel"]
+    PC --> A["platform adapter"]
+    A --> SIM["/sim/cmd_vel<br/>Gazebo proxy"]
 ```
 
 ### TF 责任边界
 
 ```mermaid
 flowchart LR
-    M[map] -->|slam_toolbox 或 AMCL，二选一| D[a2/odom]
-    D -->|Gazebo 里程计；实机由 LIO/融合里程计| B[base_link]
-    B --> X[front_lidar_link]
-    X --> Y[front_lidar_sensor_link]
+    M["map"] -->|slam_toolbox 或 AMCL，二选一| D["a2/odom"]
+    D -->|Gazebo 里程计；实机由 LIO/融合里程计| B["base_link"]
+    B --> X["front_lidar_link"]
+    X --> Y["front_lidar_sensor_link"]
 ```
 
 同一时刻只能有一个节点发布 `map -> a2/odom`。建图阶段使用 slam_toolbox，导航阶段使用 AMCL；平台 adapter 不得发布定位 TF。
