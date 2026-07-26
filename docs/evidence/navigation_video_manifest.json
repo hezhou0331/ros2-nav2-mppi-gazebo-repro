@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-07-26T16:39:37Z",
+  "success": true,
+  "simulation_only": true,
+  "controller": "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController",
+  "end_to_end": {
+    "mapping_waypoints_completed": 6,
+    "mapping_waypoints_total": 6,
+    "navigation_goals": [
+      {
+        "index": 1,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2373
+      },
+      {
+        "index": 2,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2329
+      }
+    ]
+  },
+  "media": {
+    "full": {
+      "path": "docs/media/atec_a2_p7_end_to_end_demo.mp4",
+      "duration_s": 346.88,
+      "size_bytes": 13808738,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "resolution": "1920x1080",
+      "frame_rate_fps": 25,
+      "sha256": "d1293091883e4a22f68c33e3e76542321f9108c41255ee506f33a3b7ddeedd0e",
+      "left_gazebo_pane_nonblank": true,
+      "right_rviz_pane_nonblank": true
+    },
+    "navigation_highlight": {
+      "path": "docs/media/atec_a2_p7_navigation_highlight.mp4",
+      "duration_s": 85.76,
+      "size_bytes": 3259639,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "resolution": "1920x1080",
+      "frame_rate_fps": 25,
+      "sha256": "539dadba4e37e524bce602a5d9a6ec49c97085924a49b7201017b38c7c5f637d",
+      "left_gazebo_pane_nonblank": true,
+      "right_rviz_pane_nonblank": true
+    },
+    "thumbnail": {
+      "path": "docs/media/atec_a2_p7_navigation_highlight.png",
+      "sha256": "06a0cba9a6de4dd02491c7195021fe4ba46144485c3d5cd86b4f7f60f4d5313b"
+    }
+  },
+  "validation_reports": {
+    "full_ffprobe": "docs/evidence/end_to_end_video_ffprobe.json",
+    "full_visual": "docs/evidence/end_to_end_video_visual.json",
+    "highlight_ffprobe": "docs/evidence/navigation_highlight_ffprobe.json",
+    "highlight_visual": "docs/evidence/navigation_highlight_visual.json"
+  },
+  "boundaries": {
+    "is_quadruped_gait_validation": false,
+    "safe_for_real_robot": false,
+    "real_a2_capability": "unverified"
+  }
+}

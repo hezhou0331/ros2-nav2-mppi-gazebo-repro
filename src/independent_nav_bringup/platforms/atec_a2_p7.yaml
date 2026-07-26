@@ -17,4 +17,12 @@ platform:
   motion_model_note: >-
     DiffDrive is a planar navigation proxy only; it is not an A2 gait or
     hardware controller.
+  terrain:
+    gait_controller_verified: false
+    safe_for_real_robot: false
+    supported_modes: [flat_navigation]
+    proxy_probe_modes: [ramp_up, ramp_down, stairs_up]
+    note: >-
+      Ramp and stair probes measure the rigid planar proxy only. They must not
+      be reported as A2 locomotion capability or used to tune a real robot.
   adapter_verified: false

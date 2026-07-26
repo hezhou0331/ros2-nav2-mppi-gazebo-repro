@@ -2,6 +2,7 @@
 """Unit-level checks for automation-node readiness, failure, and cancellation."""
 
 import importlib.util
+import math
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -9,6 +10,7 @@ from unittest import mock
 
 
 SCRIPT_DIR = Path(__file__).resolve().parents[1] / "scripts"
+LAUNCH_DIR = Path(__file__).resolve().parents[1] / "launch"
 
 
 def load_script(name):
@@ -21,6 +23,28 @@ def load_script(name):
 mapping_patrol = load_script("mapping_patrol")
 navigation_health = load_script("navigation_health")
 navigation_mission = load_script("navigation_mission")
+collision_scan_filter = load_script("collision_scan_filter")
+
+
+class CollisionScanFilterTests(unittest.TestCase):
+    def test_filter_uses_base_frame_endpoint_not_sensor_range(self):
+        # At the official +0.33767 m lidar offset, a 0.40 m front return is
+        # outside the footprint while an equally close rear return is inside.
+        ranges = [0.40, 0.80, 1.10, math.inf, math.nan]
+
+        filtered = collision_scan_filter.filter_ranges(
+            ranges,
+            angle_min=0.0,
+            angle_increment=math.pi,
+            footprint_radius_m=0.60,
+            sensor_offset_x_m=0.33767,
+            sensor_offset_y_m=0.0,
+        )
+
+        self.assertEqual(filtered[0], 0.40)
+        self.assertTrue(math.isinf(filtered[1]))
+        self.assertEqual(filtered[2:4], [1.10, math.inf])
+        self.assertTrue(math.isnan(filtered[4]))
 
 
 class FakeLogger:
@@ -135,6 +159,40 @@ class NavigationHealthReadinessTests(unittest.TestCase):
         self.assertEqual(
             qos.durability, navigation_health.DurabilityPolicy.TRANSIENT_LOCAL
         )
+
+    def test_transition_message_includes_wall_ages_and_missing_input(self):
+        message = navigation_health.health_transition_message(
+            previous_health=None,
+            healthy=False,
+            last_seen={"scan": 99.75, "odom": None, "map": None},
+            now=100.0,
+            timeout=2.0,
+            require_map=True,
+        )
+        self.assertIn("scan_age=0.250s", message)
+        self.assertIn("odom_age=None", message)
+        self.assertIn("map_received=false", message)
+        self.assertIn("timeout=2.000s", message)
+
+    def test_transition_message_suppresses_unchanged_health(self):
+        self.assertIsNone(
+            navigation_health.health_transition_message(
+                previous_health=False,
+                healthy=False,
+                last_seen={"scan": None, "odom": None, "map": None},
+                now=100.0,
+                timeout=2.0,
+                require_map=True,
+            )
+        )
+
+    def test_simulation_launches_use_two_second_health_timeout(self):
+        for launch_name in ("mapping.launch.py", "navigation.launch.py"):
+            with self.subTest(launch=launch_name):
+                source = (LAUNCH_DIR / launch_name).read_text(encoding="utf-8")
+                self.assertIn(
+                    '{"require_map": require_map, "timeout": 2.0}', source
+                )
 
 
 class MappingPatrolFailureTests(unittest.TestCase):

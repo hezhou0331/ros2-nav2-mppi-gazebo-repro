@@ -13,6 +13,7 @@ The ATEC reference configuration assumes one head-mounted 3D lidar mounted at
 the official `front_lidar_link`. The simulation publishes its point cloud in
 the child `front_lidar_sensor_link`, whose axes are suitable for a horizontal
 scan. It publishes `/lidar/points`; the launch file projects that single stream
-to `/scan` for SLAM and localization while the local VoxelLayer uses the
-original point cloud. Those are two representations of one sensor. The real
-driver extrinsics remain subject to the final hardware measurement.
+to `/scan` for SLAM and localization, then removes endpoints inside the A2 + P7
+footprint to produce `/collision_scan` for both costmaps and Collision Monitor.
+Those are representations of one sensor. The real driver extrinsics remain
+subject to the final hardware measurement.

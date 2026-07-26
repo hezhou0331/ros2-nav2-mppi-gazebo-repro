@@ -208,6 +208,7 @@ start_stage mapping "$repo_dir/run_mapping.sh" \
 current_stage="mapping_patrol"
 ros2 run independent_nav_bringup mapping_patrol.py \
   --output "$mapping_report" --timeout 300 \
+  --state-timeout 2.0 --odom-timeout 2.0 --scan-timeout 2.0 \
   2>&1 | tee "$artifact_dir/logs/mapping_patrol.log"
 
 # Let SLAM publish its final optimized grid before saving it.
@@ -240,7 +241,8 @@ start_stage navigation "$repo_dir/run_navigation.sh" "$artifact_map" \
 
 current_stage="navigation_mission"
 ros2 run independent_nav_bringup navigation_mission.py \
-  --output "$navigation_report" --timeout 360 \
+  --output "$navigation_report" --timeout 540 \
+  --goal-timeout 240 --state-timeout 2.0 \
   2>&1 | tee "$artifact_dir/logs/navigation_mission.log"
 
 current_stage="demo_validation"

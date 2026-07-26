@@ -186,6 +186,12 @@ xauthority="$artifact_dir/.recording.Xauthority"
 : >"$xauthority"
 export XAUTHORITY="$xauthority"
 export LIBGL_ALWAYS_SOFTWARE=1
+# GLVND can otherwise load the NVIDIA EGL vendor while Xvfb uses Mesa swrast,
+# which crashes Xvfb on hosts that have both driver stacks installed.
+mesa_egl_vendor=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+if [[ -f "$mesa_egl_vendor" ]]; then
+  export __EGL_VENDOR_LIBRARY_FILENAMES="$mesa_egl_vendor"
+fi
 export QT_X11_NO_MITSHM=1
 
 current_phase="xvfb_start"

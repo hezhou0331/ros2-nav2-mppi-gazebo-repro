@@ -8,6 +8,7 @@ install(PROGRAMS
   scripts/velocity_gate.py
   scripts/navigation_health.py
   scripts/scan_qos_relay.py
+  scripts/collision_scan_filter.py
   scripts/save_map.py
   scripts/simulation_platform_adapter.py
   scripts/simulation_supervisor.py

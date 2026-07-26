@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-nav_config="$repo_dir/src/independent_nav_bringup/config/nav2_atec_a2_p7_mppi.yaml"
+nav_config="$repo_dir/src/independent_nav_bringup/config/nav2_atec_a2_p7.yaml"
 slam_config="$repo_dir/src/independent_nav_bringup/config/slam_toolbox_atec_a2.yaml"
 platform_config="$repo_dir/src/independent_nav_bringup/platforms/atec_a2_p7.yaml"
 mapping_launch="$repo_dir/src/independent_nav_bringup/launch/mapping.launch.py"
@@ -31,6 +31,7 @@ echo "ATEC A2 + P7 URDF validation passed."
   "$mapping_launch" "$navigation_launch" \
   "$repo_dir/src/independent_nav_bringup/rviz/atec_mapping_demo.rviz" \
   "$repo_dir/src/independent_nav_bringup/rviz/atec_navigation_demo.rviz" <<'PY'
+import os
 import sys
 
 import yaml
@@ -52,30 +53,37 @@ with open(platform_path, encoding="utf-8") as stream:
     platform = yaml.safe_load(stream)["platform"]
 
 controller = nav["controller_server"]["ros__parameters"]
-mppi = controller["FollowPath"]
-assert mppi["plugin"] == "nav2_mppi_controller::MPPIController"
-assert mppi["motion_model"] == "DiffDrive"
-assert mppi["vx_max"] == 0.15
-assert mppi["wz_max"] == 0.25
-assert mppi["batch_size"] == 512
-assert mppi["iteration_count"] == 5
-assert mppi["visualize"] is False
-assert 1.0 / controller["controller_frequency"] <= mppi["model_dt"]
+rpp = controller["FollowPath"]
+assert rpp["plugin"] == (
+    "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+)
+assert rpp["desired_linear_vel"] == 0.15
+assert rpp["rotate_to_heading_angular_vel"] == 0.25
+assert rpp["use_rotate_to_heading"] is True
+assert rpp["allow_reversing"] is False
+assert rpp["use_collision_detection"] is True
+assert rpp["max_allowed_time_to_collision_up_to_carrot"] == 1.0
+progress = controller["progress_checker"]
+assert progress["plugin"] == "nav2_controller::PoseProgressChecker"
+assert progress["required_movement_radius"] == 0.05
+assert progress["required_movement_angle"] == 0.20
+assert progress["movement_time_allowance"] == 20.0
 
 local = nav["local_costmap"]["local_costmap"]["ros__parameters"]
 global_map = nav["global_costmap"]["global_costmap"]["ros__parameters"]
 assert local["robot_radius"] == 0.60
 assert global_map["robot_radius"] == 0.60
-assert local["voxel_layer"]["plugin"] == "nav2_costmap_2d::VoxelLayer"
-assert local["voxel_layer"]["points"]["topic"] == "/lidar/points"
-assert local["voxel_layer"]["points"]["data_type"] == "PointCloud2"
-assert local["voxel_layer"]["points"]["obstacle_min_range"] == 0.40
-assert local["voxel_layer"]["points"]["raytrace_min_range"] == 0.40
-assert global_map["obstacle_layer"]["scan"]["topic"] == "/scan"
+assert local["obstacle_layer"]["plugin"] == "nav2_costmap_2d::ObstacleLayer"
+assert local["obstacle_layer"]["scan"]["topic"] == "/collision_scan"
+assert local["obstacle_layer"]["scan"]["data_type"] == "LaserScan"
+assert local["obstacle_layer"]["scan"]["obstacle_min_range"] == 0.40
+assert local["obstacle_layer"]["scan"]["raytrace_min_range"] == 0.40
+assert global_map["obstacle_layer"]["scan"]["topic"] == "/collision_scan"
 assert global_map["obstacle_layer"]["scan"]["data_type"] == "LaserScan"
 assert global_map["obstacle_layer"]["scan"]["obstacle_min_range"] == 0.40
 assert global_map["obstacle_layer"]["scan"]["raytrace_min_range"] == 0.40
 assert nav["amcl"]["ros__parameters"]["laser_min_range"] == 0.40
+assert nav["amcl"]["ros__parameters"]["tf_broadcast"] is False
 collision_scan = nav["collision_monitor"]["ros__parameters"]["scan"]
 assert collision_scan["type"] == "scan"
 assert collision_scan["topic"] == "/collision_scan"
@@ -102,11 +110,23 @@ for launch_path in (mapping_launch_path, navigation_launch_path):
     assert '"inf_epsilon": 0.0' in source
 
 navigation_source = open(navigation_launch_path, encoding="utf-8").read()
-assert 'name="collision_pointcloud_to_laserscan"' in navigation_source
-assert '("scan", "/collision_scan")' in navigation_source
-assert '"target_frame": "base_link"' in navigation_source
-assert '"min_height": 0.15' in navigation_source
-assert '"max_height": 2.0' in navigation_source
+assert 'executable="collision_scan_filter.py"' in navigation_source
+assert '"footprint_radius_m": 0.60' in navigation_source
+assert '"sensor_offset_x_m": 0.33767' in navigation_source
+assert 'name="simulation_map_to_odom"' in navigation_source
+assert '"--frame-id", "map", "--child-frame-id", "a2/odom"' in navigation_source
+
+collision_filter_path = os.path.join(
+    os.path.dirname(navigation_launch_path),
+    "..",
+    "scripts",
+    "collision_scan_filter.py",
+)
+collision_filter_source = open(collision_filter_path, encoding="utf-8").read()
+assert 'DEFAULT_FOOTPRINT_RADIUS_M = 0.60' in collision_filter_source
+assert 'DEFAULT_SENSOR_OFFSET_X_M = 0.33767' in collision_filter_source
+assert 'LaserScan, "/scan"' in collision_filter_source
+assert 'LaserScan, "/collision_scan"' in collision_filter_source
 
 for rviz_path in (mapping_rviz_path, navigation_rviz_path):
     with open(rviz_path, encoding="utf-8") as stream:
@@ -120,13 +140,19 @@ assert platform["lidar"]["scan_topic"] == "/scan"
 assert platform["max_linear_x"] == 0.15
 assert platform["max_angular_z"] == 0.25
 assert platform["footprint_radius_m"] == 0.60
+assert platform["terrain"]["gait_controller_verified"] is False
+assert platform["terrain"]["safe_for_real_robot"] is False
+assert platform["terrain"]["supported_modes"] == ["flat_navigation"]
+assert set(platform["terrain"]["proxy_probe_modes"]) == {
+    "ramp_up", "ramp_down", "stairs_up"
+}
 assert platform["adapter_verified"] is False
 
 print("ATEC A2 + P7 navigation configuration validation passed.")
 PY
 
 ros2 pkg prefix pointcloud_to_laserscan >/dev/null
-ros2 pkg prefix nav2_mppi_controller >/dev/null
+ros2 pkg prefix nav2_regulated_pure_pursuit_controller >/dev/null
 ros2 pkg prefix ros_gz_sim >/dev/null
 ros2 pkg prefix action_msgs >/dev/null
 ros2 pkg prefix lifecycle_msgs >/dev/null
@@ -135,6 +161,7 @@ ros2 pkg prefix tf2_ros >/dev/null
 ros2 pkg prefix atec_a2_p7_description >/dev/null
 ros2 pkg prefix independent_nav_bringup >/dev/null
 bash -n "$repo_dir/run_atec_end_to_end_demo.sh" \
+  "$repo_dir/run_atec_terrain_probe.sh" \
   "$repo_dir/tools/install_recording_dependencies.sh" \
   "$repo_dir/tools/verify_recording.sh" \
   "$repo_dir/tools/record_atec_end_to_end_demo.sh"
@@ -151,5 +178,6 @@ grep -q 'Fraction(25, 1)' "$repo_dir/tools/verify_recording.sh"
 grep -q 'atec_demo_.*_\$\$' "$repo_dir/run_atec_end_to_end_demo.sh"
 grep -q 'atec_demo_.*_\$\$' "$repo_dir/tools/record_atec_end_to_end_demo.sh"
 "$repo_dir/run_atec_end_to_end_demo.sh" --help >/dev/null
+"$repo_dir/run_atec_terrain_probe.sh" --help >/dev/null
 "$repo_dir/tools/record_atec_end_to_end_demo.sh" --help >/dev/null
 echo "ROS dependency and workspace package validation passed."

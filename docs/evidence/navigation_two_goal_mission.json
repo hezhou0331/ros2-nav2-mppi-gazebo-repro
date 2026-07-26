@@ -1,0 +1,111 @@
+{
+  "action_name": "/navigate_to_pose",
+  "error": null,
+  "finished_at": "2026-07-26T15:32:24.013952+00:00",
+  "goals": [
+    {
+      "accepted": true,
+      "action_status": "SUCCEEDED",
+      "distance_error_m": 0.2361,
+      "final_distance_m": 0.2361,
+      "final_error_m": 0.2361,
+      "final_pose": {
+        "frame_id": "map",
+        "x": -2.7032,
+        "y": -0.3797
+      },
+      "finished_at": "2026-07-26T15:31:39.563413+00:00",
+      "index": 1,
+      "started_at": "2026-07-26T15:31:15.863263+00:00",
+      "status": "SUCCEEDED",
+      "status_code": 4,
+      "target": {
+        "frame_id": "map",
+        "x": -2.5,
+        "y": -0.5,
+        "yaw": 0.0
+      }
+    },
+    {
+      "accepted": true,
+      "action_status": "SUCCEEDED",
+      "distance_error_m": 0.2347,
+      "final_distance_m": 0.2347,
+      "final_error_m": 0.2347,
+      "final_pose": {
+        "frame_id": "map",
+        "x": 2.3062,
+        "y": 0.8325
+      },
+      "finished_at": "2026-07-26T15:32:24.013370+00:00",
+      "index": 2,
+      "started_at": "2026-07-26T15:31:39.613310+00:00",
+      "status": "SUCCEEDED",
+      "status_code": 4,
+      "target": {
+        "frame_id": "map",
+        "x": 2.5,
+        "y": 0.7,
+        "yaw": 0.0
+      }
+    }
+  ],
+  "mission_started_at": "2026-07-26T15:31:15.813724+00:00",
+  "parameters": {
+    "amcl_readiness_service": "/amcl/get_state",
+    "amcl_required_state": "PRIMARY_STATE_ACTIVE",
+    "bt_navigator_readiness_service": "/bt_navigator/get_state",
+    "bt_navigator_required_state": "PRIMARY_STATE_ACTIVE",
+    "final_pose_timeout_s": 5.0,
+    "goal_timeout_s": 240.0,
+    "goal_tolerance_m": 0.35,
+    "ready_timeout_s": 120.0,
+    "state_timeout_s": 2.0,
+    "timeout_s": 540.0
+  },
+  "phase": "completed",
+  "readiness": {
+    "action_server_ready": true,
+    "amcl_lifecycle": {
+      "active": true,
+      "error": null,
+      "service": "/amcl/get_state",
+      "service_ready": true,
+      "state_id": 3,
+      "state_label": "active"
+    },
+    "amcl_pose": {
+      "diagnostic_only": true,
+      "received": true,
+      "received_age_s": 3.063,
+      "required_for_readiness": false
+    },
+    "bt_navigator_lifecycle": {
+      "active": true,
+      "error": null,
+      "service": "/bt_navigator/get_state",
+      "service_ready": true,
+      "state_id": 3,
+      "state_label": "active"
+    },
+    "map_to_base_link": {
+      "available": true,
+      "error": null
+    },
+    "nav_enable": {
+      "age_s": 0.043,
+      "value": true
+    },
+    "nav_healthy": {
+      "age_s": 0.056,
+      "value": true
+    },
+    "platform_ready": {
+      "age_s": 0.011,
+      "value": true
+    }
+  },
+  "reason": "completed both Nav2 demonstration goals",
+  "started_at": "2026-07-26T15:31:09.463071+00:00",
+  "success": true
+}

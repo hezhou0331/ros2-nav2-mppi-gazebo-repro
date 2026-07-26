@@ -1,0 +1,150 @@
+{
+  "error": null,
+  "finished_at": "2026-07-26T16:43:49.792910+00:00",
+  "parameters": {
+    "command_rate_hz": 20.0,
+    "max_angular_speed_radps": 0.22,
+    "max_linear_speed_mps": 0.12,
+    "minimum_environment_range_m": 0.4,
+    "minimum_environment_returns": 3,
+    "odom_timeout_s": 2.0,
+    "ready_timeout_s": 90.0,
+    "scan_timeout_s": 2.0,
+    "state_timeout_s": 2.0,
+    "timeout_s": 300.0,
+    "waypoint_timeout_s": 120.0,
+    "waypoint_tolerance_m": 0.2
+  },
+  "patrol_started_at": "2026-07-26T16:39:47.242371+00:00",
+  "phase": "completed",
+  "readiness": {
+    "environment_scan": {
+      "age_s": 0.1,
+      "minimum_range_m": 0.4,
+      "minimum_returns": 3,
+      "received": true,
+      "valid": true,
+      "valid_returns": 160
+    },
+    "nav_enable": {
+      "age_s": 0.073,
+      "value": true
+    },
+    "nav_healthy": {
+      "age_s": 0.083,
+      "value": true
+    },
+    "odom": {
+      "age_s": 0.034,
+      "received": true
+    },
+    "platform_ready": {
+      "age_s": 0.013,
+      "value": true
+    }
+  },
+  "reason": "completed all mapping patrol waypoints",
+  "routes": [
+    {
+      "index": 1,
+      "x": -4.9,
+      "y": 0.0
+    },
+    {
+      "index": 2,
+      "x": -4.9,
+      "y": -1.2
+    },
+    {
+      "index": 3,
+      "x": 3.3,
+      "y": -1.2
+    },
+    {
+      "index": 4,
+      "x": 3.3,
+      "y": 1.2
+    },
+    {
+      "index": 5,
+      "x": -4.9,
+      "y": 1.2
+    },
+    {
+      "index": 6,
+      "x": -4.9,
+      "y": 0.0
+    }
+  ],
+  "started_at": "2026-07-26T16:39:41.191980+00:00",
+  "success": true,
+  "waypoint_results": [
+    {
+      "final_distance_m": 0.1994,
+      "finished_at": "2026-07-26T16:39:54.042464+00:00",
+      "index": 1,
+      "started_at": "2026-07-26T16:39:47.242395+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": -4.9,
+        "y": 0.0
+      }
+    },
+    {
+      "final_distance_m": 0.1995,
+      "finished_at": "2026-07-26T16:40:11.343063+00:00",
+      "index": 2,
+      "started_at": "2026-07-26T16:39:54.043158+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": -4.9,
+        "y": -1.2
+      }
+    },
+    {
+      "final_distance_m": 0.1978,
+      "finished_at": "2026-07-26T16:41:34.442249+00:00",
+      "index": 3,
+      "started_at": "2026-07-26T16:40:11.343846+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": 3.3,
+        "y": -1.2
+      }
+    },
+    {
+      "final_distance_m": 0.1976,
+      "finished_at": "2026-07-26T16:42:03.044586+00:00",
+      "index": 4,
+      "started_at": "2026-07-26T16:41:34.442827+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": 3.3,
+        "y": 1.2
+      }
+    },
+    {
+      "final_distance_m": 0.1996,
+      "finished_at": "2026-07-26T16:43:33.542486+00:00",
+      "index": 5,
+      "started_at": "2026-07-26T16:42:03.045956+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": -4.9,
+        "y": 1.2
+      }
+    },
+    {
+      "final_distance_m": 0.1998,
+      "finished_at": "2026-07-26T16:43:49.792340+00:00",
+      "index": 6,
+      "started_at": "2026-07-26T16:43:33.543109+00:00",
+      "status": "SUCCEEDED",
+      "target": {
+        "x": -4.9,
+        "y": 0.0
+      }
+    }
+  ],
+  "waypoints_completed": 6
+}

@@ -19,10 +19,10 @@ ros2-nav2-mppi-gazebo-repro/
 机器人只配置一颗头部原生位置的 3D 雷达：`front_lidar_link`。该 link 与其
 相对 `base_link` 的固定变换来自随模型导入的 A2 URDF；其子 frame
 `front_lidar_sensor_link` 仅校正仿真传感器的轴方向。该单雷达发布
-`/lidar/points`，并投影为 `/scan`：局部 VoxelLayer 直接使用点云，SLAM、
-AMCL、全局代价地图和 collision monitor 使用投影扫描。这是同一颗雷达的两种
-消息表示，不是两颗传感器。不要增加第二颗仿真雷达或把雷达移动到机械臂安装板
-上，除非实机传感器方案变更。
+`/lidar/points`，并投影为 `/scan`。SLAM 与 AMCL 使用 `/scan`；局部/全局
+代价地图和 collision monitor 使用按 A2 + P7 足迹过滤后的 `/collision_scan`。
+这些是同一颗雷达的消息表示，不是多颗传感器。不要增加第二颗仿真雷达或把雷达
+移动到机械臂安装板上，除非实机传感器方案变更。
 
 模型来源、可复现方式、仿真假设和实机安全限制见
 [`atec_a2_p7_description/docs/MODEL_AND_SAFETY.md`](sim_src/src/atec_a2_p7_description/docs/MODEL_AND_SAFETY.md)。

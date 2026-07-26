@@ -36,34 +36,6 @@ def projection_node():
     )
 
 
-def collision_projection_node():
-    return Node(
-        package="pointcloud_to_laserscan",
-        executable="pointcloud_to_laserscan_node",
-        name="collision_pointcloud_to_laserscan",
-        remappings=[("cloud_in", "/lidar/points"), ("scan", "/collision_scan")],
-        parameters=[{
-            "use_sim_time": True,
-            # Collision Monitor consumes LaserScan and cannot apply a height
-            # filter itself. Project in base_link so the height band removes
-            # floor/self returns before the dynamic footprint check.
-            "target_frame": "base_link",
-            "transform_tolerance": 0.2,
-            "min_height": 0.15,
-            "max_height": 2.0,
-            "angle_min": -3.14159,
-            "angle_max": 3.14159,
-            "angle_increment": 0.00872665,
-            "scan_time": 0.1,
-            "range_min": 0.40,
-            "range_max": 8.0,
-            "use_inf": True,
-            "inf_epsilon": 1.0,
-        }],
-        output="screen",
-    )
-
-
 def safety_nodes(require_map: bool):
     # The gate and adapter use wall time, matching the future Orin safety contract.
     params = {"use_sim_time": False}
@@ -72,13 +44,26 @@ def safety_nodes(require_map: bool):
              parameters=[params], output="screen"),
         Node(
             package="independent_nav_bringup",
+            executable="collision_scan_filter.py",
+            # Official A2 lidar x offset, evaluated against the same 0.60 m
+            # circular footprint used by both Nav2 costmaps.
+            parameters=[params | {
+                "footprint_radius_m": 0.60,
+                "sensor_offset_x_m": 0.33767,
+                "sensor_offset_y_m": 0.0,
+            }],
+            output="screen",
+        ),
+        Node(
+            package="independent_nav_bringup",
             executable="velocity_gate.py",
             # Conservative limits for the A2 + centered P7 navigation proxy.
             parameters=[params | {"max_linear_x": 0.15, "max_angular_z": 0.25}],
             output="screen",
         ),
         Node(package="independent_nav_bringup", executable="navigation_health.py",
-             parameters=[params | {"require_map": require_map}], output="screen"),
+             parameters=[params | {"require_map": require_map, "timeout": 2.0}],
+             output="screen"),
         Node(package="independent_nav_bringup", executable="simulation_platform_adapter.py",
              parameters=[params], output="screen"),
         Node(package="independent_nav_bringup", executable="simulation_supervisor.py",
@@ -98,13 +83,24 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(str(a2_p7_share / "launch" / "sim_world.launch.py")),
         launch_arguments={"use_gui": use_gui}.items(),
     )
+    simulation_localization = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="simulation_map_to_odom",
+        arguments=[
+            "--x", "0", "--y", "0", "--z", "0",
+            "--roll", "0", "--pitch", "0", "--yaw", "0",
+            "--frame-id", "map", "--child-frame-id", "a2/odom",
+        ],
+        output="screen",
+    )
     nav2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(nav2_share / "launch" / "bringup_launch.py")),
         launch_arguments={
             "slam": "False",
             "map": map_yaml,
             "use_sim_time": "True",
-            "params_file": str(package_share / "config" / "nav2_atec_a2_p7_mppi.yaml"),
+            "params_file": str(package_share / "config" / "nav2_atec_a2_p7.yaml"),
             "autostart": "True",
             "use_composition": "False",
         }.items(),
@@ -120,8 +116,10 @@ def generate_launch_description():
         DeclareLaunchArgument("use_gui", default_value="false"),
         DeclareLaunchArgument("use_rviz", default_value="true"),
         simulation,
+        # Mapping is built directly in Gazebo's drift-free odom coordinates.
+        # Real hardware must remove this identity TF and let AMCL own map -> odom.
+        simulation_localization,
         projection_node(),
-        collision_projection_node(),
         *safety_nodes(require_map=True),
         nav2,
         rviz,

@@ -2,7 +2,7 @@ ATEC A2 + P7 Navigation Simulation
 Copyright 2026 hezhou
 
 The active ATEC navigation configuration is
-`src/independent_nav_bringup/config/nav2_atec_a2_p7_mppi.yaml`.
+`src/independent_nav_bringup/config/nav2_atec_a2_p7.yaml`.
 
 The Unitree A2 model in
 `建模/sim_src/src/atec_a2_p7_description` was imported from the Unitree

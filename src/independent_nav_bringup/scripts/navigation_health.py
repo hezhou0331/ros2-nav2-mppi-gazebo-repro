@@ -19,6 +19,27 @@ def inputs_healthy(last_seen, now, timeout, require_map):
     return live_inputs_fresh and map_ready
 
 
+def health_transition_message(
+    previous_health, healthy, last_seen, now, timeout, require_map
+):
+    """Describe a health transition, or suppress an unchanged state."""
+    if previous_health is not None and previous_health == healthy:
+        return None
+
+    def format_age(key):
+        seen_at = last_seen[key]
+        if seen_at is None:
+            return "None"
+        return f"{max(0.0, now - seen_at):.3f}s"
+
+    return (
+        f"/nav/healthy changed to {str(healthy).lower()}: "
+        f"scan_age={format_age('scan')}, odom_age={format_age('odom')}, "
+        f"map_received={str(last_seen['map'] is not None).lower()}, "
+        f"require_map={str(require_map).lower()}, timeout={timeout:.3f}s"
+    )
+
+
 def map_subscription_qos():
     """Match the transient-local map publisher so late subscribers receive its map."""
     return QoSProfile(
@@ -34,6 +55,7 @@ class NavigationHealth(Node):
         self.declare_parameter("require_map", True)
         self.declare_parameter("timeout", 0.75)
         self.last_seen = {"scan": None, "odom": None, "map": None}
+        self.last_published_health = None
         self.publisher = self.create_publisher(Bool, "/nav/healthy", 10)
         self.create_subscription(LaserScan, "/scan", self.mark("scan"), 10)
         self.create_subscription(Odometry, "/odom", self.mark("odom"), 10)
@@ -50,12 +72,29 @@ class NavigationHealth(Node):
     def publish(self):
         now = self.get_clock().now().nanoseconds / 1e9
         timeout = self.get_parameter("timeout").value
+        require_map = self.get_parameter("require_map").value
         healthy = inputs_healthy(
             self.last_seen,
             now,
             timeout,
-            self.get_parameter("require_map").value,
+            require_map,
         )
+        transition = health_transition_message(
+            self.last_published_health,
+            healthy,
+            self.last_seen,
+            now,
+            timeout,
+            require_map,
+        )
+        if transition is not None:
+            # rclpy caches severity per Python call site, so keep INFO and WARN
+            # on distinct lines instead of selecting a bound method dynamically.
+            if healthy:
+                self.get_logger().info(transition)
+            else:
+                self.get_logger().warn(transition)
+            self.last_published_health = healthy
         self.publisher.publish(Bool(data=healthy))
 
 

@@ -24,8 +24,9 @@ ros2 launch atec_a2_p7_description sim_world.launch.py use_gui:=true
 仿真导航接口为 `/sim/cmd_vel`、`/odom`、`/lidar/points` 和 `/scan`。坐标链为
 `a2/odom -> base_link -> front_lidar_link -> front_lidar_sensor_link`：前一个雷达
 frame 保留导入 A2 的原生安装位置，后一个仿真子 frame 只将传感器轴校正为
-x 前、y 左、z 上。导航栈把同一颗雷达的点云投影为 `/scan`；局部 VoxelLayer
-使用点云，SLAM/AMCL、全局代价地图和 collision monitor 使用投影扫描。
+x 前、y 左、z 上。导航栈把同一颗雷达的点云投影为 `/scan`；SLAM/AMCL
+使用该扫描，局部/全局代价地图和 collision monitor 使用按机体足迹过滤后的
+`/collision_scan`。
 
 ## Fidelity Boundary
 

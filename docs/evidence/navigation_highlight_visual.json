@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "success": true,
+  "sample_time_s": 42.88,
+  "left_gazebo_pane": {
+    "mean_luma": 194.04,
+    "luma_stddev": 59.105,
+    "minimum_luma": 0,
+    "maximum_luma": 255
+  },
+  "right_rviz_pane": {
+    "mean_luma": 176.664,
+    "luma_stddev": 97.389,
+    "minimum_luma": 0,
+    "maximum_luma": 255
+  }
+}

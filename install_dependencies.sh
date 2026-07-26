@@ -13,7 +13,7 @@ sudo apt-get install -y \
   ros-jazzy-desktop \
   ros-jazzy-navigation2 \
   ros-jazzy-nav2-bringup \
-  ros-jazzy-nav2-mppi-controller \
+  ros-jazzy-nav2-regulated-pure-pursuit-controller \
   ros-jazzy-slam-toolbox \
   ros-jazzy-pointcloud-to-laserscan \
   ros-jazzy-ros-gz-sim \

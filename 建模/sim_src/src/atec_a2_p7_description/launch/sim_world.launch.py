@@ -27,6 +27,10 @@ def generate_launch_description():
     world = package_share / "worlds" / "atec_practice_world.sdf"
     use_gui = LaunchConfiguration("use_gui")
     mount_z = LaunchConfiguration("arm_mount_z")
+    spawn_x = LaunchConfiguration("spawn_x")
+    spawn_y = LaunchConfiguration("spawn_y")
+    spawn_z = LaunchConfiguration("spawn_z")
+    spawn_yaw = LaunchConfiguration("spawn_yaw")
     description_command = Command([
         "xacro ", str(model),
         " simulation_plugins:=true",
@@ -80,7 +84,7 @@ def generate_launch_description():
             "-world", "atec_practice_world",
             "-string", description_command,
             "-name", "atec_a2_p7",
-            "-x", "-5.8", "-y", "0", "-z", "0.56",
+            "-x", spawn_x, "-y", spawn_y, "-z", spawn_z, "-Y", spawn_yaw,
         ],
         output="screen",
     )
@@ -93,6 +97,10 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument("use_gui", default_value="false"),
+        DeclareLaunchArgument("spawn_x", default_value="-5.8"),
+        DeclareLaunchArgument("spawn_y", default_value="0.0"),
+        DeclareLaunchArgument("spawn_z", default_value="0.56"),
+        DeclareLaunchArgument("spawn_yaw", default_value="0.0"),
         DeclareLaunchArgument(
             "arm_mount_z",
             default_value="0.145",

@@ -46,9 +46,10 @@ redistribution limits are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
   `PointCloud2` header. This changes only the ROS header and is valid because
   the converted Gazebo sensor pose is the same fixed pose as that frame.
 - Navigation point-cloud input: `/lidar/points`. The navigation launch
-  projects that cloud into `/scan`. The local VoxelLayer directly consumes the
-  cloud; SLAM Toolbox, AMCL, the global costmap, and collision monitor consume
-  the projected scan. These are two representations of one physical lidar.
+  projects that cloud into `/scan` for SLAM Toolbox and AMCL, then removes
+  endpoints inside the A2 + P7 footprint to produce `/collision_scan` for both
+  costmaps and Collision Monitor. These are representations of one physical
+  lidar.
 
 ## Mounting Assumptions
 

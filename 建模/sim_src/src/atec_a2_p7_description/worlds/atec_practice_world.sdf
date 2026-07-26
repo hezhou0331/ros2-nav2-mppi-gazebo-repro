@@ -60,6 +60,33 @@
       </link>
     </model>
 
+    <!-- Flat-course navigation obstacle placed directly between the two demo goals. -->
+    <model name="single_lidar_navigation_barrier">
+      <static>true</static>
+      <pose>0 0.10 0 0 0 0</pose>
+      <link name="barrier">
+        <collision name="barrier_collision">
+          <pose>0 0 0.45 0 0 0</pose>
+          <geometry><box><size>0.70 1.00 0.90</size></box></geometry>
+        </collision>
+        <visual name="barrier_body">
+          <pose>0 0 0.45 0 0 0</pose>
+          <geometry><box><size>0.70 1.00 0.90</size></box></geometry>
+          <material><ambient>0.92 0.34 0.02 1</ambient><diffuse>0.98 0.42 0.03 1</diffuse></material>
+        </visual>
+        <visual name="front_reflective_band">
+          <pose>-0.356 0 0.55 0 0 0</pose>
+          <geometry><box><size>0.012 0.90 0.16</size></box></geometry>
+          <material><ambient>0.95 0.95 0.92 1</ambient><diffuse>1 1 0.96 1</diffuse></material>
+        </visual>
+        <visual name="rear_reflective_band">
+          <pose>0.356 0 0.55 0 0 0</pose>
+          <geometry><box><size>0.012 0.90 0.16</size></box></geometry>
+          <material><ambient>0.95 0.95 0.92 1</ambient><diffuse>1 1 0.96 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
     <!-- Three 56.7 mm risers make the maximum 170 mm competition step. -->
     <model name="step_170mm">
       <static>true</static>

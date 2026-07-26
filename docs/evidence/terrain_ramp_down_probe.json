@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "trial": "ramp_down",
+  "status": "proxy_pass",
+  "proxy_trial_pass": true,
+  "simulation_proxy": "gz-sim-velocity-control-system",
+  "is_quadruped_gait_validation": false,
+  "safe_for_real_robot": false,
+  "real_a2_capability": "unverified",
+  "command_path": "/cmd_vel -> velocity_gate -> /platform/cmd_vel -> /sim/cmd_vel",
+  "parameters": {
+    "command_linear_x_mps": 0.08,
+    "duration_s": 30.0,
+    "expected_direction": "positive_x"
+  },
+  "sample_count": 31,
+  "first_pose": {
+    "sample": 0.0,
+    "x": 0.84558,
+    "y": 3.00003,
+    "z": 0.833383,
+    "roll": 0.000584,
+    "pitch": -0.071082,
+    "yaw": 0.000189
+  },
+  "last_pose": {
+    "sample": 30.0,
+    "x": 3.64503,
+    "y": 3.00344,
+    "z": 0.517328,
+    "roll": 0.00042,
+    "pitch": -0.001095,
+    "yaw": 0.001756
+  },
+  "signed_progress_m": 2.7995,
+  "horizontal_distance_m": 2.7995,
+  "z_change_m": -0.3161,
+  "min_z_m": 0.5143,
+  "max_z_m": 0.8334,
+  "max_abs_roll_rad": 0.0126,
+  "max_abs_pitch_rad": 0.24,
+  "reason": "Rigid planar proxy met this diagnostic threshold; this is not gait proof."
+}

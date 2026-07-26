@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "trial": "ramp_up",
+  "status": "proxy_failed",
+  "proxy_trial_pass": false,
+  "simulation_proxy": "gz-sim-velocity-control-system",
+  "is_quadruped_gait_validation": false,
+  "safe_for_real_robot": false,
+  "real_a2_capability": "unverified",
+  "command_path": "/cmd_vel -> velocity_gate -> /platform/cmd_vel -> /sim/cmd_vel",
+  "parameters": {
+    "command_linear_x_mps": 0.1,
+    "duration_s": 34.0,
+    "expected_direction": "negative_x"
+  },
+  "sample_count": 35,
+  "first_pose": {
+    "sample": 0.0,
+    "x": 3.44987,
+    "y": 3.0,
+    "z": 0.517531,
+    "roll": 0.000247,
+    "pitch": -0.00432,
+    "yaw": -3.14158
+  },
+  "last_pose": {
+    "sample": 34.0,
+    "x": 2.70927,
+    "y": 3.00014,
+    "z": 0.363725,
+    "roll": -2.9e-05,
+    "pitch": 0.833884,
+    "yaw": -3.14149
+  },
+  "signed_progress_m": 0.7406,
+  "horizontal_distance_m": 0.7406,
+  "z_change_m": -0.1538,
+  "min_z_m": 0.3394,
+  "max_z_m": 0.5182,
+  "max_abs_roll_rad": 0.0002,
+  "max_abs_pitch_rad": 0.8339,
+  "reason": "Rigid planar proxy did not meet the terrain diagnostic threshold."
+}

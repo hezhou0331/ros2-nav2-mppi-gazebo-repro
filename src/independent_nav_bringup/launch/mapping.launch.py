@@ -53,7 +53,8 @@ def safety_nodes(require_map: bool):
             output="screen",
         ),
         Node(package="independent_nav_bringup", executable="navigation_health.py",
-             parameters=[params | {"require_map": require_map}], output="screen"),
+             parameters=[params | {"require_map": require_map, "timeout": 2.0}],
+             output="screen"),
         Node(package="independent_nav_bringup", executable="simulation_platform_adapter.py",
              parameters=[params], output="screen"),
         Node(package="independent_nav_bringup", executable="simulation_supervisor.py",
@@ -66,10 +67,20 @@ def generate_launch_description():
     a2_p7_share = Path(get_package_share_directory("atec_a2_p7_description"))
     use_gui = LaunchConfiguration("use_gui")
     use_rviz = LaunchConfiguration("use_rviz")
+    spawn_x = LaunchConfiguration("spawn_x")
+    spawn_y = LaunchConfiguration("spawn_y")
+    spawn_z = LaunchConfiguration("spawn_z")
+    spawn_yaw = LaunchConfiguration("spawn_yaw")
 
     simulation = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(a2_p7_share / "launch" / "sim_world.launch.py")),
-        launch_arguments={"use_gui": use_gui}.items(),
+        launch_arguments={
+            "use_gui": use_gui,
+            "spawn_x": spawn_x,
+            "spawn_y": spawn_y,
+            "spawn_z": spawn_z,
+            "spawn_yaw": spawn_yaw,
+        }.items(),
     )
     slam = Node(
         package="slam_toolbox",
@@ -99,6 +110,10 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument("use_gui", default_value="false"),
         DeclareLaunchArgument("use_rviz", default_value="true"),
+        DeclareLaunchArgument("spawn_x", default_value="-5.8"),
+        DeclareLaunchArgument("spawn_y", default_value="0.0"),
+        DeclareLaunchArgument("spawn_z", default_value="0.56"),
+        DeclareLaunchArgument("spawn_yaw", default_value="0.0"),
         simulation,
         projection_node(),
         slam,
