@@ -25,6 +25,22 @@
 | 安全控制 | `velocity_gate.py` | Nav2 不直连底盘，enable/ready/healthy 任一失效即归零 |
 | 可重复验收 | `run_atec_end_to_end_demo.sh` | 自动巡航、保存地图、导航目标和 JSON 工件全部可审计 |
 
+## 演示视频
+
+### A2 + P7 仿真模型
+
+<p align="center">
+  <a href="docs/media/atec_a2_p7_robot_showcase.mp4">
+    <img src="docs/media/atec_a2_p7_robot_showcase.gif" width="720" alt="A2 + P7 仿真模型动态展示" />
+  </a>
+</p>
+
+<p align="center">
+  点击动图观看 <a href="docs/media/atec_a2_p7_robot_showcase.mp4">1280 x 720 完整 MP4 视频</a>
+</p>
+
+该视频展示仓库中实际使用的 Unitree A2、背载 P7 机械臂与 UMI 夹爪组合模型。README 使用精简 GIF 自动预览，完整视频保留原始分辨率。
+
 ## 系统总览
 
 ```mermaid
@@ -200,16 +216,6 @@ flowchart LR
 - `mapping_patrol.json`：巡航航点和到点误差
 - `navigation_mission.json`：目标状态和最终位姿误差
 - `demo_report.json`：完整闭环验收结论
-
-## 汇报建议
-
-推荐按下面的 5 页顺序展示：
-
-1. **问题与目标**：从 A2 + P7 模型出发，用单雷达完成独立导航验证。
-2. **系统架构**：展示上面的数据链和安全控制链，强调 Nav2 与平台 adapter 解耦。
-3. **关键技术**：解释 PointCloud2/ LaserScan 双表示、TF 单一所有者、NavFn + MPPI。
-4. **演示流程**：建图 -> 保存 -> AMCL 重定位 -> 两个导航目标 -> JSON 验收。
-5. **边界与下一步**：仿真运动是平面代理；实机还需要 LIO、雷达外参、A2 协议、watchdog、急停和低速验收。
 
 ## 实机边界
 
