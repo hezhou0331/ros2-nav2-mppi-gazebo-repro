@@ -16,7 +16,7 @@ workspace.
 | Component | Packaged source | Notes |
 | --- | --- | --- |
 | A2 body and legs | `urdf/vendor/a2.urdf`, `meshes/a2/` | Imported from the Unitree `unitree_ros` A2 model, commit `aa0f5c68b5aba347bad409e71b6430407da758d7`; license is copied to `docs/UNITREE_LICENSE`. |
-| P7 arm and UMI gripper | `urdf/vendor/p7_arm_v3_umi_gripper_v3.urdf`, `meshes/p7/`, `meshes/umi_gripper_v3/` | Copied from the team-local asset `/home/hezhou/公共/ATEC/现有的资料/p7_arm_v3_umi_gripper/urdf/p7_arm_v3_umi_gripper_v3.urdf`. |
+| P7 arm and UMI gripper | `urdf/vendor/p7_arm_v3_umi_gripper_v3.urdf`, `meshes/p7/`, `meshes/umi_gripper_v3/` | Imported from the team's preserved P7 v3 + UMI source asset; the runtime copy is fully packaged in this repository. |
 | Simulation components | `urdf/components/` | Generated from the preserved vendor files by `tools/generate_components.py`; mesh URIs are made package-local, P7 link names receive `p7_` prefixes, and collision shapes are simplified for Gazebo. |
 | Competition environment | `worlds/atec_practice_world.sdf` | A practice approximation based on the local ATEC material, not an official measurement drawing. |
 

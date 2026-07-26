@@ -1,11 +1,11 @@
 # ATEC A2 + P7 建模工作区
 
-`建模/sim_src` 是本仓库的一部分，不是独立 ROS 工作区。请在
-`/home/hezhou/公共/ros2_nav_repro` 根目录构建和加载环境。该目录不单独构成
-ROS 工作区，也不应单独 source 其他工作区的 `install/setup.bash`。
+`建模/sim_src` 是本仓库的一部分，不是独立 ROS 工作区。请在克隆后的仓库根目录
+构建并加载 `install/setup.bash`。该目录不单独构成 ROS 工作区，也不应单独
+source 其他工作区的 `install/setup.bash`。
 
 ```text
-ros2_nav_repro/
+ros2-nav2-mppi-gazebo-repro/
 ├── src/independent_nav_bringup/       # 单雷达建图、定位、Nav2 与仿真安全边界
 └── 建模/sim_src/src/
     └── atec_a2_p7_description/        # A2、本地 P7 v3 UMI 模型、仿真场地

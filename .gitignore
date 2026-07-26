@@ -13,6 +13,7 @@ __pycache__/
 artifacts/
 maps/*.pgm
 maps/*.yaml
+maps/*_cleanup.json
 
 # Editors and OS
 .vscode/

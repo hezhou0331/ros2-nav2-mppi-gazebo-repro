@@ -4,7 +4,8 @@
 ## 前置条件
 
 ```bash
-cd /home/hezhou/公共/ros2_nav_repro
+git clone https://github.com/hezhou0331/ros2-nav2-mppi-gazebo-repro.git
+cd ros2-nav2-mppi-gazebo-repro
 ./install_dependencies.sh
 ./build_atec_a2_p7_nav.sh
 ./validate_atec_a2_p7_nav.sh
@@ -36,7 +37,7 @@ cd /home/hezhou/公共/ros2_nav_repro
 
 ```bash
 ./run_atec_end_to_end_demo.sh \
-  --artifact-dir /home/hezhou/公共/ros2_nav_repro/artifacts/manual_demo
+  --artifact-dir "$PWD/artifacts/manual_demo"
 ```
 
 录制完整闭环：

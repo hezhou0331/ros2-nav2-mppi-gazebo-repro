@@ -89,7 +89,7 @@ sequenceDiagram
 ## 目录结构
 
 ```text
-ros2_nav_repro/
+ros2-nav2-mppi-gazebo-repro/
 ├── src/independent_nav_bringup/
 │   ├── launch/                 # mapping.launch.py / navigation.launch.py
 │   ├── config/                 # SLAM、AMCL、Nav2、MPPI 参数
@@ -104,18 +104,49 @@ ros2_nav_repro/
 └── run_atec_end_to_end_demo.sh # 一键回归演示
 ```
 
+## 支持环境
+
+| 项目 | 要求 |
+| --- | --- |
+| 操作系统 | Ubuntu 24.04 LTS（推荐原生安装） |
+| ROS 2 | Jazzy Jalisco |
+| 仿真器 | Gazebo Harmonic / Gazebo Sim 8 |
+| 导航 | Nav2、NavFn、MPPI Controller、SLAM Toolbox |
+| 构建工具 | `colcon`、CMake、Python 3 |
+
+仓库按 ROS 2 Jazzy 的 Debian 软件包进行安装和验证。其他 Ubuntu/ROS 版本需要自行调整软件包名称和依赖，不属于当前复现基线。
+
 ## 快速开始
 
-环境：Ubuntu 24.04、ROS 2 Jazzy、Gazebo Harmonic。
+### 1. 克隆仓库
 
 ```bash
-cd /home/hezhou/公共/ros2_nav_repro
+git clone https://github.com/hezhou0331/ros2-nav2-mppi-gazebo-repro.git
+cd ros2-nav2-mppi-gazebo-repro
+```
+
+后续命令均在仓库根目录执行，不依赖固定用户名或安装路径。
+
+### 2. 安装依赖
+
+先按照 [ROS 2 Jazzy Ubuntu 安装文档](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html) 配置 ROS 2 软件源，然后执行：
+
+```bash
 ./install_dependencies.sh
+```
+
+该脚本安装 ROS 2 Desktop、Nav2、MPPI Controller、SLAM Toolbox、`ros_gz`、`gz_ros2_control`、机器人状态发布和 Xacro 等运行依赖。
+
+### 3. 构建并验证
+
+```bash
 ./build_atec_a2_p7_nav.sh
 ./validate_atec_a2_p7_nav.sh
 ```
 
-### 1. 启动建图
+构建脚本会自动定位仓库根目录，因此仓库可以放在任意用户目录。验证脚本检查包结构、模型、TF、启动配置和导航参数。
+
+### 4. 启动建图
 
 ```bash
 ./run_mapping.sh use_gui:=true
@@ -125,22 +156,22 @@ cd /home/hezhou/公共/ros2_nav_repro
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-source /home/hezhou/公共/ros2_nav_repro/install/setup.bash
+source install/setup.bash
 ros2 run independent_nav_bringup save_map.py \
-  --output /home/hezhou/公共/ros2_nav_repro/maps/atec_practice_world
+  --output "$PWD/maps/atec_practice_world"
 ```
 
-### 2. 启动 AMCL + Nav2
+### 5. 启动 AMCL + Nav2
 
 ```bash
 ./run_navigation.sh \
-  /home/hezhou/公共/ros2_nav_repro/maps/atec_practice_world.yaml \
+  "$PWD/maps/atec_practice_world.yaml" \
   use_gui:=true
 ```
 
 在 RViz 使用 `2D Pose Estimate` 初始化 AMCL，再使用 `Nav2 Goal` 发送目标。默认出生点为 `(-5.8, 0, 0)`。
 
-### 3. 一键闭环演示
+### 6. 一键闭环演示
 
 ```bash
 ./run_atec_end_to_end_demo.sh

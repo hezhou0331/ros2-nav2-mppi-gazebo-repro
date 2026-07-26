@@ -5,7 +5,7 @@
 
 ```bash
 ros2 run independent_nav_bringup save_map.py \
-  --output /home/hezhou/公共/ros2_nav_repro/maps/atec_practice_world
+  --output "$PWD/maps/atec_practice_world"
 ```
 
 随后将 `maps/atec_practice_world.yaml` 传给 `./run_navigation.sh`。
