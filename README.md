@@ -30,13 +30,13 @@
 ### A2 + P7 仿真模型
 
 <p align="center">
-  <a href="docs/media/atec_a2_p7_robot_showcase.mp4">
-    <img src="docs/media/atec_a2_p7_robot_showcase.gif" width="720" alt="A2 + P7 仿真模型动态展示" />
-  </a>
+  <video controls width="720" src="https://raw.githubusercontent.com/hezhou0331/ros2-nav2-mppi-gazebo-repro/main/docs/media/atec_a2_p7_robot_showcase.mp4">
+    A2 + P7 仿真模型视频
+  </video>
 </p>
 
 <p align="center">
-  点击动图观看 <a href="docs/media/atec_a2_p7_robot_showcase.mp4">1280 x 720 完整 MP4 视频</a>
+  GitHub 页面内直接播放；<a href="docs/media/atec_a2_p7_robot_showcase.gif">GIF 预览</a> · <a href="docs/media/atec_a2_p7_robot_showcase.mp4">下载完整 MP4</a>
 </p>
 
 该视频展示仓库中实际使用的 Unitree A2、背载 P7 机械臂与 UMI 夹爪组合模型。README 使用精简 GIF 自动预览，完整视频保留原始分辨率。
