@@ -13,5 +13,5 @@ included at `建模/sim_src/src/atec_a2_p7_description/docs/UNITREE_LICENSE`.
 Nav2 is developed by Open Navigation LLC and contributors and is distributed
 under the Apache License 2.0.
 
-`mppi_waffle.yaml` is a historical TurtleBot3-derived configuration retained
-from the earlier reproduction project. It is not loaded by any ATEC launcher.
+The active navigation configuration is A2 + P7 specific. No TurtleBot3 or
+Fishbot configuration is part of the active reproduction entry point.

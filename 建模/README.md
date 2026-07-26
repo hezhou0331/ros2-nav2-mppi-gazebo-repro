@@ -1,8 +1,8 @@
 # ATEC A2 + P7 建模工作区
 
 `建模/sim_src` 是本仓库的一部分，不是独立 ROS 工作区。请在
-`/home/hezhou/公共/ros2_nav_repro` 根目录构建和加载环境。旧 Fishbot 工作区已在
-`建模/legacy/fishbot_sim_src_20260726` 归档；不要 source 它的 `install/setup.bash`。
+`/home/hezhou/公共/ros2_nav_repro` 根目录构建和加载环境。该目录不单独构成
+ROS 工作区，也不应单独 source 其他工作区的 `install/setup.bash`。
 
 ```text
 ros2_nav_repro/

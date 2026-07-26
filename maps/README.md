@@ -10,5 +10,5 @@ ros2 run independent_nav_bringup save_map.py \
 
 随后将 `maps/atec_practice_world.yaml` 传给 `./run_navigation.sh`。
 
-旧 `fishbot_world.*` 来自四轮 Fishbot 场地，不匹配 A2 + P7 的练习世界、雷达链路
-或 `0.60 m` 的临时导航包络；不得用于本工作区的 ATEC 导航。
+地图必须来自 A2 + P7 ATEC 练习场地，并与当前雷达链路和 `0.60 m` 临时导航包络
+一起校验；不要把其他机器人或其他场地的地图复制到这里。

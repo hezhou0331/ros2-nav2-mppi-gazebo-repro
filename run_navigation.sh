@@ -6,11 +6,6 @@ if [[ $# -lt 1 ]]; then
   echo "Usage: $0 /absolute/path/to/map.yaml [use_gui:=true]" >&2
   exit 2
 fi
-if [[ "$1" == *fishbot* ]]; then
-  echo "Fishbot maps are incompatible with the ATEC A2 + P7 practice world." >&2
-  echo "Create maps/atec_practice_world.yaml with ./run_mapping.sh first." >&2
-  exit 2
-fi
 unset CONDA_PREFIX CONDA_DEFAULT_ENV PYTHONPATH
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export GZ_PARTITION="${GZ_PARTITION:-atec_a2_p7_independent_nav}"
