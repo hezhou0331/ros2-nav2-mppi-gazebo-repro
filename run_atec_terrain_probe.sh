@@ -109,7 +109,9 @@ cleanup() {
   [[ -n "$publisher_pid" ]] && kill -INT "$publisher_pid" 2>/dev/null
   [[ -n "$publisher_pid" ]] && wait "$publisher_pid" 2>/dev/null
   if [[ -n "$launch_pid" ]] && kill -0 "$launch_pid" 2>/dev/null; then
-    kill -INT -- "-$launch_pid" 2>/dev/null
+    # Let ROS launch propagate one orderly SIGINT to its children. Keep the
+    # process-group TERM below only as the timeout fallback.
+    kill -INT "$launch_pid" 2>/dev/null || true
     for _ in {1..50}; do
       kill -0 "$launch_pid" 2>/dev/null || break
       sleep 0.2
@@ -130,7 +132,8 @@ source /opt/ros/jazzy/setup.bash
 source "$repo_dir/install/setup.bash"
 set -u
 
-setsid ros2 launch independent_nav_bringup mapping.launch.py \
+setsid env --default-signal=INT --default-signal=QUIT \
+  ros2 launch independent_nav_bringup mapping.launch.py \
   use_gui:="$use_gui" use_rviz:="$use_rviz" \
   spawn_x:="$spawn_x" spawn_y:="$spawn_y" spawn_z:="$spawn_z" \
   spawn_yaw:="$spawn_yaw" >"$artifact_dir/logs/terrain_launch.log" 2>&1 &

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "success": true,
+  "status": "passed",
+  "started_at": "2026-07-27T00:04:54Z",
+  "finished_at": "2026-07-27T00:09:57Z",
+  "exit_code": 0,
+  "stage": "completed",
+  "failed_stage": null,
+  "artifact_dir": "/home/hezhou/公共/ATEC/ros2_nav_repro/artifacts/navigation_inflation_070_e2e_20260727_v1",
+  "environment": {
+    "gz_partition": "atec_demo_20260727T000454Z_2",
+    "ros_domain_id": 22
+  },
+  "artifacts": {
+    "map_yaml": "/home/hezhou/公共/ATEC/ros2_nav_repro/artifacts/navigation_inflation_070_e2e_20260727_v1/maps/atec_practice_world.yaml",
+    "mapping_report": "/home/hezhou/公共/ATEC/ros2_nav_repro/artifacts/navigation_inflation_070_e2e_20260727_v1/mapping_patrol.json",
+    "navigation_report": "/home/hezhou/公共/ATEC/ros2_nav_repro/artifacts/navigation_inflation_070_e2e_20260727_v1/navigation_mission.json",
+    "demo_report": "/home/hezhou/公共/ATEC/ros2_nav_repro/artifacts/navigation_inflation_070_e2e_20260727_v1/demo_report.json"
+  }
+}

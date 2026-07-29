@@ -3,6 +3,7 @@
 
 import importlib.util
 import math
+import time
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -20,10 +21,306 @@ def load_script(name):
     return module
 
 
+def load_launch(name):
+    path = LAUNCH_DIR / f"{name}.launch.py"
+    spec = importlib.util.spec_from_file_location(f"{name}_launch", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 mapping_patrol = load_script("mapping_patrol")
 navigation_health = load_script("navigation_health")
 navigation_mission = load_script("navigation_mission")
 collision_scan_filter = load_script("collision_scan_filter")
+velocity_gate = load_script("velocity_gate")
+hardware_control_launch = load_launch("a2_hardware_control")
+
+
+class HardwareControlLaunchTests(unittest.TestCase):
+    @staticmethod
+    def launch_configurations(values):
+        def make_configuration(name):
+            return SimpleNamespace(perform=lambda _context: values[name])
+
+        return mock.patch.object(
+            hardware_control_launch,
+            "LaunchConfiguration",
+            side_effect=make_configuration,
+        )
+
+    def test_missing_adapter_config_fails_before_nodes_are_constructed(self):
+        values = {
+            "network_interface": "enp2s0",
+            "adapter_config": "/missing/adapter.yaml",
+        }
+        with (
+            self.launch_configurations(values),
+            mock.patch.object(
+                hardware_control_launch.os.path,
+                "isfile",
+                return_value=False,
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "validate_wired_network_interface",
+            ) as validate_interface,
+            mock.patch.object(hardware_control_launch, "Node") as node,
+        ):
+            with self.assertRaisesRegex(ValueError, "adapter_config does not exist"):
+                hardware_control_launch._hardware_nodes(None, Path("/adapter"))
+        validate_interface.assert_not_called()
+        node.assert_not_called()
+
+    def test_invalid_network_interface_fails_before_sdk_or_nodes(self):
+        values = {
+            "network_interface": "lo",
+            "adapter_config": "/adapter/config.yaml",
+        }
+        with (
+            self.launch_configurations(values),
+            mock.patch.object(
+                hardware_control_launch.os.path,
+                "isfile",
+                return_value=True,
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "validate_wired_network_interface",
+                side_effect=RuntimeError("not wired"),
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "verify_pinned_sdk2_installation",
+            ) as verify_revision,
+            mock.patch.object(hardware_control_launch, "Node") as node,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "not wired"):
+                hardware_control_launch._hardware_nodes(None, Path("/adapter"))
+        verify_revision.assert_not_called()
+        node.assert_not_called()
+
+    def test_unverified_sdk_revision_fails_before_nodes_are_constructed(self):
+        values = {
+            "network_interface": "enp2s0",
+            "adapter_config": "/adapter/config.yaml",
+        }
+        with (
+            self.launch_configurations(values),
+            mock.patch.object(
+                hardware_control_launch.os.path,
+                "isfile",
+                return_value=True,
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "validate_wired_network_interface",
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "verify_pinned_sdk2_installation",
+                side_effect=RuntimeError("wrong revision"),
+            ),
+            mock.patch.object(hardware_control_launch, "Node") as node,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "wrong revision"):
+                hardware_control_launch._hardware_nodes(None, Path("/adapter"))
+        node.assert_not_called()
+
+    def test_successful_preflight_constructs_only_adapter_and_velocity_gate(self):
+        values = {
+            "network_interface": "enp2s0",
+            "adapter_config": "/adapter/config.yaml",
+            "dds_domain_id": "0",
+            "input_cmd_topic": "/cmd_vel",
+        }
+        with (
+            self.launch_configurations(values),
+            mock.patch.object(
+                hardware_control_launch.os.path,
+                "isfile",
+                return_value=True,
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "validate_wired_network_interface",
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "verify_pinned_sdk2_installation",
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "PythonLaunchDescriptionSource",
+                return_value="adapter_source",
+            ),
+            mock.patch.object(
+                hardware_control_launch,
+                "IncludeLaunchDescription",
+                return_value="adapter",
+            ) as include,
+            mock.patch.object(
+                hardware_control_launch,
+                "Node",
+                return_value="velocity_gate",
+            ) as node,
+        ):
+            actions = hardware_control_launch._hardware_nodes(
+                None,
+                Path("/adapter"),
+            )
+
+        self.assertEqual(actions, ["adapter", "velocity_gate"])
+        include.assert_called_once()
+        node.assert_called_once()
+        node_kwargs = node.call_args.kwargs
+        self.assertEqual(node_kwargs["package"], "independent_nav_bringup")
+        self.assertEqual(node_kwargs["executable"], "velocity_gate.py")
+
+
+class VelocityGateTests(unittest.TestCase):
+    def make_armed_interlock(self):
+        interlock = velocity_gate.RearmInterlock()
+        interlock.update_enable(False)
+        interlock.update_enable(True)
+        self.assertTrue(interlock.evaluate(True, latch_faults=True))
+        return interlock
+
+    def test_planar_twist_requires_all_six_components_to_be_finite(self):
+        command = velocity_gate.Twist()
+        command.linear.x = 0.1
+        command.angular.z = 0.2
+        self.assertTrue(velocity_gate.is_planar_twist(command))
+
+        fields = (
+            ("linear", "x"),
+            ("linear", "y"),
+            ("linear", "z"),
+            ("angular", "x"),
+            ("angular", "y"),
+            ("angular", "z"),
+        )
+        for vector_name, field_name in fields:
+            with self.subTest(field=f"{vector_name}.{field_name}"):
+                invalid = velocity_gate.Twist()
+                invalid.linear.x = 0.1
+                invalid.angular.z = 0.2
+                setattr(getattr(invalid, vector_name), field_name, math.nan)
+                self.assertFalse(velocity_gate.is_planar_twist(invalid))
+
+    def test_planar_twist_rejects_any_nonzero_unsupported_dof(self):
+        fields = (
+            ("linear", "y"),
+            ("linear", "z"),
+            ("angular", "x"),
+            ("angular", "y"),
+        )
+        for vector_name, field_name in fields:
+            with self.subTest(field=f"{vector_name}.{field_name}"):
+                command = velocity_gate.Twist()
+                setattr(getattr(command, vector_name), field_name, 1.0e-12)
+                self.assertFalse(velocity_gate.is_planar_twist(command))
+
+    def test_watchdog_uses_monotonic_clock(self):
+        gate = object.__new__(velocity_gate.VelocityGate)
+        with mock.patch.object(velocity_gate.time, "monotonic", return_value=123.5):
+            self.assertEqual(gate.now(), 123.5)
+
+    def test_dds_receive_timestamp_preserves_executor_queue_age(self):
+        received_at = velocity_gate.monotonic_receive_time(
+            {"received_timestamp": 100_000_000_000},
+            monotonic_now=500.0,
+            wall_time_ns=100_250_000_000,
+        )
+        self.assertAlmostEqual(received_at, 499.75)
+
+    def test_rearm_interlock_latches_fault_until_disable(self):
+        interlock = velocity_gate.RearmInterlock()
+        self.assertFalse(interlock.evaluate(True, latch_faults=True))
+
+        interlock.update_enable(False)
+        interlock.update_enable(True)
+        self.assertTrue(interlock.evaluate(True, latch_faults=True))
+        self.assertFalse(interlock.evaluate(False, latch_faults=True))
+        self.assertTrue(interlock.fault_latched)
+        self.assertFalse(interlock.evaluate(True, latch_faults=True))
+
+        interlock.update_enable(False)
+        interlock.update_enable(True)
+        self.assertTrue(interlock.evaluate(True, latch_faults=True))
+
+    def test_simulation_mode_does_not_latch_transient_fault(self):
+        interlock = velocity_gate.RearmInterlock()
+        interlock.update_enable(False)
+        interlock.update_enable(True)
+        self.assertTrue(interlock.evaluate(True, latch_faults=False))
+        self.assertFalse(interlock.evaluate(False, latch_faults=False))
+        self.assertTrue(interlock.evaluate(True, latch_faults=False))
+
+    def test_invalid_command_clears_previous_command_and_latches(self):
+        gate = object.__new__(velocity_gate.VelocityGate)
+        gate.command = velocity_gate.Twist()
+        gate.command.linear.x = 0.1
+        gate.command_time = 10.0
+        gate.interlock = self.make_armed_interlock()
+        gate.get_parameter = mock.Mock(return_value=SimpleNamespace(value=True))
+
+        invalid = velocity_gate.Twist()
+        invalid.angular.x = 0.01
+        gate.command_callback(
+            invalid,
+            {"received_timestamp": time.time_ns()},
+        )
+
+        self.assertIsNone(gate.command_time)
+        self.assertEqual(gate.command.linear.x, 0.0)
+        self.assertTrue(gate.interlock.fault_latched)
+        self.assertTrue(gate.interlock.await_disable)
+
+    def test_invalid_command_latches_after_disable_even_before_first_motion(self):
+        gate = object.__new__(velocity_gate.VelocityGate)
+        gate.command = velocity_gate.Twist()
+        gate.command_time = None
+        gate.interlock = velocity_gate.RearmInterlock()
+        gate.interlock.update_enable(False)
+        gate.interlock.update_enable(True)
+        gate.get_parameter = mock.Mock(return_value=SimpleNamespace(value=True))
+
+        invalid = velocity_gate.Twist()
+        invalid.linear.y = 0.01
+        gate.command_callback(
+            invalid,
+            {"received_timestamp": time.time_ns()},
+        )
+
+        self.assertTrue(gate.interlock.fault_latched)
+        self.assertTrue(gate.interlock.await_disable)
+
+    def test_stale_queued_command_is_cleared_and_latched(self):
+        gate = object.__new__(velocity_gate.VelocityGate)
+        gate.command = velocity_gate.Twist()
+        gate.command_time = None
+        gate.interlock = self.make_armed_interlock()
+        parameters = {
+            "cmd_timeout": 0.20,
+            "input_cmd_topic": "/cmd_vel",
+            "latch_faults": True,
+        }
+        gate.get_parameter = lambda name: SimpleNamespace(value=parameters[name])
+        gate.get_logger = mock.Mock()
+        gate.now = mock.Mock(return_value=100.0)
+
+        command = velocity_gate.Twist()
+        command.linear.x = 0.1
+        with mock.patch.object(velocity_gate.time, "time_ns", return_value=1_000_000_000):
+            gate.command_callback(
+                command,
+                {"received_timestamp": 700_000_000},
+            )
+
+        self.assertIsNone(gate.command_time)
+        self.assertEqual(gate.command.linear.x, 0.0)
+        self.assertTrue(gate.interlock.fault_latched)
 
 
 class CollisionScanFilterTests(unittest.TestCase):

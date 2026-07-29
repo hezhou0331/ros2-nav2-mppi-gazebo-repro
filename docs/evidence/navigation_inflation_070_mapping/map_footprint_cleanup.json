@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "success": true,
+  "finished_at": "2026-07-27T00:08:30.597699+00:00",
+  "map_yaml": "/home/hezhou/公共/ATEC/ros2_nav_repro/maps/atec_practice_world.yaml",
+  "map_image": "/home/hezhou/公共/ATEC/ros2_nav_repro/maps/atec_practice_world.pgm",
+  "width": 495,
+  "height": 372,
+  "resolution_m": 0.05000000074505806,
+  "clearance_radius_m": 0.65,
+  "route": [
+    {
+      "x": -5.8,
+      "y": 0.0
+    },
+    {
+      "x": -4.9,
+      "y": 0.0
+    },
+    {
+      "x": -4.9,
+      "y": -1.2
+    },
+    {
+      "x": 3.3,
+      "y": -1.2
+    },
+    {
+      "x": 3.3,
+      "y": 1.2
+    },
+    {
+      "x": -4.9,
+      "y": 1.2
+    },
+    {
+      "x": -4.9,
+      "y": 0.0
+    }
+  ],
+  "changed_pixels": {
+    "occupied": 672,
+    "unknown": 3409,
+    "other": 0
+  },
+  "changed_pixels_total": 4081
+}

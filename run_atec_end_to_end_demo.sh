@@ -81,7 +81,9 @@ stop_stage() {
     stage_pid=""
     return
   fi
-  kill -INT -- "-$stage_pid" 2>/dev/null || true
+  # Let ROS launch propagate one orderly SIGINT to its children. Signaling the
+  # whole process group here makes launch deliver a second signal to them.
+  kill -INT "$stage_pid" 2>/dev/null || true
   for _ in {1..50}; do
     kill -0 "$stage_pid" 2>/dev/null || break
     sleep 0.2
@@ -181,7 +183,10 @@ trap 'exit 143' TERM
 start_stage() {
   local name=$1
   shift
-  setsid "$@" >"$artifact_dir/logs/${name}_launch.log" 2>&1 &
+  # Background jobs inherit SIGINT as ignored from a non-interactive shell.
+  # Reset it before exec so the launch process can perform an orderly shutdown.
+  setsid env --default-signal=INT --default-signal=QUIT \
+    "$@" >"$artifact_dir/logs/${name}_launch.log" 2>&1 &
   stage_pid=$!
   echo "Started $name stage (PID $stage_pid)."
 }

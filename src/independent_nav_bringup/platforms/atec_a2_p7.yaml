@@ -7,13 +7,43 @@ platform:
     frame: front_lidar_sensor_link
     pointcloud_topic: /lidar/points
     scan_topic: /scan
-  adapter_package: TODO_atec_a2_velocity_adapter
+  adapter_package: atec_a2_sdk2_adapter
   command_topic: /platform/cmd_vel
   ready_topic: /platform/ready
+  automatic_mode_topic: /platform/automatic_mode
   manual_override_topic: /platform/manual_override
+  estop_topic: /platform/estop
+  adapter_status_topic: /platform/adapter_status
   max_linear_x: 0.15
   max_angular_z: 0.25
   footprint_radius_m: 0.60
+  adapter:
+    interface_status: implemented_not_hardware_verified
+    hardware_control_launch: independent_nav_bringup/a2_hardware_control.launch.py
+    runtime_scope: control_boundary_only
+    sdk_repository: https://github.com/unitreerobotics/unitree_sdk2_python
+    sdk_commit: 65691c8a8bc53b98d3976dba4dbf9d5d20b2e7f5
+    sdk_python_version: 1.0.1
+    cyclonedds_python_version: 0.10.2
+    sport_server_api_version: 1.0.0.1
+    client: unitree_sdk2py.a2.sport.sport_client.SportClient
+    state_topic: rt/lf/sportmodestate
+    calls: ["Move(vx, 0.0, vyaw)", "StopMove()"]
+    max_linear_x: 0.10
+    max_angular_z: 0.20
+    command_timeout_s: 0.08
+    nominal_matched_service_stop_request_s: 0.14
+    unmatched_rpc_return_path_s: 0.30
+    physical_stop_deadline_guaranteed: false
+    robot_side_watchdog_required: true
+    external_safety_source_required: true
+    dds_receive_timestamp_enforced: true
+    sdk_revision_metadata_enforced: true
+    sdk_critical_file_hashes_enforced: true
+    sport_server_api_version_enforced: true
+    sport_rpc_lease_enabled_upstream: false
+    publisher_identity_enforced_in_node: false
+    isolated_control_network_required: true
   motion_model_note: >-
     DiffDrive is a planar navigation proxy only; it is not an A2 gait or
     hardware controller.
@@ -25,4 +55,15 @@ platform:
     note: >-
       Ramp and stair probes measure the rigid planar proxy only. They must not
       be reported as A2 locomotion capability or used to tune a real robot.
+  official_simulation_path:
+    unitree_mujoco_commit: ae6a8403e272733e9996ef59990880330496177f
+    unitree_rl_mjlab_commit: 1425b15f73bd4095f0df53709d7c389c3eb9e790
+    unitree_sdk2_commit: 21d0a3b2c46ee48c8fdf2783becb6be3beb0a59b
+    training_task: Unitree-A2-Flat
+    a2_policy_available: false
+    dds_contract_compatible: false
+    a2_p7_payload_model_verified: false
+    nav2_command_bridge_verified: false
+    gait_bridge_verified: false
+    status: blocked_missing_policy_and_bridge_validation
   adapter_verified: false

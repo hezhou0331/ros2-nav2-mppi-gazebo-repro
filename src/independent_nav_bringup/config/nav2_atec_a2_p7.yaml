@@ -158,7 +158,8 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.80
+        # Keep a 0.10 m graded-cost band outside the 0.60 m robot envelope.
+        inflation_radius: 0.70
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
@@ -216,7 +217,8 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 0.80
+        # Match the local costmap so replanning and tracking use one clearance.
+        inflation_radius: 0.70
       always_send_full_costmap: True
 
 # The yaml_filename does not need to be specified since it going to be set by defaults in launch.

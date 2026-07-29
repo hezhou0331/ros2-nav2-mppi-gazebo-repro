@@ -1,0 +1,28 @@
+a2_sdk2_adapter:
+  ros__parameters:
+    # Required at launch, for example enp2s0. Never use the Wi-Fi interface.
+    network_interface: ""
+    dds_domain_id: 0
+
+    # Independent hardware-side limits, deliberately below the navigation cap.
+    max_linear_x: 0.10
+    max_angular_z: 0.20
+    unsupported_axis_epsilon: 1.0e-6
+
+    # Nominal matched-service request path: 0.08 + 0.02 + 2 * 0.02 = 0.14 s.
+    # An unmatched SDK writer sleeps in 0.10 s quanta, so this is not a
+    # physical stop guarantee. A robot-side watchdog and physical estop are
+    # mandatory on hardware.
+    command_timeout_s: 0.08
+    control_period_s: 0.02
+    rpc_timeout_s: 0.02
+    nominal_stop_request_budget_s: 0.20
+    stop_refresh_period_s: 0.10
+    shutdown_join_timeout_s: 0.50
+
+    sport_state_timeout_s: 0.20
+    external_state_timeout_s: 0.25
+    status_publish_period_s: 0.05
+
+    # A2 SDK2: DEFAULT_MODE=3, RUNNING_MODE=4. No other gait is enabled here.
+    allowed_sport_modes: [3, 4]

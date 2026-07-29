@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "success": true,
+  "map": {
+    "width": 495,
+    "height": 372,
+    "pixels": 184140,
+    "known_pixels": 19082,
+    "occupied_pixels": 1036,
+    "free_pixels": 18046,
+    "unknown_pixels": 165058,
+    "resolution": 0.05000000074505806,
+    "yaml": "/home/hezhou/公共/ATEC/ros2_nav_repro/maps/atec_practice_world.yaml",
+    "image": "/home/hezhou/公共/ATEC/ros2_nav_repro/maps/atec_practice_world.pgm"
+  },
+  "mapping": {
+    "error": null,
+    "finished_at": "2026-07-27T00:08:25.736968+00:00",
+    "parameters": {
+      "command_rate_hz": 20.0,
+      "max_angular_speed_radps": 0.22,
+      "max_linear_speed_mps": 0.12,
+      "minimum_environment_range_m": 0.4,
+      "minimum_environment_returns": 3,
+      "odom_timeout_s": 2.0,
+      "ready_timeout_s": 90.0,
+      "scan_timeout_s": 2.0,
+      "state_timeout_s": 2.0,
+      "timeout_s": 300.0,
+      "waypoint_timeout_s": 120.0,
+      "waypoint_tolerance_m": 0.2
+    },
+    "patrol_started_at": "2026-07-27T00:05:01.686509+00:00",
+    "phase": "completed",
+    "readiness": {
+      "environment_scan": {
+        "age_s": 0.065,
+        "minimum_range_m": 0.4,
+        "minimum_returns": 3,
+        "received": true,
+        "valid": true,
+        "valid_returns": 160
+      },
+      "nav_enable": {
+        "age_s": 0.05,
+        "value": true
+      },
+      "nav_healthy": {
+        "age_s": 0.095,
+        "value": true
+      },
+      "odom": {
+        "age_s": 0.034,
+        "received": true
+      },
+      "platform_ready": {
+        "age_s": 0.026,
+        "value": true
+      }
+    },
+    "reason": "completed all mapping patrol waypoints",
+    "routes": [
+      {
+        "index": 1,
+        "x": -4.9,
+        "y": 0.0
+      },
+      {
+        "index": 2,
+        "x": -4.9,
+        "y": -1.2
+      },
+      {
+        "index": 3,
+        "x": 3.3,
+        "y": -1.2
+      },
+      {
+        "index": 4,
+        "x": 3.3,
+        "y": 1.2
+      },
+      {
+        "index": 5,
+        "x": -4.9,
+        "y": 1.2
+      },
+      {
+        "index": 6,
+        "x": -4.9,
+        "y": 0.0
+      }
+    ],
+    "started_at": "2026-07-27T00:04:55.485922+00:00",
+    "success": true,
+    "waypoint_results": [
+      {
+        "final_distance_m": 0.199,
+        "finished_at": "2026-07-27T00:05:07.836372+00:00",
+        "index": 1,
+        "started_at": "2026-07-27T00:05:01.686527+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": -4.9,
+          "y": 0.0
+        }
+      },
+      {
+        "final_distance_m": 0.1974,
+        "finished_at": "2026-07-27T00:05:21.586259+00:00",
+        "index": 2,
+        "started_at": "2026-07-27T00:05:07.836843+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": -4.9,
+          "y": -1.2
+        }
+      },
+      {
+        "final_distance_m": 0.1965,
+        "finished_at": "2026-07-27T00:06:34.336265+00:00",
+        "index": 3,
+        "started_at": "2026-07-27T00:05:21.587164+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": 3.3,
+          "y": -1.2
+        }
+      },
+      {
+        "final_distance_m": 0.1953,
+        "finished_at": "2026-07-27T00:06:58.486202+00:00",
+        "index": 4,
+        "started_at": "2026-07-27T00:06:34.336949+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": 3.3,
+          "y": 1.2
+        }
+      },
+      {
+        "final_distance_m": 0.1986,
+        "finished_at": "2026-07-27T00:08:11.536238+00:00",
+        "index": 5,
+        "started_at": "2026-07-27T00:06:58.486806+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": -4.9,
+          "y": 1.2
+        }
+      },
+      {
+        "final_distance_m": 0.1984,
+        "finished_at": "2026-07-27T00:08:25.736447+00:00",
+        "index": 6,
+        "started_at": "2026-07-27T00:08:11.536884+00:00",
+        "status": "SUCCEEDED",
+        "target": {
+          "x": -4.9,
+          "y": 0.0
+        }
+      }
+    ],
+    "waypoints_completed": 6
+  }
+}

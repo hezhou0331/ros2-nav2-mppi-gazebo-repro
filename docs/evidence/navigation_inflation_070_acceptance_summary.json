@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-27",
+  "scope": "Gazebo planar-proxy navigation regression only",
+  "is_a2_gait_validation": false,
+  "safe_for_real_robot": false,
+  "configuration": {
+    "local_inflation_radius_m": 0.7,
+    "global_inflation_radius_m": 0.7,
+    "robot_radius_m": 0.6,
+    "controller": "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+  },
+  "full_end_to_end": {
+    "artifact_directory": "artifacts/navigation_inflation_070_e2e_20260727_v1",
+    "published_evidence_directory": "docs/evidence/navigation_inflation_070_e2e",
+    "published_mapping_sources_directory": "docs/evidence/navigation_inflation_070_mapping",
+    "success": true,
+    "mapping_waypoints_completed": 6,
+    "mapping_waypoints_total": 6,
+    "goals": [
+      {
+        "index": 1,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2406
+      },
+      {
+        "index": 2,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2395
+      }
+    ],
+    "run_report_sha256": "352258e9ca09b145eac480b3d8073f9927c8e8e23bef0f16890f8d1d6797d546",
+    "navigation_report_sha256": "b6d236c28973880f2a5f386c2c61d5e9654a662967ffe792d98bcb9cd1aa7038",
+    "published_reports": {
+      "run_report": {
+        "path": "docs/evidence/navigation_inflation_070_e2e/run_report.json",
+        "sha256": "352258e9ca09b145eac480b3d8073f9927c8e8e23bef0f16890f8d1d6797d546"
+      },
+      "navigation_mission": {
+        "path": "docs/evidence/navigation_inflation_070_e2e/navigation_mission.json",
+        "sha256": "b6d236c28973880f2a5f386c2c61d5e9654a662967ffe792d98bcb9cd1aa7038"
+      },
+      "demo_report": {
+        "path": "docs/evidence/navigation_inflation_070_e2e/demo_report.json",
+        "sha256": "e785259b9b4aa6f7f447428283cd368678565840d9e9a5fb22fa63beb58cfce2"
+      },
+      "map_validation": {
+        "path": "docs/evidence/navigation_inflation_070_e2e/map_validation.json",
+        "sha256": "edaf7d151071641c8bbd4e6c55fede9a275ba9c0cf35e172a30c097076c108b4"
+      }
+    }
+  },
+  "post_velocity_gate_navigation_only": {
+    "artifact_directory": "artifacts/navigation_inflation_070_velocity_gate_regression_20260727_v1",
+    "success": true,
+    "simulation_latch_faults": false,
+    "goals": [
+      {
+        "index": 1,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2353
+      },
+      {
+        "index": 2,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2358
+      }
+    ],
+    "run_report_sha256": "9934006c3aae24387ff805cb6eb37a1170fe31651e9c442155fe66b296109b05",
+    "navigation_report_sha256": "994294d4a15f043c6d60d830265030f56a6c5095c4c63b0ecbd76084aeb9f31b"
+  },
+  "post_dds_timestamp_qos_navigation_only": {
+    "artifact_directory": "artifacts/navigation_inflation_070_velocity_gate_regression_20260727_v2",
+    "success": true,
+    "simulation_latch_faults": false,
+    "goals": [
+      {
+        "index": 1,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.239
+      },
+      {
+        "index": 2,
+        "status": "SUCCEEDED",
+        "final_error_m": 0.2377
+      }
+    ],
+    "navigation_report_sha256": "cdd2f2693e5c57d55c2a29ead17e37c0c0ea79130550caa4a74d01ba1789bbfc",
+    "demo_report_sha256": "5727a29b7073de660c45452dfeeb34ed1a90e43acca5905db0b44f9ce1aec394"
+  },
+  "shutdown_smoke": {
+    "artifact_directory": "artifacts/navigation_shutdown_smoke_20260727_v4",
+    "repository_python_nodes_clean_exit": true,
+    "remaining_external_shutdown_noise": [
+      "ros_gz_bridge bridge_node exited -11",
+      "Gazebo required SIGTERM after its five-second SIGINT grace period"
+    ],
+    "launch_log_sha256": "2fce6cdc50bd38119d1d230c2ef1763879ab122c0254eda1bda7eabef791db44"
+  },
+  "limitations": [
+    "The regression uses Gazebo VelocityControl as a rigid planar proxy.",
+    "The run did not persist /odom or /plan samples, so minimum obstacle clearance and the selected passing side are not directly measured.",
+    "The result does not verify Unitree A2 gait, dynamics, hardware safety, or the SDK2 adapter on a physical robot."
+  ]
+}

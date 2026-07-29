@@ -13,7 +13,7 @@
 
 ## 一句话介绍
 
-这是一个面向汇报和回归测试的导航系统复现工程：**传感器只接入导航计算机，Nav2 只输出安全速度，平台控制通过独立 adapter 隔离**。当前 Gazebo 运动部分是平面代理，用于验证导航软件链路，不代表真实 A2 步态控制器。
+这是一个面向汇报和回归测试的导航系统复现工程：**传感器只接入导航计算机，Nav2 只输出安全速度，平台控制通过独立 adapter 隔离**。当前 Gazebo 运动部分仍是平面代理，用于验证导航软件链路，不代表真实 A2 步态控制器。仓库已新增独立的官方 SDK2 实机 adapter，但尚未在实体 A2 上验收。
 
 GitHub 仓库沿用早期包含 `mppi` 的 URL；当前经过实体障碍回归验证的活动控制器是
 Regulated Pure Pursuit，活动参数文件为
@@ -27,43 +27,57 @@ Regulated Pure Pursuit，活动参数文件为
 | 建图与仿真定位 | `slam_toolbox` + Gazebo 无漂移里程计 | 建图、保存地图、重启后导航是两个明确阶段；AMCL 保留为诊断，不冒充实机定位 |
 | 全局与局部规划 | `NavFn` + `RegulatedPurePursuitController` | 全局路径负责绕行，RPP 负责确定性跟踪、转向和前向碰撞检查 |
 | 安全控制 | `velocity_gate.py` | Nav2 不直连底盘，enable/ready/healthy 任一失效即归零 |
+| A2 官方接口 | `a2_hardware_control.launch.py` + `atec_a2_sdk2_adapter` | 官方控制边界已接入；已通过无 SDK 测试，未完成实机验收 |
 | 可重复验收 | `run_atec_end_to_end_demo.sh` | 自动巡航、保存地图、导航目标和 JSON 工件全部可审计 |
 
 ## 已验证导航结果
 
-2026-07-26 的实体障碍回归中，两个 `NavigateToPose` 目标均返回 `SUCCEEDED`，终点误差分别为 0.2361 m 和 0.2347 m，累计轨迹为 8.9854 m。五级速度命令链均观测到非零输出；运行时实际控制器为 RPP，原工件目录名中的 `mppi` 只是历史命名。详细指标、原始 JSON 和仿真边界见 [导航验证证据](docs/NAVIGATION_EVIDENCE.md)。
+2026-07-27 将局部和全局 costmap 的 `inflation_radius` 由 `0.80 m` 调为 `0.70 m`，保持 `robot_radius=0.60 m`。重新建图巡航 `6/6` 通过，两个 `NavigateToPose` 目标均返回 `SUCCEEDED`，终点误差为 `0.2406 m` 和 `0.2395 m`，闭环报告为 `passed`。运行时实际控制器为 RPP；详细指标、稳定证据和仿真边界见 [导航验证证据](docs/NAVIGATION_EVIDENCE.md)。
 
-## 演示视频
+## 演示：从建图到导航
 
-### 单雷达建图与双目标绕障导航
+### 01 · 建图｜一颗 3D LiDAR → 可导航的 2D 栅格
 
 <p align="center">
-  <a href="docs/media/atec_a2_p7_navigation_highlight.mp4">
-    <img src="docs/media/atec_a2_p7_navigation_highlight.png" width="900" alt="A2 + P7 Gazebo 与 RViz 双目标导航演示" />
+  <img src="docs/media/atec_a2_p7_mapping_lidar_3d.png" width="900" alt="A2 加 P7 的实时 3D LiDAR 点云视图" />
+</p>
+
+<p align="center">
+  <img src="docs/media/atec_a2_p7_mapping_grid_2d.png" width="900" alt="SLAM Toolbox 地图经已记录的巡航 footprint 清理后得到的 2D 导航栅格" />
+</p>
+
+第一张图是 A2 头部雷达发布的实时 `PointCloud2` 透视视图；它是**3D 传感器观测**，不冒充 3D SLAM 地图。第二张图是从 `slam_toolbox /map` 保存后，再按闭环脚本记录的 `0.65 m` 已验证巡航 footprint 清理得到的最终导航栅格，不是未经处理的原始 SLAM 图。清理报告记录仅在巡航 footprint 内改写 `4,081` 个单元；该栅格对应的 `0.70 m` 导航 costmap 膨胀半径全闭环中，建图巡航 `6/6` 通过，分辨率为 `0.05 m/cell`。青色线是命令的巡航路线，不是未落盘的里程计轨迹。
+
+展示图均由真实仿真工件渲染；输入 SHA-256、路线叠加含义和输出文件见[展示媒体清单](docs/evidence/github_showcase_media_manifest.json)。使用透视点云配置可运行：
+
+```bash
+./run_mapping.sh use_gui:=true use_rviz:=true \
+  rviz_config:="$PWD/src/independent_nav_bringup/rviz/atec_mapping_showcase_3d.rviz"
+```
+
+### 02 · 导航｜双目标绕障
+
+<p align="center">
+  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">
+    <img src="docs/media/atec_a2_p7_navigation_showcase.gif" width="900" alt="A2 P7 在 Gazebo 和 Nav2 代价地图中的双目标绕障加速演示" />
   </a>
 </p>
 
 <p align="center">
-  <a href="docs/media/atec_a2_p7_navigation_highlight.mp4">85.76 秒导航精华</a>
-  ·
-  <a href="docs/media/atec_a2_p7_end_to_end_demo.mp4">346.88 秒建图到导航完整闭环</a>
+  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">播放 5× 导航演示（约 17.3 秒）</a>
 </p>
 
-左侧为 Gazebo 中的 A2 + P7 和实体障碍，右侧为 RViz 中的已保存地图、单雷达投影、全局/局部代价地图与规划路径。本次录屏的建图巡航 `6/6` 通过，两个导航目标均为 `SUCCEEDED`，终点误差为 0.2373 m 和 0.2329 m。视频通过 1920 x 1080、25 fps、H.264 编码及左右画面非空校验。
+动图将 Gazebo 视角与 RViz 的全局/局部代价地图放大分开呈现，并且**只加快播放速度**；没有提高 RPP、速度平滑器、速度门或平台 adapter 的已验收控制上限。最新 `0.70 m` 膨胀半径验收仍以两目标均 `SUCCEEDED`、终点误差 `0.2406 m / 0.2395 m` 的结构化工件为准；该视觉剪辑不替代验收数据。
 
 ### A2 + P7 仿真模型
 
 <p align="center">
-  <video controls width="720" src="https://cdn.jsdelivr.net/gh/hezhou0331/ros2-nav2-mppi-gazebo-repro@main/docs/media/atec_a2_p7_robot_showcase.mp4">
-    A2 + P7 仿真模型视频
-  </video>
+  <a href="docs/media/atec_a2_p7_robot_showcase.mp4">
+    <img src="docs/media/atec_a2_p7_robot_showcase.gif" width="720" alt="Unitree A2 加 P7 机械臂和 UMI 夹爪的组合模型环绕展示" />
+  </a>
 </p>
 
-<p align="center">
-  GitHub 页面内直接播放；<a href="docs/media/atec_a2_p7_robot_showcase.gif">GIF 预览</a> · <a href="docs/media/atec_a2_p7_robot_showcase.mp4">下载完整 MP4</a>
-</p>
-
-该视频展示仓库中实际使用的 Unitree A2、背载 P7 机械臂与 UMI 夹爪组合模型。README 使用精简 GIF 自动预览，完整视频保留原始分辨率。
+该 GIF 现在直接在 GitHub 页面预览；点击可打开[完整 MP4](docs/media/atec_a2_p7_robot_showcase.mp4)。它展示仓库实际使用的 Unitree A2、背载 P7 机械臂与 UMI 夹爪组合模型。
 
 ## 系统总览
 
@@ -90,8 +104,10 @@ flowchart LR
     CM --> CMD["/cmd_vel"]
     CMD --> G["velocity_gate<br/>限速 + 超时归零"]
     G --> PC["/platform/cmd_vel"]
-    PC --> A["platform adapter"]
-    A --> SIM["/sim/cmd_vel<br/>Gazebo proxy"]
+    PC --> SA["simulation adapter"]
+    SA --> SIM["/sim/cmd_vel<br/>Gazebo planar proxy"]
+    PC -.->|实机二选一| HA["A2 SDK2 adapter<br/>未上机验收"]
+    HA -.-> A2["SportClient<br/>Move / StopMove"]
 ```
 
 ### TF 责任边界
@@ -124,15 +140,20 @@ sequenceDiagram
     G->>G: 检查 enable + ready + healthy
     G->>A: /platform/cmd_vel（限幅）
     A->>R: 厂商协议或仿真命令
-    Note over G,A: 指令超过 200 ms 未更新时持续输出零
+    Note over G,A: 上游指令超时归零；实机 adapter 独立使用 80 ms watchdog
 ```
 
-`velocity_gate` 的默认仿真限速为 `0.15 m/s` 和 `0.25 rad/s`。这套边界可复用到实机，但 `simulation_platform_adapter.py` 和 Gazebo `VelocityControl` 不能用于真实 A2。
+`velocity_gate` 的默认仿真限速为 `0.15 m/s` 和 `0.25 rad/s`。`atec_a2_sdk2_adapter` 再独立限制到 `0.10 m/s` 和 `0.20 rad/s`，固定使用 Unitree 官方 `unitree_sdk2_python` 提交 `65691c8a8bc53b98d3976dba4dbf9d5d20b2e7f5`，并且只调用 A2 `SportClient.Move(vx, 0.0, vyaw)` 与 `StopMove()`。
+
+实机 adapter 要求 `/platform/automatic_mode`、`/platform/manual_override` 和 `/platform/estop` 的权威心跳，同时检查 `rt/lf/sportmodestate`。RPC、非法命令、手柄抢占、急停或 Sport 状态故障会锁存，需要 `automatic_mode=false -> true` 且重新收到命令才能恢复。官方公开 SDK 未提供可直接代替这三个安全信号的 A2 接口，因此必须由另行验收的硬件或 PLC bridge 提供。服务已匹配时的名义停止请求路径为 `0.14 s`；SDK writer 未匹配时的本地返回路径约为 `0.30 s`，且无法送达停止请求。因此必须另配机器人侧 watchdog 和实体急停，当前不声称达成 200 ms 实机停止上界。`simulation_platform_adapter.py` 和 Gazebo `VelocityControl` 只能用于仿真回归。
+
+硬件控制路径使用 DDS 本地接收时间拒绝排队旧命令，权威心跳或 Sport 状态在曾经就绪后超时会锁存；速度、超时和模式 3/4 是代码硬上限，YAML 只能进一步收紧。SDK 启动时还会核对 pip 的 PEP 610 元数据，安装来源或提交不匹配即保持 fail-closed。精确边界和安装限制见 [A2 官方 SDK2 adapter](src/atec_a2_sdk2_adapter/README.md)。
 
 ## 目录结构
 
 ```text
 ros2-nav2-mppi-gazebo-repro/
+├── src/atec_a2_sdk2_adapter/      # 官方 A2 SDK2 实机边界（未上机验收）
 ├── src/independent_nav_bringup/
 │   ├── launch/                 # mapping.launch.py / navigation.launch.py
 │   ├── config/                 # SLAM、AMCL、Nav2、RPP 参数
@@ -156,6 +177,9 @@ ros2-nav2-mppi-gazebo-repro/
 | 仿真器 | Gazebo Harmonic / Gazebo Sim 8 |
 | 导航 | Nav2、NavFn、Regulated Pure Pursuit Controller、SLAM Toolbox |
 | 构建工具 | `colcon`、CMake、Python 3 |
+| A2 实机可选依赖 | 固定提交的 Unitree `unitree_sdk2_python`，不影响无 SDK 构建和单测 |
+
+官方 SDK 固定的 `cyclonedds==0.10.2` 没有 CPython 3.12 Linux wheel；Ubuntu 24.04/Jazzy 目标必须预先构建兼容的原生 CycloneDDS 和明确的 ROS Python 环境，不能依赖裸 `python3 -m pip`。
 
 仓库按 ROS 2 Jazzy 的 Debian 软件包进行安装和验证。其他 Ubuntu/ROS 版本需要自行调整软件包名称和依赖，不属于当前复现基线。
 
@@ -178,7 +202,7 @@ cd ros2-nav2-mppi-gazebo-repro
 ./install_dependencies.sh
 ```
 
-该脚本安装 ROS 2 Desktop、Nav2、Regulated Pure Pursuit Controller、SLAM Toolbox、`ros_gz`、机器人状态发布和 Xacro 等运行依赖。
+该脚本安装 ROS 2 Desktop、Nav2、Regulated Pure Pursuit Controller、SLAM Toolbox、`ros_gz`、机器人状态发布和 Xacro 等仿真运行依赖。A2 实机 SDK 只应在目标 Orin 上按 [adapter 文档](src/atec_a2_sdk2_adapter/README.md) 安装固定提交。
 
 ### 3. 构建并验证
 
@@ -188,6 +212,15 @@ cd ros2-nav2-mppi-gazebo-repro
 ```
 
 构建脚本会自动定位仓库根目录，因此仓库可以放在任意用户目录。验证脚本检查包结构、模型、TF、启动配置和导航参数。
+
+官方 A2 控制边界单独启动，不会混入 Gazebo、仿真恒等 TF 或伪安全发布者：
+
+```bash
+ros2 launch independent_nav_bringup a2_hardware_control.launch.py \
+  network_interface:=enp2s0
+```
+
+该 launch 仍要求外部提供经验证的 `/cmd_vel`、`/nav/healthy` 和三路权威安全心跳，不是完整实机导航 bringup。
 
 ### 4. 启动建图
 
@@ -248,9 +281,10 @@ flowchart LR
 - 用 URDF/3D 几何自过滤替换仿真的 `0.60 m` 整足迹过滤；后者可能删除已经
   进入安全足迹的真实动态障碍，禁止直接用于实机 Collision Monitor
 - LIO/融合里程计及 `odom -> base_link`
-- A2 官方连续速度接口、自动模式和手柄抢占
-- 将仿真 `2.0 s` 传感健康窗口收紧为经实测批准的上限，并实现 200 ms 内
-  指令 watchdog、实体急停和通信丢失策略
+- 已实现的 A2 官方 SDK2 速度 adapter 必须在支撑架和实体机器人上验证
+- 为自动模式、手柄抢占和实体急停接入独立的权威安全心跳
+- 将仿真 `2.0 s` 传感健康窗口收紧为经实测批准的上限，并用
+  机器人侧 watchdog、实体急停和通信丢失策略验收停止时限
 - P7 安装板载荷、重心、footprint 和限速
 - 扫描匹配、回环检测、AMCL 噪声参数和地图质量
 
@@ -262,6 +296,8 @@ flowchart LR
 - [地形代理评估与能力边界](docs/TERRAIN_ASSESSMENT.md)
 - [自动闭环与录屏验收](docs/END_TO_END_DEMO.md)
 - [平台 adapter 契约](src/independent_nav_bringup/docs/PLATFORM_ADAPTER_CONTRACT.md)
+- [A2 官方 SDK2 adapter](src/atec_a2_sdk2_adapter/README.md)
+- [A2 运动后端与非滑行仿真阻塞](docs/A2_MOTION_BACKEND_STATUS.md)
 - [A2/P7 模型与安全边界](建模/sim_src/src/atec_a2_p7_description/docs/MODEL_AND_SAFETY.md)
 - [模型来源与许可证](建模/sim_src/src/atec_a2_p7_description/docs/MODEL_PROVENANCE.md)
 

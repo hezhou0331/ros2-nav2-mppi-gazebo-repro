@@ -58,7 +58,12 @@ def safety_nodes(require_map: bool):
             package="independent_nav_bringup",
             executable="velocity_gate.py",
             # Conservative limits for the A2 + centered P7 navigation proxy.
-            parameters=[params | {"max_linear_x": 0.15, "max_angular_z": 0.25}],
+            parameters=[params | {
+                "max_linear_x": 0.15,
+                "max_angular_z": 0.25,
+                # The automated simulation supervisor does not perform a rearm cycle.
+                "latch_faults": False,
+            }],
             output="screen",
         ),
         Node(package="independent_nav_bringup", executable="navigation_health.py",

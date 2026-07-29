@@ -24,5 +24,6 @@
   <exec_depend>nav2_lifecycle_manager</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>atec_a2_p7_description</exec_depend>
+  <exec_depend>atec_a2_sdk2_adapter</exec_depend>
   <export><build_type>ament_cmake</build_type></export>
 </package>

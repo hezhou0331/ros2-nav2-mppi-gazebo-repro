@@ -2,6 +2,7 @@
 """Convert the sensor-data Best Effort scan output into Nav2's Reliable input."""
 
 import rclpy
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from rclpy.qos import QoSProfile, QoSReliabilityPolicy
 from sensor_msgs.msg import LaserScan
@@ -21,9 +22,12 @@ def main():
     node = ScanQosRelay()
     try:
         rclpy.spin(node)
+    except (ExternalShutdownException, KeyboardInterrupt):
+        pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == "__main__":

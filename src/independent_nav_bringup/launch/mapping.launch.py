@@ -49,7 +49,12 @@ def safety_nodes(require_map: bool):
             package="independent_nav_bringup",
             executable="velocity_gate.py",
             # Conservative limits for the A2 + centered P7 navigation proxy.
-            parameters=[params | {"max_linear_x": 0.15, "max_angular_z": 0.25}],
+            parameters=[params | {
+                "max_linear_x": 0.15,
+                "max_angular_z": 0.25,
+                # The automated simulation supervisor does not perform a rearm cycle.
+                "latch_faults": False,
+            }],
             output="screen",
         ),
         Node(package="independent_nav_bringup", executable="navigation_health.py",
@@ -67,6 +72,7 @@ def generate_launch_description():
     a2_p7_share = Path(get_package_share_directory("atec_a2_p7_description"))
     use_gui = LaunchConfiguration("use_gui")
     use_rviz = LaunchConfiguration("use_rviz")
+    rviz_config = LaunchConfiguration("rviz_config")
     spawn_x = LaunchConfiguration("spawn_x")
     spawn_y = LaunchConfiguration("spawn_y")
     spawn_z = LaunchConfiguration("spawn_z")
@@ -103,13 +109,18 @@ def generate_launch_description():
     )
     rviz = Node(
         package="rviz2", executable="rviz2",
-        arguments=["-d", str(package_share / "rviz" / "atec_mapping_demo.rviz")],
+        arguments=["-d", rviz_config],
         parameters=[{"use_sim_time": True}], output="screen",
         condition=IfCondition(use_rviz),
     )
     return LaunchDescription([
         DeclareLaunchArgument("use_gui", default_value="false"),
         DeclareLaunchArgument("use_rviz", default_value="true"),
+        DeclareLaunchArgument(
+            "rviz_config",
+            default_value=str(package_share / "rviz" / "atec_mapping_demo.rviz"),
+            description="RViz configuration; use atec_mapping_showcase_3d.rviz for a live 3D LiDAR view.",
+        ),
         DeclareLaunchArgument("spawn_x", default_value="-5.8"),
         DeclareLaunchArgument("spawn_y", default_value="0.0"),
         DeclareLaunchArgument("spawn_z", default_value="0.56"),

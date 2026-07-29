@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""Gazebo-only platform adapter implementing the future adapter topic boundary."""
+"""Gazebo-only adapter implementing the shared platform topic boundary."""
 
 import rclpy
 from geometry_msgs.msg import Twist
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
@@ -35,9 +36,12 @@ def main():
     node = SimulationPlatformAdapter()
     try:
         rclpy.spin(node)
+    except (ExternalShutdownException, KeyboardInterrupt):
+        pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == "__main__":

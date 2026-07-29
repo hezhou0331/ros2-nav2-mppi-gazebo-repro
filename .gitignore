@@ -10,6 +10,7 @@ log/
 *.log
 *.pyc
 __pycache__/
+.pytest_cache/
 artifacts/
 maps/*.pgm
 maps/*.yaml

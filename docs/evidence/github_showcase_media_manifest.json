@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-29T10:45:38.202947Z",
+  "generator": "tools/render_github_showcase_media.py",
+  "scope": "GitHub presentation media generated from real simulation artifacts only",
+  "claims": {
+    "mapping_lidar_3d": "Live RViz PointCloud2 observation, not a reconstructed 3D SLAM map.",
+    "mapping_grid_2d": "Navigation grid saved from slam_toolbox /map and then processed by the recorded 0.65 m verified patrol-footprint cleanup; cyan is the commanded route, not odometry.",
+    "navigation_showcase": "5x playback rendering only; controller and platform limits are unchanged."
+  },
+  "inputs": {
+    "lidar_3d_source": {
+      "path": "docs/media/atec_a2_p7_mapping_lidar_3d_raw.png",
+      "sha256": "df7fc0e1602f932e7c4810ee3a0dbf35a3a6dc58a0dd0f74c7ef68e8f30f1b89"
+    },
+    "map_pgm": {
+      "path": "docs/evidence/navigation_inflation_070_mapping/atec_practice_world.pgm",
+      "sha256": "004efe02da4f358a395a32140b26649da7e9a7b83053ee4f55a9bff0d30c4b9e"
+    },
+    "map_yaml": {
+      "path": "docs/evidence/navigation_inflation_070_mapping/atec_practice_world.yaml",
+      "sha256": "65cf78875cb8ee524bbc9eb4d2c6f12ca4c42f7ca04d207f6af51d2c2c6d6e96"
+    },
+    "mapping_report": {
+      "path": "docs/evidence/navigation_inflation_070_mapping/mapping_patrol.json",
+      "sha256": "c6231e288bf4448ed6bbed1a40c1ed3274b4330cc1d109dad2a68b4ece7a8239"
+    },
+    "map_cleanup_report": {
+      "path": "docs/evidence/navigation_inflation_070_mapping/map_footprint_cleanup.json",
+      "sha256": "f2cf57ebfe747fe1821d6eb5449d1c0b279b5188249da1255f7cf075368f2bf9"
+    },
+    "navigation_source": {
+      "path": "docs/media/atec_a2_p7_navigation_highlight.mp4",
+      "sha256": "539dadba4e37e524bce602a5d9a6ec49c97085924a49b7201017b38c7c5f637d"
+    }
+  },
+  "mapping_grid": {
+    "resolution_m": 0.05000000074505806,
+    "source_dimensions": [
+      495,
+      372
+    ],
+    "crop_dimensions": [
+      281,
+      148
+    ],
+    "patrol_waypoints": 6,
+    "patrol_succeeded": true,
+    "patrol_waypoints_completed": 6,
+    "patrol_unique_locations": 5,
+    "occupied_cells_in_crop": 1036,
+    "free_cells_in_crop": 18046,
+    "unknown_cells_in_crop": 22506,
+    "footprint_cleanup": {
+      "success": true,
+      "clearance_radius_m": 0.65,
+      "changed_pixels": {
+        "occupied": 672,
+        "unknown": 3409,
+        "other": 0
+      },
+      "changed_pixels_total": 4081
+    }
+  },
+  "outputs": [
+    {
+      "path": "docs/media/atec_a2_p7_mapping_lidar_3d.png",
+      "sha256": "b6d56c4bfc028d555938ba154e9b3a9d192db50b08d6da18b841ac0a1dd3c284",
+      "size_bytes": 300762
+    },
+    {
+      "path": "docs/media/atec_a2_p7_mapping_grid_2d.png",
+      "sha256": "1c8c51563e5e4f31d40662ecf8d5e367429bd4b7ea2f9ba7a9b7724b413593c1",
+      "size_bytes": 100347
+    },
+    {
+      "path": "docs/media/atec_a2_p7_navigation_showcase.png",
+      "sha256": "c94e9a518b0ad3463f67b91ad14fc988c5b8918c7082cd5bc696bb7b1e7ab5a0",
+      "size_bytes": 526666
+    },
+    {
+      "path": "docs/media/atec_a2_p7_navigation_showcase.mp4",
+      "sha256": "a7197f9b7d5d1f823867dd511cf42e91374301b0e2931e1357068bb492c25481",
+      "size_bytes": 1452866
+    },
+    {
+      "path": "docs/media/atec_a2_p7_navigation_showcase.gif",
+      "sha256": "81bba730321eff2eae1eda3b257e106e03e65aae693d972205f8c5f60a1911d7",
+      "size_bytes": 2882427
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 """Simulation-only supervisor: explicitly publishes false, then enables navigation."""
 
 import rclpy
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
 from std_msgs.msg import Bool
 
@@ -24,9 +25,12 @@ def main():
     node = SimulationSupervisor()
     try:
         rclpy.spin(node)
+    except (ExternalShutdownException, KeyboardInterrupt):
+        pass
     finally:
         node.destroy_node()
-        rclpy.shutdown()
+        if rclpy.ok():
+            rclpy.shutdown()
 
 
 if __name__ == "__main__":
