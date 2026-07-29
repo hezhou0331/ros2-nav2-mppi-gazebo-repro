@@ -24,14 +24,14 @@
 ### 02 · 建图｜3D LiDAR → 2D 栅格
 
 <p align="center">
-  <img src="docs/media/atec_a2_p7_mapping_lidar_3d.png" width="900" alt="A2 加 P7 的实时 3D LiDAR 点云视图" />
+  <img src="docs/media/atec_a2_p7_mapping_lidar_3d_raw.png" width="900" alt="RViz 中 A2 加 P7 的实时 3D LiDAR 点云" />
 </p>
 
 <p align="center">
-  <img src="docs/media/atec_a2_p7_mapping_grid_2d.png" width="900" alt="SLAM Toolbox 地图经已记录的巡航 footprint 清理后得到的 2D 导航栅格" />
+  <img src="docs/media/atec_a2_p7_mapping_grid_2d_raw.png" width="900" alt="RViz 中 SLAM Toolbox 生成的 2D 栅格地图" />
 </p>
 
-上图为实时 3D LiDAR 点云和最终 2D 导航栅格（保存 SLAM 图后经 `0.65 m` 巡航 footprint 清理）。建图巡航 `6/6`，分辨率 `0.05 m/cell`；[展示媒体清单](docs/evidence/github_showcase_media_manifest.json)保留输入、声明和 SHA-256。
+建图阶段的原始 RViz 画面：实时 3D LiDAR 点云与 2D SLAM 栅格。
 
 ### 03 · 导航｜双目标绕障
 
