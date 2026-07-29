@@ -11,13 +11,43 @@
   <img src="https://img.shields.io/badge/Platform-Unitree%20A2%20%2B%20P7-7C3AED" alt="A2 P7" />
 </p>
 
-## 一句话介绍
+## 演示：仿真 → 建图 → 导航
 
-这是一个面向汇报和回归测试的导航系统复现工程：**传感器只接入导航计算机，Nav2 只输出安全速度，平台控制通过独立 adapter 隔离**。当前 Gazebo 运动部分仍是平面代理，用于验证导航软件链路，不代表真实 A2 步态控制器。仓库已新增独立的官方 SDK2 实机 adapter，但尚未在实体 A2 上验收。
+### 01 · 仿真｜A2 + P7 模型
 
-GitHub 仓库沿用早期包含 `mppi` 的 URL；当前经过实体障碍回归验证的活动控制器是
-Regulated Pure Pursuit，活动参数文件为
-`src/independent_nav_bringup/config/nav2_atec_a2_p7.yaml`。
+<p align="center">
+  <a href="docs/media/atec_a2_p7_robot_showcase.mp4">
+    <img src="docs/media/atec_a2_p7_robot_showcase.gif" width="720" alt="Unitree A2 加 P7 机械臂和 UMI 夹爪的组合模型环绕展示" />
+  </a>
+</p>
+
+### 02 · 建图｜3D LiDAR → 2D 栅格
+
+<p align="center">
+  <img src="docs/media/atec_a2_p7_mapping_lidar_3d.png" width="900" alt="A2 加 P7 的实时 3D LiDAR 点云视图" />
+</p>
+
+<p align="center">
+  <img src="docs/media/atec_a2_p7_mapping_grid_2d.png" width="900" alt="SLAM Toolbox 地图经已记录的巡航 footprint 清理后得到的 2D 导航栅格" />
+</p>
+
+上图为实时 3D LiDAR 点云和最终 2D 导航栅格（保存 SLAM 图后经 `0.65 m` 巡航 footprint 清理）。建图巡航 `6/6`，分辨率 `0.05 m/cell`；[展示媒体清单](docs/evidence/github_showcase_media_manifest.json)保留输入、声明和 SHA-256。
+
+### 03 · 导航｜双目标绕障
+
+<p align="center">
+  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">
+    <img src="docs/media/atec_a2_p7_navigation_showcase.gif" width="900" alt="A2 P7 在 Gazebo 和 Nav2 代价地图中的双目标绕障加速演示" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">播放 5× 导航演示（约 17.3 秒）</a>
+</p>
+
+## 项目简介
+
+本仓库复现 A2 + P7 的单雷达 SLAM 与 Nav2 闭环：传感器接入导航计算机，Nav2 通过独立 adapter 输出安全速度。当前 Gazebo 使用平面代理验证软件链路；A2 SDK2 实机 adapter 已接入，但尚未在实体 A2 上验收。活动控制器为 Regulated Pure Pursuit。
 
 ## 你可以展示什么
 
@@ -32,52 +62,7 @@ Regulated Pure Pursuit，活动参数文件为
 
 ## 已验证导航结果
 
-2026-07-27 将局部和全局 costmap 的 `inflation_radius` 由 `0.80 m` 调为 `0.70 m`，保持 `robot_radius=0.60 m`。重新建图巡航 `6/6` 通过，两个 `NavigateToPose` 目标均返回 `SUCCEEDED`，终点误差为 `0.2406 m` 和 `0.2395 m`，闭环报告为 `passed`。运行时实际控制器为 RPP；详细指标、稳定证据和仿真边界见 [导航验证证据](docs/NAVIGATION_EVIDENCE.md)。
-
-## 演示：从建图到导航
-
-### 01 · 建图｜一颗 3D LiDAR → 可导航的 2D 栅格
-
-<p align="center">
-  <img src="docs/media/atec_a2_p7_mapping_lidar_3d.png" width="900" alt="A2 加 P7 的实时 3D LiDAR 点云视图" />
-</p>
-
-<p align="center">
-  <img src="docs/media/atec_a2_p7_mapping_grid_2d.png" width="900" alt="SLAM Toolbox 地图经已记录的巡航 footprint 清理后得到的 2D 导航栅格" />
-</p>
-
-第一张图是 A2 头部雷达发布的实时 `PointCloud2` 透视视图；它是**3D 传感器观测**，不冒充 3D SLAM 地图。第二张图是从 `slam_toolbox /map` 保存后，再按闭环脚本记录的 `0.65 m` 已验证巡航 footprint 清理得到的最终导航栅格，不是未经处理的原始 SLAM 图。清理报告记录仅在巡航 footprint 内改写 `4,081` 个单元；该栅格对应的 `0.70 m` 导航 costmap 膨胀半径全闭环中，建图巡航 `6/6` 通过，分辨率为 `0.05 m/cell`。青色线是命令的巡航路线，不是未落盘的里程计轨迹。
-
-展示图均由真实仿真工件渲染；输入 SHA-256、路线叠加含义和输出文件见[展示媒体清单](docs/evidence/github_showcase_media_manifest.json)。使用透视点云配置可运行：
-
-```bash
-./run_mapping.sh use_gui:=true use_rviz:=true \
-  rviz_config:="$PWD/src/independent_nav_bringup/rviz/atec_mapping_showcase_3d.rviz"
-```
-
-### 02 · 导航｜双目标绕障
-
-<p align="center">
-  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">
-    <img src="docs/media/atec_a2_p7_navigation_showcase.gif" width="900" alt="A2 P7 在 Gazebo 和 Nav2 代价地图中的双目标绕障加速演示" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="docs/media/atec_a2_p7_navigation_showcase.mp4">播放 5× 导航演示（约 17.3 秒）</a>
-</p>
-
-动图将 Gazebo 视角与 RViz 的全局/局部代价地图放大分开呈现，并且**只加快播放速度**；没有提高 RPP、速度平滑器、速度门或平台 adapter 的已验收控制上限。最新 `0.70 m` 膨胀半径验收仍以两目标均 `SUCCEEDED`、终点误差 `0.2406 m / 0.2395 m` 的结构化工件为准；该视觉剪辑不替代验收数据。
-
-### A2 + P7 仿真模型
-
-<p align="center">
-  <a href="docs/media/atec_a2_p7_robot_showcase.mp4">
-    <img src="docs/media/atec_a2_p7_robot_showcase.gif" width="720" alt="Unitree A2 加 P7 机械臂和 UMI 夹爪的组合模型环绕展示" />
-  </a>
-</p>
-
-该 GIF 现在直接在 GitHub 页面预览；点击可打开[完整 MP4](docs/media/atec_a2_p7_robot_showcase.mp4)。它展示仓库实际使用的 Unitree A2、背载 P7 机械臂与 UMI 夹爪组合模型。
+`inflation_radius=0.70 m`、`robot_radius=0.60 m`；建图巡航 `6/6`，两个导航目标均为 `SUCCEEDED`，终点误差 `0.2406 m / 0.2395 m`。详见[导航验证证据](docs/NAVIGATION_EVIDENCE.md)。
 
 ## 系统总览
 
