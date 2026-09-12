@@ -1,0 +1,4 @@
+# Preserve supplied vendor bytes so inventory SHA-256 also works on other hosts.
+vendor/** -text -whitespace
+# Context lines in patches may intentionally consist of one space.
+*.patch -text -whitespace
