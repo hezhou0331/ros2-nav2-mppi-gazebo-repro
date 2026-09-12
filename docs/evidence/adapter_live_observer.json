@@ -1,0 +1,320 @@
+{
+  "timestamp": "2026-09-12T20:12:58+0800",
+  "scope": "Read-only snapshot in the selected ROS domain; absence is not proof of no device.",
+  "ros_domain_id": "0",
+  "rmw": "rmw_fastrtps_cpp",
+  "ros_localhost_only": "1",
+  "nodes": [
+    "m1_airy_input_adapter",
+    "m1_readonly_observer",
+    "m1_zenoh_sensor_receiver"
+  ],
+  "topics": {
+    "/m1_airy/front/imu": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_airy/front/points": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_airy/rear/imu": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_airy/rear/points": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_sensors/front/imu_raw": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 2
+    },
+    "/m1_sensors/front/points_raw": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 2
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 2
+    },
+    "/m1_sensors/rear/points_raw": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 2
+    },
+    "/parameter_events": {
+      "types": [
+        "rcl_interfaces/msg/ParameterEvent"
+      ],
+      "publishers": 3,
+      "subscribers": 0
+    },
+    "/tf": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 0,
+      "subscribers": 1
+    },
+    "/tf_static": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 0,
+      "subscribers": 1
+    }
+  },
+  "samples": {
+    "/m1_sensors/front/imu_raw": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 3106,
+      "frame_id": "rslidar_head",
+      "stamp_age_seconds": -153.36797404289246,
+      "observed_hz": 172.81171399669327
+    },
+    "/m1_sensors/front/points_raw": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 144,
+      "frame_id": "rslidar_head",
+      "stamp_age_seconds": -153.23146057128906,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 8.032267529335053
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 3183,
+      "frame_id": "rslidar_tail",
+      "stamp_age_seconds": 1789213127.7974772,
+      "observed_hz": 177.07903429165356
+    },
+    "/m1_sensors/rear/points_raw": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 153,
+      "frame_id": "rslidar_tail",
+      "stamp_age_seconds": 1789213127.929428,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 8.49128951262474
+    },
+    "/m1_airy/front/points": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 133,
+      "frame_id": "rslidar_head",
+      "stamp_age_seconds": 0.15535664558410645,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 7.587222947359019
+    },
+    "/m1_airy/front/imu": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 3406,
+      "frame_id": "rslidar_head_imu",
+      "stamp_age_seconds": 0.015123367309570312,
+      "observed_hz": 193.86761653930142
+    },
+    "/m1_airy/rear/imu": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 3422,
+      "frame_id": "rslidar_tail_imu",
+      "stamp_age_seconds": 0.01668095588684082,
+      "observed_hz": 194.7732090783587
+    },
+    "/m1_airy/rear/points": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 130,
+      "frame_id": "rslidar_tail",
+      "stamp_age_seconds": 0.15549492835998535,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 7.588487672930105
+    }
+  },
+  "transforms": {
+    "map <- odom": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "odom <- base_link": {
+      "available": false,
+      "reason": "\"odom\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "map <- base_link": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    }
+  },
+  "hardware_navigation_verified": false
+}

@@ -1,0 +1,65 @@
+{
+  "timestamp_unix": 1789215299.5590773,
+  "robot_slam_native_airy_built": true,
+  "build_elapsed": "3min 25s",
+  "source_copy": "src_airy/robot_slam",
+  "install": "install_airy/robot_slam",
+  "upstream_mapping_sha256": "cf57f712b1ff43a3344d1927f577e1c99a48ee1a0bebf517d0c00b3dd1d2746e",
+  "native_decode_records": [
+    {
+      "input": "artifacts/real_sensors/24_front_lidar.cdr",
+      "finite_points": 20710,
+      "first_ms": 0.0855922699,
+      "last_ms": 99.9889374,
+      "schema_rejection": true,
+      "timestamp_rejection": true
+    },
+    {
+      "input": "artifacts/real_sensors/24_rear_lidar.cdr",
+      "finite_points": 21684,
+      "first_ms": 0.432247996,
+      "last_ms": 94.3220062,
+      "schema_rejection": true,
+      "timestamp_rejection": true
+    },
+    {
+      "input": "artifacts/real_sensors/front_adapted.cdr",
+      "finite_points": 21301,
+      "first_ms": 0.0922679901,
+      "last_ms": 99.98703,
+      "schema_rejection": true,
+      "timestamp_rejection": true
+    },
+    {
+      "input": "artifacts/real_sensors/rear_adapted.cdr",
+      "finite_points": 20929,
+      "first_ms": 0.0925064087,
+      "last_ms": 99.9903717,
+      "schema_rejection": true,
+      "timestamp_rejection": true
+    }
+  ],
+  "software_tests_passed": 11,
+  "missing_calibration_rejected": true,
+  "live_adapter_seconds": 30,
+  "live_adapter_status": {
+    "timestamp_unix": 1789215191.1164856,
+    "running": false,
+    "counts": {
+      "rear/imu": 5969,
+      "front/imu": 5965,
+      "front/points": 258,
+      "rear/points": 258
+    },
+    "errors": {},
+    "clock_fault": null,
+    "hardware_synchronized": false,
+    "extrinsics_verified": false,
+    "navigation_ready": false,
+    "motion_outputs": false
+  },
+  "hardware_navigation_tested": false,
+  "hardware_time_sync_verified": false,
+  "extrinsics_verified": false,
+  "motion_outputs": false
+}

@@ -1,0 +1,53 @@
+{
+  "timestamp_unix": 1789227358.9807673,
+  "running": false,
+  "counts": {
+    "rear/points": 1258,
+    "rear/imu": 25264,
+    "front/points": 1233,
+    "front/imu": 25273
+  },
+  "accepted": {
+    "front/points": 1234,
+    "front/imu": 25285,
+    "rear/imu": 25273,
+    "rear/points": 1258
+  },
+  "errors": {
+    "rear/points": "设备采样间隔超限"
+  },
+  "clock_fault": "source_gap",
+  "state": "fault",
+  "output_enabled": false,
+  "fault": {
+    "code": "source_gap",
+    "stream": "rear/points",
+    "detail": "设备采样间隔超限",
+    "monotonic_ns": 94386171757879
+  },
+  "stream_age_s": {
+    "front/points": 53.720605833,
+    "front/imu": 53.679718144000006,
+    "rear/points": 53.938046362,
+    "rear/imu": 53.645215059
+  },
+  "thresholds": {
+    "startup_grace_s": 5.0,
+    "silence_s": {
+      "imu": 0.1,
+      "points": 0.35
+    },
+    "source_gap_s": {
+      "imu": 0.05,
+      "points": 0.25
+    },
+    "max_age_s": {
+      "imu": 0.25,
+      "points": 0.5
+    }
+  },
+  "hardware_synchronized": false,
+  "extrinsics_verified": false,
+  "navigation_ready": false,
+  "motion_outputs": false
+}

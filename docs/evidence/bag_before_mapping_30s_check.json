@@ -1,0 +1,67 @@
+{
+  "counts": {
+    "/m1_sensors/front/imu_raw": 5841,
+    "/m1_sensors/front/points_raw": 291,
+    "/m1_sensors/rear/imu_raw": 5840,
+    "/m1_sensors/rear/points_raw": 292
+  },
+  "max_relative_point_time_error_seconds": 4.76837158203125e-07,
+  "raw_input_preserved": true,
+  "orientation_unavailable_marked": true,
+  "hardware_synchronization_verified": false,
+  "navigation_ready": false,
+  "sensors": {
+    "front": {
+      "imu_accel_norm_m_s2_quantiles": [
+        9.757350915105244,
+        9.832451195531426,
+        9.901605156424123
+      ],
+      "imu_regressions": 0,
+      "imu_duplicate_stamps": 0,
+      "imu_source_hz": 199.65468513338087,
+      "imu_gap_seconds_quantiles": [
+        0.004999936,
+        0.0050140160000000005,
+        0.040003072
+      ],
+      "cloud_gap_seconds_quantiles": [
+        0.099998951,
+        0.10002358177000001,
+        0.199990988
+      ],
+      "imu_gaps_above_15ms": 1,
+      "cloud_frames": 291,
+      "cloud_finite_points_min": 20912,
+      "clouds_with_recorded_imu_coverage": 289,
+      "boundary_clouds": 2,
+      "imu_samples_per_covered_scan_min": 13
+    },
+    "rear": {
+      "imu_accel_norm_m_s2_quantiles": [
+        9.721935912338273,
+        9.795105107602442,
+        9.863745891674549
+      ],
+      "imu_regressions": 0,
+      "imu_duplicate_stamps": 0,
+      "imu_source_hz": 199.65806120021685,
+      "imu_gap_seconds_quantiles": [
+        0.005,
+        0.005012001,
+        0.035002999
+      ],
+      "cloud_gap_seconds_quantiles": [
+        0.1,
+        0.10000500000000001,
+        0.10000692000000001
+      ],
+      "imu_gaps_above_15ms": 1,
+      "cloud_frames": 292,
+      "cloud_finite_points_min": 20980,
+      "clouds_with_recorded_imu_coverage": 291,
+      "boundary_clouds": 1,
+      "imu_samples_per_covered_scan_min": 14
+    }
+  }
+}

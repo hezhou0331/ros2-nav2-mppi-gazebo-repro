@@ -1,0 +1,1907 @@
+{
+  "timestamp_unix": 1789228940.2789924,
+  "duration_s": 60.0,
+  "errors": [],
+  "streams": {
+    "front/points": {
+      "count": 597,
+      "gids": [
+        "c214ac327fc9c1327432d6a074b5e990"
+      ],
+      "gid_changes": 0,
+      "sequence_missing": 3,
+      "sequence_repeats_or_reorders": 0,
+      "source_regressions": 0,
+      "source_duplicates": 0,
+      "source_gap_s_quantiles": [
+        0.099997997,
+        0.10003315225000001,
+        0.199996948
+      ],
+      "receive_gap_s_quantiles": [
+        0.100093893,
+        0.12031042415,
+        0.200698862
+      ],
+      "continuous_sequence_large_gaps": 0,
+      "publisher_minus_device_s_quantiles": [
+        0.113194345,
+        0.11378407800000001,
+        0.120063628
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.534906283,
+        -152.51116396100002,
+        -152.493258448
+      ],
+      "callback_copy_ms_quantiles": [
+        0.636035,
+        2.4632109999999994,
+        2.528683
+      ]
+    },
+    "front/imu": {
+      "count": 12007,
+      "gids": [
+        "41ca8ec45fe480950fd06d8014988c91"
+      ],
+      "gid_changes": 0,
+      "sequence_missing": 5,
+      "sequence_repeats_or_reorders": 0,
+      "source_regressions": 0,
+      "source_duplicates": 0,
+      "source_gap_s_quantiles": [
+        0.004999936,
+        0.005012953600000001,
+        0.01499776
+      ],
+      "receive_gap_s_quantiles": [
+        2.9888000000000003e-05,
+        0.04714275720000002,
+        0.072076816
+      ],
+      "continuous_sequence_large_gaps": 0,
+      "publisher_minus_device_s_quantiles": [
+        0.012458432,
+        0.012631002,
+        0.042601597000000005
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.55792783700002,
+        -152.53738647400002,
+        -152.479587414
+      ],
+      "callback_copy_ms_quantiles": [
+        0.011328,
+        0.06815814000000002,
+        0.31171299999999996
+      ],
+      "acc_mean_raw_g": [
+        0.010392009283647039,
+        1.0019538163284958,
+        0.019222642992759432
+      ],
+      "acc_std_raw_g": [
+        0.002004737442464643,
+        0.0015146780724277237,
+        0.0009225603620345715
+      ],
+      "acc_norm_raw_g_quantiles": [
+        0.9959234653102846,
+        1.0022056588531192,
+        1.0055999390174097,
+        1.0082728569098787
+      ],
+      "gyro_mean_rad_s": [
+        0.0027778099200547056,
+        -0.011845577500920029,
+        0.013060158215639389
+      ],
+      "gyro_norm_rad_s_quantiles": [
+        0.017878917980179796,
+        0.01961721429393906,
+        0.020774363489411925
+      ],
+      "frame_ids": [
+        "rslidar_head"
+      ]
+    },
+    "rear/points": {
+      "count": 599,
+      "gids": [
+        "7e23d4dcef15d91c15f6f3fb991d6704"
+      ],
+      "gid_changes": 0,
+      "sequence_missing": 2,
+      "sequence_repeats_or_reorders": 0,
+      "source_regressions": 0,
+      "source_duplicates": 0,
+      "source_gap_s_quantiles": [
+        0.1,
+        0.10000506,
+        0.20000300000000001
+      ],
+      "receive_gap_s_quantiles": [
+        0.09972037550000001,
+        0.11863181533999993,
+        0.201224333
+      ],
+      "continuous_sequence_large_gaps": 0,
+      "publisher_minus_device_s_quantiles": [
+        1789228224.2565026,
+        1789228224.257657,
+        1789228224.2654865
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.530045245,
+        -152.51132384500002,
+        -152.477317352
+      ],
+      "callback_copy_ms_quantiles": [
+        0.638242,
+        2.47588648,
+        2.531724
+      ]
+    },
+    "rear/imu": {
+      "count": 12007,
+      "gids": [
+        "70f79cc8b8e90a07cedd872be50d5007"
+      ],
+      "gid_changes": 0,
+      "sequence_missing": 5,
+      "sequence_repeats_or_reorders": 0,
+      "source_regressions": 0,
+      "source_duplicates": 0,
+      "source_gap_s_quantiles": [
+        0.005,
+        0.005008001000000001,
+        0.014994
+      ],
+      "receive_gap_s_quantiles": [
+        3.616e-05,
+        0.04741290810000002,
+        0.075390386
+      ],
+      "continuous_sequence_large_gaps": 0,
+      "publisher_minus_device_s_quantiles": [
+        1789228224.1555407,
+        1789228224.1563344,
+        1789228224.1728907
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.557749706,
+        -152.536601909,
+        -152.479676625
+      ],
+      "callback_copy_ms_quantiles": [
+        0.0112,
+        0.06671902000000002,
+        0.5317769999999999
+      ],
+      "acc_mean_raw_g": [
+        -0.0033489782327496462,
+        0.9986674134912187,
+        -0.04088717006550866
+      ],
+      "acc_std_raw_g": [
+        0.0013456178821633492,
+        0.0011596115865319244,
+        0.0009598913203988847
+      ],
+      "acc_norm_raw_g_quantiles": [
+        0.9951493592157713,
+        0.999499918649526,
+        1.0022726506491235,
+        1.0040282015814899
+      ],
+      "gyro_mean_rad_s": [
+        -0.01894313376792476,
+        -0.007560587337018276,
+        -0.012559687059757076
+      ],
+      "gyro_norm_rad_s_quantiles": [
+        0.023974367147556387,
+        0.025703215909477085,
+        0.027440899978141003
+      ],
+      "frame_ids": [
+        "rslidar_tail"
+      ]
+    }
+  },
+  "geometry": {
+    "front": [
+      {
+        "file": "front_00.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27295,
+        "valid_points": 27295,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04200664907693863,
+              0.04950806871056557,
+              -0.9978899955749512
+            ],
+            "distance_origin_m": 0.6871877908706665,
+            "inliers": 2192,
+            "remaining_points": 3500,
+            "rms_m": 0.01120876893401146
+          },
+          {
+            "normal_sensor": [
+              -0.9930235743522644,
+              0.04558229818940163,
+              -0.10874952375888824
+            ],
+            "distance_origin_m": 0.0835147425532341,
+            "inliers": 558,
+            "remaining_points": 1308,
+            "rms_m": 0.010188968852162361
+          },
+          {
+            "normal_sensor": [
+              -0.27732253074645996,
+              -0.02326582558453083,
+              -0.960495114326477
+            ],
+            "distance_origin_m": 0.2645845115184784,
+            "inliers": 154,
+            "remaining_points": 750,
+            "rms_m": 0.012888934463262558
+          }
+        ]
+      },
+      {
+        "file": "front_01.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27224,
+        "valid_points": 27224,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.050704456865787506,
+              0.04138457030057907,
+              -0.9978559017181396
+            ],
+            "distance_origin_m": 0.6960614919662476,
+            "inliers": 2151,
+            "remaining_points": 3500,
+            "rms_m": 0.009976143017411232
+          },
+          {
+            "normal_sensor": [
+              -0.9957069158554077,
+              -0.0004419695178512484,
+              -0.092560775578022
+            ],
+            "distance_origin_m": 0.07842432707548141,
+            "inliers": 529,
+            "remaining_points": 1349,
+            "rms_m": 0.010917136445641518
+          },
+          {
+            "normal_sensor": [
+              0.03130240738391876,
+              0.03509886935353279,
+              -0.9988934993743896
+            ],
+            "distance_origin_m": 0.650046706199646,
+            "inliers": 285,
+            "remaining_points": 820,
+            "rms_m": 0.00960073247551918
+          }
+        ]
+      },
+      {
+        "file": "front_02.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27164,
+        "valid_points": 27164,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04747477173805237,
+              0.04766547679901123,
+              -0.9977344870567322
+            ],
+            "distance_origin_m": 0.6911544799804688,
+            "inliers": 2173,
+            "remaining_points": 3500,
+            "rms_m": 0.010488040745258331
+          },
+          {
+            "normal_sensor": [
+              -0.9913855195045471,
+              0.05759822949767113,
+              -0.11763184517621994
+            ],
+            "distance_origin_m": 0.08694149553775787,
+            "inliers": 600,
+            "remaining_points": 1327,
+            "rms_m": 0.010799824260175228
+          },
+          {
+            "normal_sensor": [
+              0.09586389362812042,
+              -0.03253241628408432,
+              -0.9948626756668091
+            ],
+            "distance_origin_m": 0.7229507565498352,
+            "inliers": 159,
+            "remaining_points": 727,
+            "rms_m": 0.011882152408361435
+          }
+        ]
+      },
+      {
+        "file": "front_03.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27251,
+        "valid_points": 27251,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.0429888516664505,
+              0.04998442530632019,
+              -0.9978243708610535
+            ],
+            "distance_origin_m": 0.6880953907966614,
+            "inliers": 2218,
+            "remaining_points": 3500,
+            "rms_m": 0.01097565796226263
+          },
+          {
+            "normal_sensor": [
+              -0.9946050047874451,
+              0.019040774554014206,
+              -0.10197238624095917
+            ],
+            "distance_origin_m": 0.08322583884000778,
+            "inliers": 568,
+            "remaining_points": 1282,
+            "rms_m": 0.010812113992869854
+          },
+          {
+            "normal_sensor": [
+              0.9992499351501465,
+              0.014680854976177216,
+              -0.03583314269781113
+            ],
+            "distance_origin_m": 0.04667425528168678,
+            "inliers": 176,
+            "remaining_points": 714,
+            "rms_m": 0.012137351557612419
+          }
+        ]
+      },
+      {
+        "file": "front_04.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27386,
+        "valid_points": 27386,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.046051930636167526,
+              0.04815823584794998,
+              -0.99777752161026
+            ],
+            "distance_origin_m": 0.6921613216400146,
+            "inliers": 2145,
+            "remaining_points": 3500,
+            "rms_m": 0.010059160180389881
+          },
+          {
+            "normal_sensor": [
+              -0.9917781352996826,
+              -0.021611806005239487,
+              -0.12613098323345184
+            ],
+            "distance_origin_m": 0.0883929505944252,
+            "inliers": 598,
+            "remaining_points": 1355,
+            "rms_m": 0.012030605226755142
+          },
+          {
+            "normal_sensor": [
+              0.08350591361522675,
+              0.009408176876604557,
+              -0.996462881565094
+            ],
+            "distance_origin_m": 0.6700461506843567,
+            "inliers": 129,
+            "remaining_points": 757,
+            "rms_m": 0.010980574414134026
+          }
+        ]
+      },
+      {
+        "file": "front_05.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27215,
+        "valid_points": 27215,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.044313766062259674,
+              0.04819254204630852,
+              -0.9978545904159546
+            ],
+            "distance_origin_m": 0.6882625818252563,
+            "inliers": 2170,
+            "remaining_points": 3500,
+            "rms_m": 0.010973687283694744
+          },
+          {
+            "normal_sensor": [
+              -0.9924542307853699,
+              0.057257041335105896,
+              -0.1084260493516922
+            ],
+            "distance_origin_m": 0.08267577737569809,
+            "inliers": 555,
+            "remaining_points": 1330,
+            "rms_m": 0.009526857174932957
+          },
+          {
+            "normal_sensor": [
+              0.9994472861289978,
+              -0.0238274484872818,
+              -0.02318190224468708
+            ],
+            "distance_origin_m": 0.03300910070538521,
+            "inliers": 142,
+            "remaining_points": 775,
+            "rms_m": 0.01132657565176487
+          }
+        ]
+      },
+      {
+        "file": "front_06.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27342,
+        "valid_points": 27342,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.049441806972026825,
+              0.05079895630478859,
+              -0.9974843263626099
+            ],
+            "distance_origin_m": 0.6938249468803406,
+            "inliers": 2249,
+            "remaining_points": 3500,
+            "rms_m": 0.010249901562929153
+          },
+          {
+            "normal_sensor": [
+              -0.9862216711044312,
+              0.0752117931842804,
+              -0.14734303951263428
+            ],
+            "distance_origin_m": 0.0964076966047287,
+            "inliers": 543,
+            "remaining_points": 1251,
+            "rms_m": 0.011731797829270363
+          },
+          {
+            "normal_sensor": [
+              0.06651001423597336,
+              0.020035769790410995,
+              -0.9975845813751221
+            ],
+            "distance_origin_m": 0.658836305141449,
+            "inliers": 136,
+            "remaining_points": 708,
+            "rms_m": 0.011336198076605797
+          }
+        ]
+      },
+      {
+        "file": "front_07.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27115,
+        "valid_points": 27115,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04305567964911461,
+              0.05291695520281792,
+              -0.9976702928543091
+            ],
+            "distance_origin_m": 0.6889477372169495,
+            "inliers": 2209,
+            "remaining_points": 3500,
+            "rms_m": 0.010823564603924751
+          },
+          {
+            "normal_sensor": [
+              -0.9886916279792786,
+              0.08010242134332657,
+              -0.1267770677804947
+            ],
+            "distance_origin_m": 0.08867812901735306,
+            "inliers": 552,
+            "remaining_points": 1291,
+            "rms_m": 0.009987137280404568
+          },
+          {
+            "normal_sensor": [
+              0.08544936031103134,
+              0.046542152762413025,
+              -0.9952548742294312
+            ],
+            "distance_origin_m": 0.6466346383094788,
+            "inliers": 129,
+            "remaining_points": 739,
+            "rms_m": 0.01130972895771265
+          }
+        ]
+      },
+      {
+        "file": "front_08.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27239,
+        "valid_points": 27239,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.045876920223236084,
+              0.05098116025328636,
+              -0.9976453185081482
+            ],
+            "distance_origin_m": 0.6915215849876404,
+            "inliers": 2255,
+            "remaining_points": 3500,
+            "rms_m": 0.010243545286357403
+          },
+          {
+            "normal_sensor": [
+              -0.9914946556091309,
+              -0.0015239769127219915,
+              -0.13013842701911926
+            ],
+            "distance_origin_m": 0.08752778172492981,
+            "inliers": 541,
+            "remaining_points": 1245,
+            "rms_m": 0.011667776852846146
+          },
+          {
+            "normal_sensor": [
+              0.026179101318120956,
+              0.03945503756403923,
+              -0.9988783597946167
+            ],
+            "distance_origin_m": 0.6464428901672363,
+            "inliers": 179,
+            "remaining_points": 704,
+            "rms_m": 0.010109910741448402
+          }
+        ]
+      },
+      {
+        "file": "front_09.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27368,
+        "valid_points": 27368,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.05007876455783844,
+              0.049476590007543564,
+              -0.9975190162658691
+            ],
+            "distance_origin_m": 0.6931665539741516,
+            "inliers": 2216,
+            "remaining_points": 3500,
+            "rms_m": 0.010081998072564602
+          },
+          {
+            "normal_sensor": [
+              -0.9965369701385498,
+              0.02398877963423729,
+              -0.07961563020944595
+            ],
+            "distance_origin_m": 0.07454875111579895,
+            "inliers": 474,
+            "remaining_points": 1284,
+            "rms_m": 0.00919828750193119
+          },
+          {
+            "normal_sensor": [
+              0.05909581482410431,
+              0.052198730409145355,
+              -0.996886670589447
+            ],
+            "distance_origin_m": 0.657531201839447,
+            "inliers": 139,
+            "remaining_points": 810,
+            "rms_m": 0.009993255138397217
+          }
+        ]
+      },
+      {
+        "file": "front_10.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27340,
+        "valid_points": 27340,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.040840648114681244,
+              0.05068008601665497,
+              -0.9978795647621155
+            ],
+            "distance_origin_m": 0.6853582859039307,
+            "inliers": 2154,
+            "remaining_points": 3500,
+            "rms_m": 0.011644064448773861
+          },
+          {
+            "normal_sensor": [
+              -0.9893919229507446,
+              0.0746728777885437,
+              -0.12460958957672119
+            ],
+            "distance_origin_m": 0.08605378121137619,
+            "inliers": 513,
+            "remaining_points": 1346,
+            "rms_m": 0.010178876109421253
+          },
+          {
+            "normal_sensor": [
+              0.08431968092918396,
+              -0.05118762329220772,
+              -0.9951230883598328
+            ],
+            "distance_origin_m": 0.7375404834747314,
+            "inliers": 172,
+            "remaining_points": 833,
+            "rms_m": 0.011152348481118679
+          }
+        ]
+      },
+      {
+        "file": "front_11.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27246,
+        "valid_points": 27246,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04763881117105484,
+              0.04639280214905739,
+              -0.9977867007255554
+            ],
+            "distance_origin_m": 0.6919448375701904,
+            "inliers": 2234,
+            "remaining_points": 3500,
+            "rms_m": 0.01056794635951519
+          },
+          {
+            "normal_sensor": [
+              -0.9866644144058228,
+              0.07140904664993286,
+              -0.1462671160697937
+            ],
+            "distance_origin_m": 0.09533815085887909,
+            "inliers": 591,
+            "remaining_points": 1266,
+            "rms_m": 0.011020551435649395
+          },
+          {
+            "normal_sensor": [
+              0.08001111447811127,
+              0.03518237918615341,
+              -0.9961729049682617
+            ],
+            "distance_origin_m": 0.6546866297721863,
+            "inliers": 171,
+            "remaining_points": 675,
+            "rms_m": 0.010502628982067108
+          }
+        ]
+      },
+      {
+        "file": "front_12.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27273,
+        "valid_points": 27273,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.049360405653715134,
+              0.047905083745718,
+              -0.9976315498352051
+            ],
+            "distance_origin_m": 0.6928915977478027,
+            "inliers": 2189,
+            "remaining_points": 3500,
+            "rms_m": 0.010247495025396347
+          },
+          {
+            "normal_sensor": [
+              -0.9950958490371704,
+              0.03344789147377014,
+              -0.09308890253305435
+            ],
+            "distance_origin_m": 0.0793997049331665,
+            "inliers": 530,
+            "remaining_points": 1311,
+            "rms_m": 0.010503229685127735
+          },
+          {
+            "normal_sensor": [
+              0.9999276399612427,
+              0.011936409398913383,
+              -0.0014841888332739472
+            ],
+            "distance_origin_m": 0.020972127094864845,
+            "inliers": 187,
+            "remaining_points": 781,
+            "rms_m": 0.011583407409489155
+          }
+        ]
+      },
+      {
+        "file": "front_13.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 82464,
+        "finite_points": 22819,
+        "valid_points": 22819,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04080180451273918,
+              0.05007800832390785,
+              -0.9979115128517151
+            ],
+            "distance_origin_m": 0.6875431537628174,
+            "inliers": 2004,
+            "remaining_points": 3500,
+            "rms_m": 0.011359700001776218
+          },
+          {
+            "normal_sensor": [
+              -0.9924070239067078,
+              0.05635448917746544,
+              -0.10932713001966476
+            ],
+            "distance_origin_m": 0.08328408002853394,
+            "inliers": 650,
+            "remaining_points": 1496,
+            "rms_m": 0.009727753698825836
+          },
+          {
+            "normal_sensor": [
+              0.06962541490793228,
+              -0.050265487283468246,
+              -0.9963060021400452
+            ],
+            "distance_origin_m": 0.7321505546569824,
+            "inliers": 193,
+            "remaining_points": 846,
+            "rms_m": 0.012683075852692127
+          }
+        ]
+      },
+      {
+        "file": "front_14.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 82464,
+        "finite_points": 22417,
+        "valid_points": 22417,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04015820473432541,
+              0.050617948174476624,
+              -0.9979103803634644
+            ],
+            "distance_origin_m": 0.6880355477333069,
+            "inliers": 1938,
+            "remaining_points": 3500,
+            "rms_m": 0.011057578027248383
+          },
+          {
+            "normal_sensor": [
+              -0.9749471545219421,
+              0.12365724891424179,
+              -0.18489693105220795
+            ],
+            "distance_origin_m": 0.10590626299381256,
+            "inliers": 616,
+            "remaining_points": 1562,
+            "rms_m": 0.010540352202951908
+          },
+          {
+            "normal_sensor": [
+              0.02462233416736126,
+              0.04263974726200104,
+              -0.9987870454788208
+            ],
+            "distance_origin_m": 0.6464513540267944,
+            "inliers": 220,
+            "remaining_points": 946,
+            "rms_m": 0.009546537883579731
+          }
+        ]
+      },
+      {
+        "file": "front_15.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27249,
+        "valid_points": 27249,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.047968123108148575,
+              0.048877958208322525,
+              -0.9976522326469421
+            ],
+            "distance_origin_m": 0.6920053958892822,
+            "inliers": 2193,
+            "remaining_points": 3500,
+            "rms_m": 0.01048089936375618
+          },
+          {
+            "normal_sensor": [
+              -0.9914427995681763,
+              0.029422199353575706,
+              -0.12718290090560913
+            ],
+            "distance_origin_m": 0.08791080117225647,
+            "inliers": 574,
+            "remaining_points": 1307,
+            "rms_m": 0.010995461605489254
+          },
+          {
+            "normal_sensor": [
+              0.04403972253203392,
+              0.04075054079294205,
+              -0.9981983304023743
+            ],
+            "distance_origin_m": 0.6493925452232361,
+            "inliers": 140,
+            "remaining_points": 733,
+            "rms_m": 0.008948249742388725
+          }
+        ]
+      },
+      {
+        "file": "front_16.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27332,
+        "valid_points": 27332,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04553379863500595,
+              0.05210060626268387,
+              -0.9976032376289368
+            ],
+            "distance_origin_m": 0.6903523206710815,
+            "inliers": 2148,
+            "remaining_points": 3500,
+            "rms_m": 0.010623414069414139
+          },
+          {
+            "normal_sensor": [
+              -0.9899849891662598,
+              0.06191626191139221,
+              -0.12687018513679504
+            ],
+            "distance_origin_m": 0.08984430134296417,
+            "inliers": 605,
+            "remaining_points": 1352,
+            "rms_m": 0.01092415302991867
+          },
+          {
+            "normal_sensor": [
+              0.02720877341926098,
+              0.03376097232103348,
+              -0.9990594983100891
+            ],
+            "distance_origin_m": 0.6491178870201111,
+            "inliers": 188,
+            "remaining_points": 747,
+            "rms_m": 0.010486901737749577
+          }
+        ]
+      },
+      {
+        "file": "front_17.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27338,
+        "valid_points": 27338,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.042751580476760864,
+              0.048549145460128784,
+              -0.997905433177948
+            ],
+            "distance_origin_m": 0.6876983046531677,
+            "inliers": 2254,
+            "remaining_points": 3500,
+            "rms_m": 0.0111275939270854
+          },
+          {
+            "normal_sensor": [
+              -0.9914750456809998,
+              0.039803385734558105,
+              -0.1240682303905487
+            ],
+            "distance_origin_m": 0.0847323015332222,
+            "inliers": 536,
+            "remaining_points": 1246,
+            "rms_m": 0.010163277387619019
+          },
+          {
+            "normal_sensor": [
+              0.0348549522459507,
+              -0.030780892819166183,
+              -0.9989182353019714
+            ],
+            "distance_origin_m": 0.7100082635879517,
+            "inliers": 144,
+            "remaining_points": 710,
+            "rms_m": 0.010598712600767612
+          }
+        ]
+      },
+      {
+        "file": "front_18.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27452,
+        "valid_points": 27452,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.048798587173223495,
+              0.046801142394542694,
+              -0.9977115392684937
+            ],
+            "distance_origin_m": 0.6946664452552795,
+            "inliers": 2148,
+            "remaining_points": 3500,
+            "rms_m": 0.010029935277998447
+          },
+          {
+            "normal_sensor": [
+              -0.9895390272140503,
+              0.011500485241413116,
+              -0.14380648732185364
+            ],
+            "distance_origin_m": 0.09268911927938461,
+            "inliers": 576,
+            "remaining_points": 1352,
+            "rms_m": 0.011229296214878559
+          },
+          {
+            "normal_sensor": [
+              0.04250264912843704,
+              0.03772163763642311,
+              -0.9983839988708496
+            ],
+            "distance_origin_m": 0.6510461568832397,
+            "inliers": 213,
+            "remaining_points": 776,
+            "rms_m": 0.010312620550394058
+          }
+        ]
+      },
+      {
+        "file": "front_19.cdr",
+        "frame_id": "rslidar_head",
+        "total_points": 86400,
+        "finite_points": 27098,
+        "valid_points": 27098,
+        "planes": [
+          {
+            "normal_sensor": [
+              0.04775119945406914,
+              0.04766933619976044,
+              -0.9977211356163025
+            ],
+            "distance_origin_m": 0.6913810968399048,
+            "inliers": 2222,
+            "remaining_points": 3500,
+            "rms_m": 0.010457395575940609
+          },
+          {
+            "normal_sensor": [
+              -0.9864165782928467,
+              0.09774011373519897,
+              -0.13201968371868134
+            ],
+            "distance_origin_m": 0.09074357151985168,
+            "inliers": 559,
+            "remaining_points": 1278,
+            "rms_m": 0.011115149594843388
+          },
+          {
+            "normal_sensor": [
+              0.04568963870406151,
+              -0.9772025346755981,
+              0.2073345184326172
+            ],
+            "distance_origin_m": 0.7162096500396729,
+            "inliers": 126,
+            "remaining_points": 719,
+            "rms_m": 0.012928170152008533
+          }
+        ]
+      }
+    ],
+    "rear": [
+      {
+        "file": "rear_00.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25506,
+        "valid_points": 25506,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9996494650840759,
+              0.023317908868193626,
+              -0.01253652572631836
+            ],
+            "distance_origin_m": 0.07864151895046234,
+            "inliers": 649,
+            "remaining_points": 3500,
+            "rms_m": 0.010019827634096146
+          },
+          {
+            "normal_sensor": [
+              -0.007439823355525732,
+              0.9994121789932251,
+              0.03346511349081993
+            ],
+            "distance_origin_m": 1.1180106401443481,
+            "inliers": 370,
+            "remaining_points": 2851,
+            "rms_m": 0.010056289844214916
+          },
+          {
+            "normal_sensor": [
+              -0.009766173548996449,
+              0.02379014529287815,
+              -0.9996692538261414
+            ],
+            "distance_origin_m": 3.450305223464966,
+            "inliers": 233,
+            "remaining_points": 2481,
+            "rms_m": 0.011699100956320763
+          }
+        ]
+      },
+      {
+        "file": "rear_01.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25499,
+        "valid_points": 25499,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9986345171928406,
+              0.029741507023572922,
+              -0.04294778034090996
+            ],
+            "distance_origin_m": 0.085434190928936,
+            "inliers": 567,
+            "remaining_points": 3500,
+            "rms_m": 0.010197908617556095
+          },
+          {
+            "normal_sensor": [
+              0.034899093210697174,
+              0.9985589385032654,
+              0.04076823219656944
+            ],
+            "distance_origin_m": 1.1340430974960327,
+            "inliers": 387,
+            "remaining_points": 2933,
+            "rms_m": 0.010692392475903034
+          },
+          {
+            "normal_sensor": [
+              -0.9929941892623901,
+              0.11547566205263138,
+              -0.025058381259441376
+            ],
+            "distance_origin_m": 0.12042099237442017,
+            "inliers": 171,
+            "remaining_points": 2546,
+            "rms_m": 0.012632977217435837
+          }
+        ]
+      },
+      {
+        "file": "rear_02.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25542,
+        "valid_points": 25542,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9995169043540955,
+              0.02831270359456539,
+              0.012818513438105583
+            ],
+            "distance_origin_m": 0.06940720230340958,
+            "inliers": 657,
+            "remaining_points": 3500,
+            "rms_m": 0.008559418842196465
+          },
+          {
+            "normal_sensor": [
+              0.9621966481208801,
+              -0.2698793411254883,
+              -0.036643341183662415
+            ],
+            "distance_origin_m": 0.30120763182640076,
+            "inliers": 212,
+            "remaining_points": 2843,
+            "rms_m": 0.013857410289347172
+          },
+          {
+            "normal_sensor": [
+              0.9678467512130737,
+              0.23846763372421265,
+              -0.08003637194633484
+            ],
+            "distance_origin_m": 0.4162069261074066,
+            "inliers": 157,
+            "remaining_points": 2631,
+            "rms_m": 0.012794177047908306
+          }
+        ]
+      },
+      {
+        "file": "rear_03.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25371,
+        "valid_points": 25371,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9979285597801208,
+              -0.044883452355861664,
+              -0.04608750343322754
+            ],
+            "distance_origin_m": 0.08660252392292023,
+            "inliers": 604,
+            "remaining_points": 3500,
+            "rms_m": 0.010977878235280514
+          },
+          {
+            "normal_sensor": [
+              -0.00759472930803895,
+              0.9998066425323486,
+              0.018138645216822624
+            ],
+            "distance_origin_m": 1.1338024139404297,
+            "inliers": 283,
+            "remaining_points": 2896,
+            "rms_m": 0.009570128284394741
+          },
+          {
+            "normal_sensor": [
+              -0.9883913397789001,
+              0.0739549994468689,
+              -0.13271498680114746
+            ],
+            "distance_origin_m": 0.19396740198135376,
+            "inliers": 146,
+            "remaining_points": 2613,
+            "rms_m": 0.013830387964844704
+          }
+        ]
+      },
+      {
+        "file": "rear_04.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25629,
+        "valid_points": 25629,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9996705651283264,
+              0.023517612367868423,
+              0.01027823705226183
+            ],
+            "distance_origin_m": 0.07140184193849564,
+            "inliers": 644,
+            "remaining_points": 3500,
+            "rms_m": 0.008970250375568867
+          },
+          {
+            "normal_sensor": [
+              -0.005603141151368618,
+              0.9864711761474609,
+              -0.16383890807628632
+            ],
+            "distance_origin_m": 1.2055431604385376,
+            "inliers": 212,
+            "remaining_points": 2856,
+            "rms_m": 0.013945452868938446
+          },
+          {
+            "normal_sensor": [
+              0.9797930717468262,
+              0.0368490070104599,
+              -0.19659008085727692
+            ],
+            "distance_origin_m": 0.7299630045890808,
+            "inliers": 172,
+            "remaining_points": 2644,
+            "rms_m": 0.013552181422710419
+          }
+        ]
+      },
+      {
+        "file": "rear_05.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25609,
+        "valid_points": 25609,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9960588216781616,
+              0.08779048919677734,
+              -0.012636342085897923
+            ],
+            "distance_origin_m": 0.07653418928384781,
+            "inliers": 605,
+            "remaining_points": 3500,
+            "rms_m": 0.011168787255883217
+          },
+          {
+            "normal_sensor": [
+              -0.033068444579839706,
+              0.9973323941230774,
+              -0.06507355719804764
+            ],
+            "distance_origin_m": 1.1569205522537231,
+            "inliers": 181,
+            "remaining_points": 2895,
+            "rms_m": 0.011584465391933918
+          },
+          {
+            "normal_sensor": [
+              0.891144871711731,
+              0.45270708203315735,
+              -0.030283456668257713
+            ],
+            "distance_origin_m": 0.3697474002838135,
+            "inliers": 134,
+            "remaining_points": 2714,
+            "rms_m": 0.01324288360774517
+          }
+        ]
+      },
+      {
+        "file": "rear_06.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25523,
+        "valid_points": 25523,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9916325211524963,
+              -0.059693120419979095,
+              -0.11446268856525421
+            ],
+            "distance_origin_m": 0.1055295467376709,
+            "inliers": 448,
+            "remaining_points": 3500,
+            "rms_m": 0.012271170504391193
+          },
+          {
+            "normal_sensor": [
+              -0.7731351852416992,
+              -0.20158450305461884,
+              -0.6013532280921936
+            ],
+            "distance_origin_m": 0.004680773243308067,
+            "inliers": 156,
+            "remaining_points": 3052,
+            "rms_m": 0.012760338373482227
+          },
+          {
+            "normal_sensor": [
+              0.99234938621521,
+              -0.07375805079936981,
+              -0.09900735318660736
+            ],
+            "distance_origin_m": 0.40813779830932617,
+            "inliers": 151,
+            "remaining_points": 2896,
+            "rms_m": 0.015029423870146275
+          }
+        ]
+      },
+      {
+        "file": "rear_07.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 82464,
+        "finite_points": 21823,
+        "valid_points": 21823,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9998370409011841,
+              -0.01760258898139,
+              0.004011559300124645
+            ],
+            "distance_origin_m": 0.07323498278856277,
+            "inliers": 751,
+            "remaining_points": 3500,
+            "rms_m": 0.00941983051598072
+          },
+          {
+            "normal_sensor": [
+              0.05845468491315842,
+              0.9979465007781982,
+              0.026189059019088745
+            ],
+            "distance_origin_m": 1.151584506034851,
+            "inliers": 405,
+            "remaining_points": 2749,
+            "rms_m": 0.01229286752641201
+          },
+          {
+            "normal_sensor": [
+              0.9839816093444824,
+              0.16270706057548523,
+              -0.07284624874591827
+            ],
+            "distance_origin_m": 0.3841232657432556,
+            "inliers": 212,
+            "remaining_points": 2344,
+            "rms_m": 0.012387655675411224
+          }
+        ]
+      },
+      {
+        "file": "rear_08.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25466,
+        "valid_points": 25466,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9844704866409302,
+              -0.16957341134548187,
+              0.04541720822453499
+            ],
+            "distance_origin_m": 0.060292188078165054,
+            "inliers": 392,
+            "remaining_points": 3500,
+            "rms_m": 0.012530160136520863
+          },
+          {
+            "normal_sensor": [
+              -0.975368857383728,
+              -0.03660746291279793,
+              -0.2175212800502777
+            ],
+            "distance_origin_m": 0.11001010239124298,
+            "inliers": 213,
+            "remaining_points": 3108,
+            "rms_m": 0.012092475779354572
+          },
+          {
+            "normal_sensor": [
+              -0.04007356986403465,
+              0.9974902868270874,
+              -0.05837202072143555
+            ],
+            "distance_origin_m": 1.1427726745605469,
+            "inliers": 196,
+            "remaining_points": 2895,
+            "rms_m": 0.012428337708115578
+          }
+        ]
+      },
+      {
+        "file": "rear_09.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25539,
+        "valid_points": 25539,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.966084897518158,
+              0.005437273066490889,
+              -0.25816744565963745
+            ],
+            "distance_origin_m": 0.14491067826747894,
+            "inliers": 430,
+            "remaining_points": 3500,
+            "rms_m": 0.013070492073893547
+          },
+          {
+            "normal_sensor": [
+              -0.9957048296928406,
+              -0.06452864408493042,
+              -0.06639224290847778
+            ],
+            "distance_origin_m": 0.13159702718257904,
+            "inliers": 240,
+            "remaining_points": 3070,
+            "rms_m": 0.01471664011478424
+          },
+          {
+            "normal_sensor": [
+              0.9934711456298828,
+              -0.0887572318315506,
+              -0.07167447358369827
+            ],
+            "distance_origin_m": 0.3662555515766144,
+            "inliers": 188,
+            "remaining_points": 2830,
+            "rms_m": 0.012668929062783718
+          }
+        ]
+      },
+      {
+        "file": "rear_10.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25699,
+        "valid_points": 25699,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9932934045791626,
+              0.052007149904966354,
+              -0.10326401144266129
+            ],
+            "distance_origin_m": 0.10023823380470276,
+            "inliers": 493,
+            "remaining_points": 3500,
+            "rms_m": 0.01015687920153141
+          },
+          {
+            "normal_sensor": [
+              0.9730363488197327,
+              -0.22419323027133942,
+              0.05420006439089775
+            ],
+            "distance_origin_m": 0.2545510232448578,
+            "inliers": 167,
+            "remaining_points": 3007,
+            "rms_m": 0.014052373357117176
+          },
+          {
+            "normal_sensor": [
+              0.8761563301086426,
+              0.47071993350982666,
+              -0.10379252582788467
+            ],
+            "distance_origin_m": 0.4705439805984497,
+            "inliers": 160,
+            "remaining_points": 2840,
+            "rms_m": 0.01432360615581274
+          }
+        ]
+      },
+      {
+        "file": "rear_11.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25598,
+        "valid_points": 25598,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9976121187210083,
+              0.06773412227630615,
+              -0.013495752587914467
+            ],
+            "distance_origin_m": 0.07708259671926498,
+            "inliers": 555,
+            "remaining_points": 3500,
+            "rms_m": 0.009292840957641602
+          },
+          {
+            "normal_sensor": [
+              0.9205898642539978,
+              0.38157689571380615,
+              -0.08314647525548935
+            ],
+            "distance_origin_m": 0.39069312810897827,
+            "inliers": 155,
+            "remaining_points": 2945,
+            "rms_m": 0.013335264287889004
+          },
+          {
+            "normal_sensor": [
+              0.03302041441202164,
+              0.9791854619979858,
+              -0.20026348531246185
+            ],
+            "distance_origin_m": 1.2461546659469604,
+            "inliers": 158,
+            "remaining_points": 2790,
+            "rms_m": 0.013494336046278477
+          }
+        ]
+      },
+      {
+        "file": "rear_12.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25625,
+        "valid_points": 25625,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9974486231803894,
+              0.013841435313224792,
+              -0.07003311067819595
+            ],
+            "distance_origin_m": 0.09196411073207855,
+            "inliers": 547,
+            "remaining_points": 3500,
+            "rms_m": 0.010166171006858349
+          },
+          {
+            "normal_sensor": [
+              0.9907141923904419,
+              0.13373404741287231,
+              -0.024506522342562675
+            ],
+            "distance_origin_m": 0.34015071392059326,
+            "inliers": 236,
+            "remaining_points": 2953,
+            "rms_m": 0.012644440867006779
+          },
+          {
+            "normal_sensor": [
+              -0.9990335702896118,
+              -0.011524645611643791,
+              -0.042416300624608994
+            ],
+            "distance_origin_m": 0.12154614180326462,
+            "inliers": 259,
+            "remaining_points": 2717,
+            "rms_m": 0.011586630716919899
+          }
+        ]
+      },
+      {
+        "file": "rear_13.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25654,
+        "valid_points": 25654,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9998889565467834,
+              -0.0032507365103811026,
+              0.01454429142177105
+            ],
+            "distance_origin_m": 0.06952675431966782,
+            "inliers": 689,
+            "remaining_points": 3500,
+            "rms_m": 0.0074633345939219
+          },
+          {
+            "normal_sensor": [
+              0.02722948230803013,
+              0.9991810321807861,
+              0.029930341988801956
+            ],
+            "distance_origin_m": 1.136047601699829,
+            "inliers": 360,
+            "remaining_points": 2811,
+            "rms_m": 0.010317306965589523
+          },
+          {
+            "normal_sensor": [
+              0.9809446930885315,
+              0.18658052384853363,
+              -0.05417730659246445
+            ],
+            "distance_origin_m": 0.34914329648017883,
+            "inliers": 145,
+            "remaining_points": 2451,
+            "rms_m": 0.014207497239112854
+          }
+        ]
+      },
+      {
+        "file": "rear_14.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25672,
+        "valid_points": 25672,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9990595579147339,
+              -0.004139429423958063,
+              0.04316098615527153
+            ],
+            "distance_origin_m": 0.05876009911298752,
+            "inliers": 615,
+            "remaining_points": 3500,
+            "rms_m": 0.006318883504718542
+          },
+          {
+            "normal_sensor": [
+              0.03312239050865173,
+              0.9978175163269043,
+              0.05712324380874634
+            ],
+            "distance_origin_m": 1.1210979223251343,
+            "inliers": 337,
+            "remaining_points": 2885,
+            "rms_m": 0.010448750108480453
+          },
+          {
+            "normal_sensor": [
+              0.9732602834701538,
+              0.20348919928073883,
+              -0.10656700283288956
+            ],
+            "distance_origin_m": 0.42099934816360474,
+            "inliers": 177,
+            "remaining_points": 2548,
+            "rms_m": 0.01319645345211029
+          }
+        ]
+      },
+      {
+        "file": "rear_15.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25600,
+        "valid_points": 25600,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9966011643409729,
+              0.07121334969997406,
+              -0.041410211473703384
+            ],
+            "distance_origin_m": 0.08434709161520004,
+            "inliers": 540,
+            "remaining_points": 3500,
+            "rms_m": 0.009139575995504856
+          },
+          {
+            "normal_sensor": [
+              0.9894131422042847,
+              -0.14510546624660492,
+              -0.002451519714668393
+            ],
+            "distance_origin_m": 0.2970992624759674,
+            "inliers": 206,
+            "remaining_points": 2960,
+            "rms_m": 0.0122978575527668
+          },
+          {
+            "normal_sensor": [
+              0.0007729801582172513,
+              0.019488625228405,
+              -0.9998098015785217
+            ],
+            "distance_origin_m": 3.473229169845581,
+            "inliers": 274,
+            "remaining_points": 2754,
+            "rms_m": 0.011033168993890285
+          }
+        ]
+      },
+      {
+        "file": "rear_16.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25772,
+        "valid_points": 25772,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9893136620521545,
+              0.1189187690615654,
+              -0.08436110615730286
+            ],
+            "distance_origin_m": 0.098604217171669,
+            "inliers": 499,
+            "remaining_points": 3500,
+            "rms_m": 0.010234968736767769
+          },
+          {
+            "normal_sensor": [
+              -0.740143895149231,
+              -0.6621088981628418,
+              -0.1174684539437294
+            ],
+            "distance_origin_m": 0.1668977439403534,
+            "inliers": 146,
+            "remaining_points": 3001,
+            "rms_m": 0.013842085376381874
+          },
+          {
+            "normal_sensor": [
+              0.9907371997833252,
+              -0.10856729000806808,
+              -0.0815654844045639
+            ],
+            "distance_origin_m": 0.3581194579601288,
+            "inliers": 203,
+            "remaining_points": 2855,
+            "rms_m": 0.013425953686237335
+          }
+        ]
+      },
+      {
+        "file": "rear_17.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25496,
+        "valid_points": 25496,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9970322251319885,
+              0.07018669694662094,
+              0.03163231536746025
+            ],
+            "distance_origin_m": 0.06354554742574692,
+            "inliers": 566,
+            "remaining_points": 3500,
+            "rms_m": 0.009286468848586082
+          },
+          {
+            "normal_sensor": [
+              0.11118851602077484,
+              0.9793351888656616,
+              0.16893696784973145
+            ],
+            "distance_origin_m": 1.080452799797058,
+            "inliers": 154,
+            "remaining_points": 2934,
+            "rms_m": 0.012966882437467575
+          },
+          {
+            "normal_sensor": [
+              0.9794552326202393,
+              0.1825520545244217,
+              -0.08568686991930008
+            ],
+            "distance_origin_m": 0.38245999813079834,
+            "inliers": 177,
+            "remaining_points": 2780,
+            "rms_m": 0.013538875617086887
+          }
+        ]
+      },
+      {
+        "file": "rear_18.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25531,
+        "valid_points": 25531,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9995952844619751,
+              -0.009550840593874454,
+              -0.026797261089086533
+            ],
+            "distance_origin_m": 0.08344458043575287,
+            "inliers": 635,
+            "remaining_points": 3500,
+            "rms_m": 0.01105714961886406
+          },
+          {
+            "normal_sensor": [
+              0.9880502820014954,
+              -0.13913880288600922,
+              -0.06630988419055939
+            ],
+            "distance_origin_m": 0.34123897552490234,
+            "inliers": 209,
+            "remaining_points": 2865,
+            "rms_m": 0.01323897298425436
+          },
+          {
+            "normal_sensor": [
+              0.20849691331386566,
+              0.975294828414917,
+              0.07299996167421341
+            ],
+            "distance_origin_m": 1.1345487833023071,
+            "inliers": 136,
+            "remaining_points": 2656,
+            "rms_m": 0.0129765709862113
+          }
+        ]
+      },
+      {
+        "file": "rear_19.cdr",
+        "frame_id": "rslidar_tail",
+        "total_points": 86400,
+        "finite_points": 25551,
+        "valid_points": 25551,
+        "planes": [
+          {
+            "normal_sensor": [
+              -0.9943937659263611,
+              -0.06820714473724365,
+              -0.08080092072486877
+            ],
+            "distance_origin_m": 0.10490346699953079,
+            "inliers": 413,
+            "remaining_points": 3500,
+            "rms_m": 0.011693437583744526
+          },
+          {
+            "normal_sensor": [
+              -0.9997639656066895,
+              -0.0019266457529738545,
+              -0.021641023457050323
+            ],
+            "distance_origin_m": 0.07088722288608551,
+            "inliers": 230,
+            "remaining_points": 3087,
+            "rms_m": 0.0113295903429389
+          },
+          {
+            "normal_sensor": [
+              0.9736908078193665,
+              -0.21713590621948242,
+              -0.06912434101104736
+            ],
+            "distance_origin_m": 0.3363857865333557,
+            "inliers": 207,
+            "remaining_points": 2857,
+            "rms_m": 0.01405415777117014
+          }
+        ]
+      }
+    ]
+  },
+  "motion_outputs": false,
+  "extrinsics_verified": false,
+  "hardware_sync_verified": false,
+  "notes": [
+    "平面未标注地面；不同原始坐标系不能直接比较法向与重力。",
+    "静止特征不能确定完整外参或动态时延；探针仍有网络与复制开销。",
+    "有组织点云按 height×width×xyz 展平；修正首次几何探针轴拼接错误后，用同批 CDR 重算，未重采或修改原数据。"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "fresh_extract_passed": true,
+  "repeat_extract_passed": true,
+  "private_import_passed": true,
+  "sha256": "1950fdc8de72e5a3847d845d57e72dedf35275725e42be46a26454cfabb54c8c",
+  "live_dependency_tree_modified": false
+}

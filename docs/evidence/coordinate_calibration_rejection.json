@@ -1,0 +1,5 @@
+{
+  "exit_code": 2,
+  "stderr": "usage: preview_node.py [-h] --calibration CALIBRATION --status STATUS\n                       [--seconds SECONDS]\npreview_node.py: error: 真实外参检查未通过：base ← lidar: 缺少已核实标定及来源\n",
+  "passed": true
+}

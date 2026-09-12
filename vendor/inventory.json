@@ -1,0 +1,510 @@
+{
+  "description": "Included vendor inputs; paths relative to vendor/. Original licensing terms retained.",
+  "files": [
+    {
+      "path": "archives/ZG_M1_A0_V1_0.rar",
+      "bytes": 27022577,
+      "sha256": "bf0541be5481477ef43a6c1094324ce4e349bb8bd82142b79ddee0a1c93c3b3e"
+    },
+    {
+      "path": "archives/robot_sdk_lowlevel-0.0.1-ubuntu22.04-arm64.zip",
+      "bytes": 162608,
+      "sha256": "98517f548409615826a5eafe2d63c806b699279aad80047fcfb240377fba2cb0"
+    },
+    {
+      "path": "archives/robot_sdk_lowlevel-0.0.1-ubuntu22.04-x86_64.zip",
+      "bytes": 161660,
+      "sha256": "37caf0a191449058a8c017a4c53cd3aca88af58b13794813af799af198b32490"
+    },
+    {
+      "path": "sdk/arm64/LICENSE",
+      "bytes": 322,
+      "sha256": "cf9f3d889b83f542264d67549f25df84ba16920f668e5f36d4b243192a649059"
+    },
+    {
+      "path": "sdk/arm64/README.md",
+      "bytes": 400,
+      "sha256": "42b7a5827bbcfe540193a06646b7e684fa84fb3693b106639f9e2d9b4ca9a026"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_client_api_en.md",
+      "bytes": 10378,
+      "sha256": "9e85ae8a4493cefb6e44bd7d06e196a54b1ec1b8e082bc9bf1262c9f60da9bef"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_client_api_zh.md",
+      "bytes": 9780,
+      "sha256": "a14c5f21b8924c3828c88eee3d9bbfe0849ba223aa8160f457097f4a47da212e"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_error_en.md",
+      "bytes": 7233,
+      "sha256": "6139616f1e8d13bd54c271b1edda27b8144bbf416bbf2da25c8930591736199c"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_error_zh.md",
+      "bytes": 6512,
+      "sha256": "dae4071082f61dbb7fdebe6da506fdad80883addb69cdbf40a4853810a7103f9"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_type_en.md",
+      "bytes": 13397,
+      "sha256": "b4fe0a2842e551da4e1ffe3abba766fbbc4b497a7c3dd635997724027e6d5cef"
+    },
+    {
+      "path": "sdk/arm64/docs/sdk_type_zh.md",
+      "bytes": 13799,
+      "sha256": "e2e495f67b9b398848a27acad09cb4c11c1c7527aaa4849574f7314be12c26f7"
+    },
+    {
+      "path": "sdk/arm64/docs/usage_en.md",
+      "bytes": 11869,
+      "sha256": "a0e05c45dc4832ab8b724f77ccea1e8c1e50fccda99ceb48eb196ea350b409ff"
+    },
+    {
+      "path": "sdk/arm64/docs/usage_zh.md",
+      "bytes": 11252,
+      "sha256": "3a7db04a9b60ec9b3fef32b4a04af2161eac6a73644e848203991587fa948386"
+    },
+    {
+      "path": "sdk/arm64/example/zs_m1/CMakeLists.txt",
+      "bytes": 583,
+      "sha256": "e3d4415f7ad37c87928969215e5fea614d99cf6b3d6d86a0b5344d72289739fa"
+    },
+    {
+      "path": "sdk/arm64/example/zs_m1/sdk_example.cpp",
+      "bytes": 11658,
+      "sha256": "a562a193b2d1de49e00edf09f7e4439c7fb296ac7c29f1c3584ea7d253d5c2ba"
+    },
+    {
+      "path": "sdk/arm64/example/zs_m1f/CMakeLists.txt",
+      "bytes": 604,
+      "sha256": "0e69cd16afaeb347285e8b13279103a991c7eadf9cb81c031fd971b2e678a1c2"
+    },
+    {
+      "path": "sdk/arm64/example/zs_m1f/sdk_example.cpp",
+      "bytes": 11685,
+      "sha256": "9171281c2dc80ac7c3c94f17473d9df6e80aeac1b7716cd0c45659327754033f"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/common_type.h",
+      "bytes": 1441,
+      "sha256": "1e69b8b837fa6fdb3896b4e5523351c14130b8b2cd328c79bf1d6f18bc4c054d"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/error.h",
+      "bytes": 695,
+      "sha256": "137b7bc509bbff2d9b22f1bdd319ae4e94fe02ae2077ca568f552024d8e424c7"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/logging.h",
+      "bytes": 199,
+      "sha256": "4a02329fc48906bf9532440f346cc5da51cf52b5ebe8149e39831d6fd84382ce"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/sdk_version.h",
+      "bytes": 186,
+      "sha256": "99e7c599a6adb77d40733d4c5b651ce9654c5ad8677bd56810e6c777f1906274"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/version.h",
+      "bytes": 189,
+      "sha256": "b98cb239411f139b5c3f0fe9a142ff33cec4c009b6a800900e1968d2ef4becfa"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/zs_m1/client.h",
+      "bytes": 2953,
+      "sha256": "ff917e625d61c08ca4486a8094de855535c7809c70bb8c9cd4872dbfee78852f"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/zs_m1/types.h",
+      "bytes": 9162,
+      "sha256": "47b02498f814c2130bc58a2de21d05b27100a49f9b5ffdb84b818ae1fe3072ed"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/zs_m1f/client.h",
+      "bytes": 2968,
+      "sha256": "e8c02622d8d4baf5e4c834293ae220ce86ee26263bee227b651bf2dba1542f1e"
+    },
+    {
+      "path": "sdk/arm64/include/robot_sdk_lowlevel/zs_m1f/types.h",
+      "bytes": 9120,
+      "sha256": "2e60d83ab8922cd3c88a52fac9db5f234120e02e02944aed51ab7501b2cbbd13"
+    },
+    {
+      "path": "sdk/arm64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelConfig.cmake",
+      "bytes": 960,
+      "sha256": "3cbab60112951ade24e2968afbb6cd623e41843bf11f2245e3af3732408012af"
+    },
+    {
+      "path": "sdk/arm64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelConfigVersion.cmake",
+      "bytes": 2878,
+      "sha256": "1c1efe7131a353b1998cfa0222d5c013a03fe9dbdb1c44c6e8517a0be151ad28"
+    },
+    {
+      "path": "sdk/arm64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelTargets-release.cmake",
+      "bytes": 1054,
+      "sha256": "b389a681fa61faadd2cfcef9589f6558b2932e98c8146c6e6c18d46b70eaa1f7"
+    },
+    {
+      "path": "sdk/arm64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelTargets.cmake",
+      "bytes": 3434,
+      "sha256": "72045b40c52c759b04227f2fd87301fee5d7f42c5c2f741905c5c3afdcde5225"
+    },
+    {
+      "path": "sdk/arm64/lib/librobot_sdk_lowlevel.so",
+      "bytes": 26,
+      "sha256": "5c816ad1c047da4630a237bdcfec72328aaa0fca291dbba07c3f0c672989f2f8"
+    },
+    {
+      "path": "sdk/arm64/lib/librobot_sdk_lowlevel.so.0",
+      "bytes": 30,
+      "sha256": "b84281b60c269076cb9f93e8b9a9f01d502300ab71aaf21792e4e1254a5a48f9"
+    },
+    {
+      "path": "sdk/arm64/lib/librobot_sdk_lowlevel.so.0.0.1",
+      "bytes": 387536,
+      "sha256": "af097543152510d33f3c8449a7df508441ee309a4a6efaf8f353b80e98e68c54"
+    },
+    {
+      "path": "sdk/x86_64/LICENSE",
+      "bytes": 322,
+      "sha256": "cf9f3d889b83f542264d67549f25df84ba16920f668e5f36d4b243192a649059"
+    },
+    {
+      "path": "sdk/x86_64/README.md",
+      "bytes": 400,
+      "sha256": "42b7a5827bbcfe540193a06646b7e684fa84fb3693b106639f9e2d9b4ca9a026"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_client_api_en.md",
+      "bytes": 10378,
+      "sha256": "9e85ae8a4493cefb6e44bd7d06e196a54b1ec1b8e082bc9bf1262c9f60da9bef"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_client_api_zh.md",
+      "bytes": 9780,
+      "sha256": "a14c5f21b8924c3828c88eee3d9bbfe0849ba223aa8160f457097f4a47da212e"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_error_en.md",
+      "bytes": 7233,
+      "sha256": "6139616f1e8d13bd54c271b1edda27b8144bbf416bbf2da25c8930591736199c"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_error_zh.md",
+      "bytes": 6512,
+      "sha256": "dae4071082f61dbb7fdebe6da506fdad80883addb69cdbf40a4853810a7103f9"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_type_en.md",
+      "bytes": 13397,
+      "sha256": "b4fe0a2842e551da4e1ffe3abba766fbbc4b497a7c3dd635997724027e6d5cef"
+    },
+    {
+      "path": "sdk/x86_64/docs/sdk_type_zh.md",
+      "bytes": 13799,
+      "sha256": "e2e495f67b9b398848a27acad09cb4c11c1c7527aaa4849574f7314be12c26f7"
+    },
+    {
+      "path": "sdk/x86_64/docs/usage_en.md",
+      "bytes": 11869,
+      "sha256": "a0e05c45dc4832ab8b724f77ccea1e8c1e50fccda99ceb48eb196ea350b409ff"
+    },
+    {
+      "path": "sdk/x86_64/docs/usage_zh.md",
+      "bytes": 11252,
+      "sha256": "3a7db04a9b60ec9b3fef32b4a04af2161eac6a73644e848203991587fa948386"
+    },
+    {
+      "path": "sdk/x86_64/example/zs_m1/CMakeLists.txt",
+      "bytes": 583,
+      "sha256": "e3d4415f7ad37c87928969215e5fea614d99cf6b3d6d86a0b5344d72289739fa"
+    },
+    {
+      "path": "sdk/x86_64/example/zs_m1/sdk_example.cpp",
+      "bytes": 11658,
+      "sha256": "a562a193b2d1de49e00edf09f7e4439c7fb296ac7c29f1c3584ea7d253d5c2ba"
+    },
+    {
+      "path": "sdk/x86_64/example/zs_m1f/CMakeLists.txt",
+      "bytes": 604,
+      "sha256": "0e69cd16afaeb347285e8b13279103a991c7eadf9cb81c031fd971b2e678a1c2"
+    },
+    {
+      "path": "sdk/x86_64/example/zs_m1f/sdk_example.cpp",
+      "bytes": 11685,
+      "sha256": "9171281c2dc80ac7c3c94f17473d9df6e80aeac1b7716cd0c45659327754033f"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/common_type.h",
+      "bytes": 1441,
+      "sha256": "1e69b8b837fa6fdb3896b4e5523351c14130b8b2cd328c79bf1d6f18bc4c054d"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/error.h",
+      "bytes": 695,
+      "sha256": "137b7bc509bbff2d9b22f1bdd319ae4e94fe02ae2077ca568f552024d8e424c7"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/logging.h",
+      "bytes": 199,
+      "sha256": "4a02329fc48906bf9532440f346cc5da51cf52b5ebe8149e39831d6fd84382ce"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/sdk_version.h",
+      "bytes": 186,
+      "sha256": "99e7c599a6adb77d40733d4c5b651ce9654c5ad8677bd56810e6c777f1906274"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/version.h",
+      "bytes": 189,
+      "sha256": "b98cb239411f139b5c3f0fe9a142ff33cec4c009b6a800900e1968d2ef4becfa"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/zs_m1/client.h",
+      "bytes": 2953,
+      "sha256": "ff917e625d61c08ca4486a8094de855535c7809c70bb8c9cd4872dbfee78852f"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/zs_m1/types.h",
+      "bytes": 9162,
+      "sha256": "47b02498f814c2130bc58a2de21d05b27100a49f9b5ffdb84b818ae1fe3072ed"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/zs_m1f/client.h",
+      "bytes": 2968,
+      "sha256": "e8c02622d8d4baf5e4c834293ae220ce86ee26263bee227b651bf2dba1542f1e"
+    },
+    {
+      "path": "sdk/x86_64/include/robot_sdk_lowlevel/zs_m1f/types.h",
+      "bytes": 9120,
+      "sha256": "2e60d83ab8922cd3c88a52fac9db5f234120e02e02944aed51ab7501b2cbbd13"
+    },
+    {
+      "path": "sdk/x86_64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelConfig.cmake",
+      "bytes": 960,
+      "sha256": "3cbab60112951ade24e2968afbb6cd623e41843bf11f2245e3af3732408012af"
+    },
+    {
+      "path": "sdk/x86_64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelConfigVersion.cmake",
+      "bytes": 2878,
+      "sha256": "1c1efe7131a353b1998cfa0222d5c013a03fe9dbdb1c44c6e8517a0be151ad28"
+    },
+    {
+      "path": "sdk/x86_64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelTargets-release.cmake",
+      "bytes": 1054,
+      "sha256": "b389a681fa61faadd2cfcef9589f6558b2932e98c8146c6e6c18d46b70eaa1f7"
+    },
+    {
+      "path": "sdk/x86_64/lib/cmake/robot_sdk_lowlevel/robot_sdk_lowlevelTargets.cmake",
+      "bytes": 3434,
+      "sha256": "72045b40c52c759b04227f2fd87301fee5d7f42c5c2f741905c5c3afdcde5225"
+    },
+    {
+      "path": "sdk/x86_64/lib/librobot_sdk_lowlevel.so",
+      "bytes": 26,
+      "sha256": "5c816ad1c047da4630a237bdcfec72328aaa0fca291dbba07c3f0c672989f2f8"
+    },
+    {
+      "path": "sdk/x86_64/lib/librobot_sdk_lowlevel.so.0",
+      "bytes": 30,
+      "sha256": "b84281b60c269076cb9f93e8b9a9f01d502300ab71aaf21792e4e1254a5a48f9"
+    },
+    {
+      "path": "sdk/x86_64/lib/librobot_sdk_lowlevel.so.0.0.1",
+      "bytes": 383200,
+      "sha256": "c358d8c2e3b404f2f662cecf2733b2515c61e4be820755822d3b261a6c5dea09"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/CMakeLists.txt",
+      "bytes": 293,
+      "sha256": "52a14f7f15f127d2d2868456de534ca1294cb84721943bac89c70aa2ffc5d2d8"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/config/joint_names_ZG_M1_A0_V1_0.yaml",
+      "bytes": 535,
+      "sha256": "b13704bd03a9ae6cef655c4966359011ac2f6a24ab13df191ee336e15c6e66da"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/export.log",
+      "bytes": 322467,
+      "sha256": "8f4b227ee65366abf7ec8bd914b77a7eca1149e3d30578f90d53136f766885fb"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/launch/display.launch",
+      "bytes": 500,
+      "sha256": "20b552c5c810bc7a16a1843b1c1114f3bde0f32c9fe5a1cfb779f4cd82d30005"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/launch/gazebo.launch",
+      "bytes": 567,
+      "sha256": "844f232aead0af691add075a6d4ce6aad19dbb46994d85f5ede9685758efb9f3"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/BASE_LINK.STL",
+      "bytes": 32625084,
+      "sha256": "a7ceac5e9f4cc5b0898987e561d5e9c7e30196b5cc0e7fe6e2d26ca17bed7a67"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_ABAD_LINK.STL",
+      "bytes": 1252584,
+      "sha256": "4070ad0055318d678c986adf3128065e0ba8e8062ac92512162605cc46c86dde"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_FOOT_LINK.STL",
+      "bytes": 3243984,
+      "sha256": "243fb67e514f88a832cc79d3c66d003cd6f6f7a91ca8702e164bd9baa1e5819d"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_HIP_LINK.STL",
+      "bytes": 5746184,
+      "sha256": "3a62da454115da40c627874f22557b12c07d7fe0b703248bae2be13273aecf81"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_KNEE_LINK.STL",
+      "bytes": 4705784,
+      "sha256": "47708f09c0ee217c8082bf732ce6a88e9f816dcb4aa787f92e1e832415959a60"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_LIHGT_LINK.STL",
+      "bytes": 831384,
+      "sha256": "ebe5fa6dc310ee3042b1c318b35d15f0d293e7fbf092d710a0bf81ef418a1ecf"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FAR_RADARA22_LINK.STL",
+      "bytes": 417784,
+      "sha256": "570f5b43cc5422e42facd639333cf46262c7c4def7bfb9e54be2651ec3a369d0"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_ABAD_LINK.STL",
+      "bytes": 1252584,
+      "sha256": "fc680650f3d3190ba0631428b221921dab9570411a5fa67bc39cedefae661bda"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_FOOT_LINK.STL",
+      "bytes": 3243984,
+      "sha256": "a594bf630cb57e228140eb3a20fd712f7c65791fdbdee84855453efb0b5cce1d"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_HIP_LINK.STL",
+      "bytes": 5746184,
+      "sha256": "c71f433239987927f4f9bc554a9b8841fb9af014023a3d646ac743a790677019"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_KNEE_LINK.STL",
+      "bytes": 4705784,
+      "sha256": "4fc15f27981b2c12a88af3d77cc70f878049009114164131341dd245c24ff8ea"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_LIHGT_LINK.STL",
+      "bytes": 831384,
+      "sha256": "659bb67f54974e5db1dc06c671e591ab667f7a35a305e54310d3733615920c78"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/FBL_RADARA22_LINK.STL",
+      "bytes": 417784,
+      "sha256": "853df3ddd6187f5a724e029a6fa7b5f734159742508cc1205b500aaec891babc"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/F_AIRY_LINK.STL",
+      "bytes": 203984,
+      "sha256": "6ad0bb44817fc18a3a04e5c73c2d83eb7c42a3f0a7b4a3ac4abb0a63bb34e4e7"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/F_IMX415_LINK.STL",
+      "bytes": 143084,
+      "sha256": "91b70883ec1d470a2f8757afa524bab1fb8651333e740debae6312168e3ad94a"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/IMU_ICM42688_LINK.STL",
+      "bytes": 454184,
+      "sha256": "33997657c66f01a51e08ce8bb8d8f4abcceaf9435c918822905f5ad8abf3116b"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/IMU_LUA300C_LINK.STL",
+      "bytes": 107184,
+      "sha256": "0e41e7e40ea340928fd0f7cbf8b3bb082c91ae820a1ed904284f1aa46905ef97"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RAR_ABAD_LINK.STL",
+      "bytes": 1252584,
+      "sha256": "cef591feb0b1468f1e75152f8b55bca5352e6a8270a27b49517019a20d121d47"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RAR_FOOT_LINK.STL",
+      "bytes": 3243984,
+      "sha256": "243fb67e514f88a832cc79d3c66d003cd6f6f7a91ca8702e164bd9baa1e5819d"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RAR_HIP_LINK.STL",
+      "bytes": 5746184,
+      "sha256": "5246ad50e70f560b21749e573ce24a0e5535899e6bf6be0444168c7b3712d8e3"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RAR_KNEE_LINK.STL",
+      "bytes": 4705784,
+      "sha256": "27a70b31613160edcc5f1b94a70c9084b03cffd0115a46d5e7f54d9232827b46"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RAR_LIHGT_LINK.STL",
+      "bytes": 831384,
+      "sha256": "de0e54cb8107d5512be44cc2e76231bf828a592136055f7b33c4860a00e19215"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RBL_ABAD_LINK.STL",
+      "bytes": 1252584,
+      "sha256": "c745d9c025ff80054112f5f589c339855af0ac2184974a32f28f67afbf8f93d4"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RBL_FOOT_LINK.STL",
+      "bytes": 3243984,
+      "sha256": "24d5bb07345ba0b6401c95328c764940a2ad767f7d11e40dfb7a4f8afaffe273"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RBL_HIP_LINK.STL",
+      "bytes": 5746184,
+      "sha256": "1b30ab1e9c92338fd15b856bd5d69382549e0b5ae69bab95b3c8ed0f68bb9aff"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RBL_KNEE_LINK.STL",
+      "bytes": 4705784,
+      "sha256": "8572dc3ebbfda5a925be6babfe158e7a5e2aa56412288d1c30342ac8c70f0447"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/RBL_LIHGT_LINK.STL",
+      "bytes": 831384,
+      "sha256": "0d3f0d415b25368af74297e0cd1f365ac1a716e0a6f65101d336f3ad9484ab00"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/R_AIRY_LINK.STL",
+      "bytes": 203984,
+      "sha256": "82fa739fe4e4bbd8803fd4e61d5ce80985c345ceef75ff1ae226e8a70a9d9de1"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/meshes/R_IMX415_LINK.STL",
+      "bytes": 143084,
+      "sha256": "30a3095efed21ab2ba90bb38d63f251ef6c636a65ad6e6db0f165b60db017838"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/package.xml",
+      "bytes": 660,
+      "sha256": "4e81025abd35b695fe33d806fce00da14fb15916da39a1c1706713dc958e7a5a"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/urdf/ZG_M1_A0_V1_0.urdf",
+      "bytes": 39603,
+      "sha256": "f961f953314854f2bfcd21a05d0a8d869549fb468b0694982e68a6b02b07b311"
+    },
+    {
+      "path": "robot_description/ZG_M1_A0_V1_0/中狗传感器位置信息.xlsx",
+      "bytes": 11129,
+      "sha256": "819733ff05b350619f7782a6d454b9e2b66fcffd75d1460cec4e7197b2fc4889"
+    },
+    {
+      "path": "manuals/M1_L2_SDK_guide.docx",
+      "bytes": 17694116,
+      "sha256": "ff439a5f700102b7b79b277cdd89fe604ef3028c0197c8dd50937482a29b6b05"
+    }
+  ]
+}

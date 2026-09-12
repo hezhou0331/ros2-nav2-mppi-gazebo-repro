@@ -1,0 +1,100 @@
+{
+  "front": {
+    "frame_id": "rslidar_head",
+    "points": 82464,
+    "finite_points": 20710,
+    "finite_ratio": 0.251139891346527,
+    "xyz_min": [
+      -3.250974416732788,
+      -3.2180392742156982,
+      0.051258526742458344
+    ],
+    "xyz_max": [
+      0.11791642010211945,
+      2.5285747051239014,
+      0.7512813210487366
+    ],
+    "ring_min": 0,
+    "ring_max": 95,
+    "header_stamp": 1789213087.4999993,
+    "point_stamp_min": 1789213087.5000849,
+    "point_stamp_max": 1789213087.5999882,
+    "frame_span_seconds": 0.09990334510803223,
+    "point_time_minus_header_range": [
+      8.559226989746094e-05,
+      0.09998893737792969
+    ],
+    "imu_first_stamp": 1789213087.52879,
+    "imu_orientation_covariance": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "imu_acceleration_covariance": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "rear": {
+    "frame_id": "rslidar_tail",
+    "points": 86400,
+    "finite_points": 21684,
+    "finite_ratio": 0.2509722222222222,
+    "xyz_min": [
+      -5.017453670501709,
+      -4.295624256134033,
+      0.04176747053861618
+    ],
+    "xyz_max": [
+      0.09308741241693497,
+      6.072739601135254,
+      5.845179080963135
+    ],
+    "ring_min": 0,
+    "ring_max": 95,
+    "header_stamp": 17294.100005,
+    "point_stamp_min": 17294.100437248006,
+    "point_stamp_max": 17294.194327008005,
+    "frame_span_seconds": 0.0938897599990014,
+    "point_time_minus_header_range": [
+      0.0004322480053815525,
+      0.09432200800438295
+    ],
+    "imu_first_stamp": 17294.103433,
+    "imu_orientation_covariance": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "imu_acceleration_covariance": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

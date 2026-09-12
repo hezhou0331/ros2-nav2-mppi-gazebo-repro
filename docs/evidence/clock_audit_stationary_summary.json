@@ -1,0 +1,105 @@
+{
+  "timestamp_unix": 1789229084.8501198,
+  "columns": [
+    "device_ns",
+    "publisher_ns",
+    "receive_wall_ns",
+    "receive_monotonic_ns",
+    "publisher_gid"
+  ],
+  "summary": {
+    "front_lidar": {
+      "count": 159,
+      "source_hz": 10.000005160129245,
+      "regressions": 0,
+      "publisher_minus_source_s_quantiles": [
+        0.11322491900000001,
+        0.11323662246,
+        0.113666815,
+        0.11537004649999999,
+        0.117738824
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.52768711000002,
+        -152.52563971094003,
+        -152.51471846700002,
+        -152.49667624042002,
+        -152.40874475200002
+      ],
+      "publisher_gids": [
+        "c214ac327fc9c1327432d6a074b5e990"
+      ]
+    },
+    "front_lidar/imu": {
+      "count": 3183,
+      "source_hz": 199.99661944117705,
+      "regressions": 0,
+      "publisher_minus_source_s_quantiles": [
+        0.012459544000000001,
+        0.01247997978,
+        0.012636292,
+        0.022079803919999984,
+        0.03630602
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.556212671,
+        -152.55409603526002,
+        -152.527508863,
+        -152.41589264392002,
+        -152.268507161
+      ],
+      "publisher_gids": [
+        "41ca8ec45fe480950fd06d8014988c91"
+      ]
+    },
+    "rear_lidar/imu": {
+      "count": 3183,
+      "source_hz": 200.00006284100024,
+      "regressions": 0,
+      "publisher_minus_source_s_quantiles": [
+        1789228224.158985,
+        1789228224.159017,
+        1789228224.1592913,
+        1789228224.1665316,
+        1789228224.1729057
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.55581024900002,
+        -152.55466799754,
+        -152.52881802800002,
+        -152.36775084912,
+        -152.217249339
+      ],
+      "publisher_gids": [
+        "70f79cc8b8e90a07cedd872be50d5007"
+      ]
+    },
+    "rear_lidar": {
+      "count": 159,
+      "source_hz": 10.000005215192592,
+      "regressions": 0,
+      "publisher_minus_source_s_quantiles": [
+        1789228224.259923,
+        1789228224.2599819,
+        1789228224.260513,
+        1789228224.2636907,
+        1789228224.2658608
+      ],
+      "local_minus_publisher_s_quantiles": [
+        -152.53356488,
+        -152.52504210854002,
+        -152.513742417,
+        -152.44020930562002,
+        -152.30231426900002
+      ],
+      "publisher_gids": [
+        "7e23d4dcef15d91c15f6f3fb991d6704"
+      ]
+    }
+  },
+  "local_minus_board_interval_s": [
+    -152.557816707,
+    -152.555046648
+  ],
+  "best_rtt_s": 0.008855150000000001
+}

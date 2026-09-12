@@ -1,0 +1,185 @@
+{
+  "timestamp": "2026-09-12T19:52:15+0800",
+  "scope": "Read-only snapshot in the selected ROS domain; absence is not proof of no device.",
+  "ros_domain_id": "0",
+  "rmw": "rmw_fastrtps_cpp",
+  "ros_localhost_only": "1",
+  "nodes": [
+    "m1_readonly_observer",
+    "m1_zenoh_sensor_receiver"
+  ],
+  "topics": {
+    "/m1_sensors/front/imu_raw": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_sensors/front/points_raw": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_sensors/rear/points_raw": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/parameter_events": {
+      "types": [
+        "rcl_interfaces/msg/ParameterEvent"
+      ],
+      "publishers": 2,
+      "subscribers": 0
+    },
+    "/tf": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 0,
+      "subscribers": 1
+    },
+    "/tf_static": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 0,
+      "subscribers": 1
+    }
+  },
+  "samples": {
+    "/m1_sensors/front/imu_raw": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 1999,
+      "frame_id": "rslidar_head",
+      "stamp_age_seconds": -153.35444927215576,
+      "observed_hz": 171.73236503935638
+    },
+    "/m1_sensors/front/points_raw": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 104,
+      "frame_id": "rslidar_head",
+      "stamp_age_seconds": -153.23639798164368,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 8.972073117730448
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 2087,
+      "frame_id": "rslidar_tail",
+      "stamp_age_seconds": 1789213127.7692096,
+      "observed_hz": 179.8072370500408
+    },
+    "/m1_sensors/rear/points_raw": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 104,
+      "frame_id": "rslidar_tail",
+      "stamp_age_seconds": 1789213127.917008,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "points": 86400,
+      "observed_hz": 9.10975597317663
+    }
+  },
+  "transforms": {
+    "map <- odom": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "odom <- base_link": {
+      "available": false,
+      "reason": "\"odom\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "map <- base_link": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    }
+  },
+  "hardware_navigation_verified": false
+}

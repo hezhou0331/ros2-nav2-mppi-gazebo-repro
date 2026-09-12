@@ -1,0 +1,14 @@
+Starting >>> navigo_util
+Finished <<< navigo_util [1.32s]
+Starting >>> navigo_map_server
+Finished <<< navigo_map_server [37.6s]
+Starting >>> navigo_costmap_2d
+Finished <<< navigo_costmap_2d [1min 44s]
+Starting >>> navigo_core
+Finished <<< navigo_core [3.11s]
+Starting >>> navigo_mppi_controller
+Finished <<< navigo_mppi_controller [1min 3s]
+Starting >>> navigo_navfn_planner
+Finished <<< navigo_navfn_planner [14.9s]
+
+Summary: 6 packages finished [3min 45s]

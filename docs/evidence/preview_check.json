@@ -1,0 +1,66 @@
+{
+  "scope": "Loopback-only synthetic-map plugin configuration; no navigation goals or hardware",
+  "ros_domain_id": 176,
+  "nodes": {
+    "map_server": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "planner_server": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "controller_server": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "behavior_server": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "velocity_optimizer": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "bt_navigator": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    },
+    "waypoint_follower": {
+      "initial": "unconfigured",
+      "configure_success": true,
+      "final": "inactive"
+    }
+  },
+  "passed": true,
+  "hardware_navigation_verified": false,
+  "root_velocity_publishers": {
+    "/cmd_vel": 0,
+    "/cmd_vel_raw": 0,
+    "/cmd_vel_smoothed": 0
+  },
+  "discovered_nodes": [
+    "/m1_preview/behavior_server",
+    "/m1_preview/bt_navigator",
+    "/m1_preview/bt_navigator_navigate_through_poses_rclcpp_node",
+    "/m1_preview/bt_navigator_navigate_to_pose_rclcpp_node",
+    "/m1_preview/controller_server",
+    "/m1_preview/global_costmap/global_costmap",
+    "/m1_preview/lifecycle_manager_preview",
+    "/m1_preview/local_costmap/local_costmap",
+    "/m1_preview/map_server",
+    "/m1_preview/planner_server",
+    "/m1_preview/transform_listener_impl_aaaae9b16bd0",
+    "/m1_preview/transform_listener_impl_aaab1be3b020",
+    "/m1_preview/transform_listener_impl_aaab1c0f01a0",
+    "/m1_preview/velocity_optimizer",
+    "/m1_preview/waypoint_follower",
+    "/m1_preview_checker"
+  ]
+}

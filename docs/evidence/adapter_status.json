@@ -1,0 +1,16 @@
+{
+  "timestamp_unix": 1789215191.1164856,
+  "running": false,
+  "counts": {
+    "rear/imu": 5969,
+    "front/imu": 5965,
+    "front/points": 258,
+    "rear/points": 258
+  },
+  "errors": {},
+  "clock_fault": null,
+  "hardware_synchronized": false,
+  "extrinsics_verified": false,
+  "navigation_ready": false,
+  "motion_outputs": false
+}

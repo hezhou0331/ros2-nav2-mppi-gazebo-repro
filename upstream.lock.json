@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/zsibot/genisom_roamerx_open.git",
+  "commit": "51d1e9d22e9bf73380e92a9c4792983d0b355ad0",
+  "verified_date": "2026-09-12",
+  "sparse_paths": [
+    "src",
+    "script"
+  ],
+  "local_modifications": false
+}

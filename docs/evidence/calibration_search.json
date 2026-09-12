@@ -1,0 +1,51 @@
+{
+  "timestamp_unix": 1789223088.3340619,
+  "scope": "本机文件及已授权外接 Orin 文件只读检查；未登录狗内导航板",
+  "searched": [
+    {
+      "location": "本机 vendor/sdk、vendor/robot_description、vendor/archives 与原始备份",
+      "finding": "控制 SDK、URDF/STL 和标称位置表；未发现实机旋转或雷达内部 IMU 标定"
+    },
+    {
+      "location": "本机 WeChat 提供的 M1&L2 SDK DOCX",
+      "finding": "14 页使用说明，无标定、传感器同步配置或板内登录信息"
+    },
+    {
+      "location": "本机 /home/hezhou/data、Downloads、Documents 文件名检索；另用 --no-ignore 检查 vendor、WeChat、Downloads 和导航参考资料",
+      "finding": "AIRY 网格、我们新增的适配文件、其他项目模板；未找到可核实为当前 M1 的完整标定。文件名检索不等于穷尽所有文件内容。"
+    },
+    {
+      "location": "Orin /opt/robot_app/configs、/userdata/storage、/mnt/nvme/atec、/mnt/nvme/workspace、/home/nvidia/Workspace、Downloads、Documents",
+      "finding": "找到其他机器人/机械臂配置，没有可证明对应 M1 AIRY 的完整外参。/home/nvidia/.jszr 与 /opt/robot 不存在。"
+    },
+    {
+      "location": "Orin /home/nvidia/ros2_ws/src/fastlio_terrain_navigation",
+      "finding": "X30 地形导航/仿真工程；其中 0.826 m 雷达高度不属于 M1，不采用。未修改该工作区。"
+    },
+    {
+      "location": "狗内 .100:7447 已有只读 Zenoh TF/参数服务",
+      "finding": "只看到 map→odom→base_link；已读标准参数未给传感器变换。没有 .100 SSH 授权登录，因此没有检查板内文件系统。"
+    }
+  ],
+  "orin_time_status": {
+    "NTP": true,
+    "NTPSynchronized": true,
+    "service": "systemd-timesyncd",
+    "sensor_sync_proven": false
+  },
+  "extrinsics_found_verified": false,
+  "next_required_artifacts": [
+    "本机实测或厂家确认的 base_link ← front LiDAR 完整旋转和平移",
+    "前 AIRY 对应序列号的 IMU ← LiDAR 出厂标定/DIFOP",
+    "板内驱动配置及雷达同步状态，或独立时延标定证据"
+  ],
+  "motion_or_sdk_control_used": false,
+  "followup": {
+    "tf_cache_query": "未返回传感器安装变换",
+    "calibration_state": "有21字节消息，缺IDL不解读",
+    "difop_capture": "历史pcap仅24字节文件头，无候选包",
+    "official_driver": "已定位 getDeviceInfo 和 DIFOP 标定解码，尚无实际设备信息包",
+    "public_lite_repository": "Livox配置及走方形动作树，不能当本 M1 AIRY 外参",
+    "new_repository_access": "CyanTempest/Navigation仍无法读取"
+  }
+}

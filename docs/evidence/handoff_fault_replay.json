@@ -1,0 +1,220 @@
+{
+  "timestamp_unix": 1789231479.073518,
+  "bag": "data/artifacts/real_sensors/bag_before_mapping_30s",
+  "recorded_messages": 12264,
+  "scope": "real recorded messages, virtual delivery/clock faults, production AdapterEngine; no ROS publisher or hardware control",
+  "cases": {
+    "baseline": {
+      "passed": true,
+      "outputs": 12236,
+      "outputs_after_fault": 0,
+      "expected_fault": null,
+      "fault": null
+    },
+    "imu_stop": {
+      "passed": true,
+      "outputs": 421,
+      "outputs_after_fault": 0,
+      "expected_fault": "stream_timeout",
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/imu",
+        "detail": "输入完全断流",
+        "monotonic_ns": 2100000000
+      }
+    },
+    "cloud_stop": {
+      "passed": true,
+      "outputs": 515,
+      "outputs_after_fault": 0,
+      "expected_fault": "stream_timeout",
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/points",
+        "detail": "输入完全断流",
+        "monotonic_ns": 2290000000
+      }
+    },
+    "all_stop": {
+      "passed": true,
+      "outputs": 400,
+      "outputs_after_fault": 0,
+      "expected_fault": "stream_timeout",
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/imu",
+        "detail": "输入完全断流",
+        "monotonic_ns": 2100000000
+      }
+    },
+    "reconnect_after_stop": {
+      "passed": true,
+      "outputs": 421,
+      "outputs_after_fault": 0,
+      "expected_fault": "stream_timeout",
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/imu",
+        "detail": "输入完全断流",
+        "monotonic_ns": 2100000000
+      }
+    },
+    "missing_startup_imu": {
+      "passed": true,
+      "outputs": 0,
+      "outputs_after_fault": 0,
+      "expected_fault": "startup_missing",
+      "fault": {
+        "code": "startup_missing",
+        "stream": "rear/imu",
+        "detail": "启动等待超过 5 秒",
+        "monotonic_ns": 6000148836
+      }
+    },
+    "duplicate": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "source_nonincreasing",
+      "fault": {
+        "code": "source_nonincreasing",
+        "stream": "front/imu",
+        "detail": "设备时间重复或回退",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "out_of_order": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "source_nonincreasing",
+      "fault": {
+        "code": "source_nonincreasing",
+        "stream": "front/imu",
+        "detail": "设备时间重复或回退",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "device_clock_jump": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "stale_or_future",
+      "fault": {
+        "code": "stale_or_future",
+        "stream": "front/imu",
+        "detail": "样本年龄超限",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "delayed_message": {
+      "passed": true,
+      "outputs": 564,
+      "outputs_after_fault": 0,
+      "expected_fault": "stale_or_future",
+      "fault": {
+        "code": "stale_or_future",
+        "stream": "front/imu",
+        "detail": "样本年龄超限",
+        "monotonic_ns": 2403027442
+      }
+    },
+    "wrong_frame": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "frame_changed",
+      "fault": {
+        "code": "frame_changed",
+        "stream": "front/imu",
+        "detail": "原始坐标名不符",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "wrong_cloud_field": {
+      "passed": true,
+      "outputs": 407,
+      "outputs_after_fault": 0,
+      "expected_fault": "invalid_measurement",
+      "fault": {
+        "code": "invalid_measurement",
+        "stream": "front/points",
+        "detail": "XYZIRT 字段不匹配: timestamp",
+        "monotonic_ns": 2005936588
+      }
+    },
+    "wrong_point_time": {
+      "passed": true,
+      "outputs": 407,
+      "outputs_after_fault": 0,
+      "expected_fault": "invalid_measurement",
+      "fault": {
+        "code": "invalid_measurement",
+        "stream": "front/points",
+        "detail": "点云逐点时间/线束/强度异常",
+        "monotonic_ns": 2005936588
+      }
+    },
+    "nonfinite_imu": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "invalid_measurement",
+      "fault": {
+        "code": "invalid_measurement",
+        "stream": "front/imu",
+        "detail": "IMU 包含非有限测量",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "publisher_restart": {
+      "passed": true,
+      "outputs": 406,
+      "outputs_after_fault": 0,
+      "expected_fault": "publisher_changed",
+      "fault": {
+        "code": "publisher_changed",
+        "stream": "front/imu",
+        "detail": "ROS 发布者改变，需重新初始化",
+        "monotonic_ns": 2002675096
+      }
+    },
+    "host_clock_jump": {
+      "passed": true,
+      "outputs": 400,
+      "outputs_after_fault": 0,
+      "expected_fault": "host_clock_jump",
+      "fault": {
+        "code": "host_clock_jump",
+        "stream": "all",
+        "detail": "主机墙钟跳变超过 50 ms",
+        "monotonic_ns": 2000000000
+      }
+    },
+    "profile_expired": {
+      "passed": true,
+      "outputs": 602,
+      "outputs_after_fault": 0,
+      "expected_fault": "profile_expired",
+      "fault": {
+        "code": "profile_expired",
+        "stream": "all",
+        "detail": "重新审计时间后重启，不能续用旧定位状态",
+        "monotonic_ns": 2500000000
+      }
+    },
+    "zenoh_source_restart": {
+      "passed": true,
+      "fault": "front/imu: source_publisher_changed"
+    },
+    "zenoh_sequence_repeat": {
+      "passed": true,
+      "fault": "front/imu: source_sequence_nonincreasing"
+    },
+    "future_clock_profile": {
+      "passed": true
+    }
+  },
+  "passed": true,
+  "motion_outputs": false
+}

@@ -1,0 +1,15 @@
+{
+  "timestamp_unix": 1789223379.130157,
+  "repository": "https://github.com/CyanTempest/Navigation.git",
+  "status": "inaccessible",
+  "checks": {
+    "git_ls_remote": "Repository not found",
+    "authenticated_gh_repo_view": "Could not resolve to a Repository",
+    "github_connector": "404 Not Found",
+    "local_or_orin_git_remote_match": false
+  },
+  "content_reviewed": false,
+  "calibration_solved": null,
+  "navigation_stack_changed": false,
+  "note": "无法区分私有未授权、拼写错误或仓库不存在；等待可访问链接或源码路径。用户两次给出同一 URL，先按只参考标定、保留当前 RoamerX 处理。"
+}

@@ -1,0 +1,234 @@
+{
+  "endpoint": "tcp/192.168.168.100:7447",
+  "started_unix": 1789212933.822083,
+  "streams": {
+    "24/odom/mc_odom/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": {
+      "count": 729,
+      "decode_errors": 0,
+      "first_recv": 80014.669696127,
+      "last_recv": 80029.630946195,
+      "frame_id": "odom",
+      "age_seconds": -153.7028203010559,
+      "serialized_bytes": 724,
+      "child_frame_id": "base_link",
+      "position": [
+        0.0,
+        0.0,
+        0.101735
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.004388
+      ],
+      "unique_frames": 729,
+      "first_stamp": 1789213087.518,
+      "last_stamp": 1789213102.505,
+      "received_hz": 48.65903562145355,
+      "unique_device_hz": 48.57543130543914
+    },
+    "24/rear_lidar/imu/sensor_msgs::msg::dds_::Imu_/TypeHashNotSupported": {
+      "count": 3000,
+      "decode_errors": 0,
+      "first_recv": 80014.669825564,
+      "last_recv": 80029.669455537,
+      "frame_id": "rslidar_tail",
+      "age_seconds": 1789195639.7421668,
+      "serialized_bytes": 332,
+      "acceleration": [
+        -0.0150146484375,
+        0.998779296875,
+        -0.006103515625
+      ],
+      "angular_velocity": [
+        -0.02183792181313038,
+        -0.008255799300968647,
+        -0.014913702383637428
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "acceleration_norm": 0.9989107950346746,
+      "unique_frames": 3000,
+      "first_stamp": 17294.103433,
+      "last_stamp": 17309.098433,
+      "received_hz": 199.9382655036126,
+      "unique_device_hz": 200.00000000001359
+    },
+    "24/front_lidar/imu/sensor_msgs::msg::dds_::Imu_/TypeHashNotSupported": {
+      "count": 3000,
+      "decode_errors": 0,
+      "first_recv": 80014.669871803,
+      "last_recv": 80029.675142943,
+      "frame_id": "rslidar_head",
+      "age_seconds": -153.6777641773224,
+      "serialized_bytes": 332,
+      "acceleration": [
+        0.022216796875,
+        1.00244140625,
+        -0.0155029296875
+      ],
+      "angular_velocity": [
+        0.0034621094819158316,
+        -0.011984225362539291,
+        0.012516857124865055
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "acceleration_norm": 1.0028074091552965,
+      "unique_frames": 3000,
+      "first_stamp": 1789213087.52879,
+      "last_stamp": 1789213102.524044,
+      "received_hz": 199.86309957467674,
+      "unique_device_hz": 199.99661173110198
+    },
+    "24/odom/current_pose/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": {
+      "count": 439,
+      "decode_errors": 0,
+      "first_recv": 80014.683621384,
+      "last_recv": 80029.669605518,
+      "frame_id": "odom",
+      "age_seconds": -153.66377091407776,
+      "serialized_bytes": 724,
+      "child_frame_id": "base_link",
+      "position": [
+        0.0,
+        0.0,
+        0.101735
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.005413
+      ],
+      "unique_frames": 439,
+      "first_stamp": 1789213087.539,
+      "last_stamp": 1789213102.505,
+      "received_hz": 29.227309737134636,
+      "unique_device_hz": 29.266336873948514
+    },
+    "24/front_lidar/sensor_msgs::msg::dds_::PointCloud2_/TypeHashNotSupported": {
+      "count": 150,
+      "decode_errors": 0,
+      "first_recv": 80014.759648021,
+      "last_recv": 80029.661526159,
+      "frame_id": "rslidar_head",
+      "age_seconds": -153.56325387954712,
+      "serialized_bytes": 2246601,
+      "width": 96,
+      "height": 859,
+      "point_step": 26,
+      "row_step": 2496,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "is_dense": false,
+      "unique_frames": 150,
+      "first_stamp": 1789213087.4999993,
+      "last_stamp": 1789213102.400007,
+      "received_hz": 9.998739663562782,
+      "unique_device_hz": 9.999994815598686
+    },
+    "24/rear_lidar/sensor_msgs::msg::dds_::PointCloud2_/TypeHashNotSupported": {
+      "count": 149,
+      "decode_errors": 0,
+      "first_recv": 80014.784622625,
+      "last_recv": 80029.585051625,
+      "frame_id": "rslidar_tail",
+      "age_seconds": 1789195639.8603678,
+      "serialized_bytes": 2246601,
+      "width": 96,
+      "height": 900,
+      "point_step": 26,
+      "row_step": 2496,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        },
+        {
+          "name": "intensity",
+          "datatype": 7,
+          "offset": 12,
+          "count": 1
+        },
+        {
+          "name": "ring",
+          "datatype": 4,
+          "offset": 16,
+          "count": 1
+        },
+        {
+          "name": "timestamp",
+          "datatype": 8,
+          "offset": 18,
+          "count": 1
+        }
+      ],
+      "is_dense": false,
+      "unique_frames": 149,
+      "first_stamp": 17294.100005,
+      "last_stamp": 17308.90000808,
+      "received_hz": 9.999710143530367,
+      "unique_device_hz": 9.999997918919728
+    }
+  },
+  "hardware_commands_sent": false,
+  "finished_unix": 1789212948.850089
+}

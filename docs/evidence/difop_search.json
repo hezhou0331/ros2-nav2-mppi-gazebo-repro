@@ -1,0 +1,7 @@
+{
+  "source_file": "/mnt/nvme/workspace/ljy/navigation/artifacts/m1_lidar_discovery_1929.pcap",
+  "file_bytes": 24,
+  "candidates": [],
+  "rejected": [],
+  "note": "扫描的是候选包；需核对传输封装、设备/型号与单位。没有把未知值写入实机标定。"
+}

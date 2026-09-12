@@ -1,0 +1,85 @@
+{
+  "audited_at": "2026-09-12T09:37:30.719465+00:00",
+  "recordings": [
+    {
+      "source": "/mnt/nvme/atec/probe/stand_pose_150555.jsonl",
+      "sha256": "e7f48799a3a41284dfcc35410fb41570f4adb9b4f6cb0c8a8b1bace6bd6004f1",
+      "rows": 5800,
+      "valid_vector_rows": {
+        "joint_pos_rad": 5800,
+        "joint_vel_rad_s": 0,
+        "joint_torque_nm": 0,
+        "quat_xyzw": 5800,
+        "gyro_rad_s": 5800,
+        "acc_m_s2": 0
+      },
+      "invalid_vector_rows": {
+        "joint_pos_rad": 0,
+        "joint_vel_rad_s": 0,
+        "joint_torque_nm": 0,
+        "quat_xyzw": 0,
+        "gyro_rad_s": 0,
+        "acc_m_s2": 0
+      },
+      "parse_or_timestamp_errors": [],
+      "error_count": 0,
+      "unique_timestamps": 5800,
+      "duplicate_timestamps": 0,
+      "backward_timestamp_steps": 0,
+      "device_time_span_seconds": 119.976,
+      "unique_frame_rate_hz": 48.33466693338668,
+      "median_positive_interval_ms": 20,
+      "quaternion_norm_range": [
+        0.9999999592857965,
+        1.0000000412755599
+      ],
+      "complete_imu_fields_in_every_row": false,
+      "missing_imu_fields": [
+        "acc_m_s2"
+      ],
+      "clock_alignment_verified": false,
+      "navigation_ready": false,
+      "note": "Recorded data only. No SDK initialized. Requires live point cloud, calibrated frames and clock alignment."
+    },
+    {
+      "source": "/mnt/nvme/atec/probe/stand_pose_r2.jsonl",
+      "sha256": "29d81f9ae706b02832c85e1fcfbc3269df3fceb8a0e3808b2ddbf210ab6a3c1d",
+      "rows": 18750,
+      "valid_vector_rows": {
+        "joint_pos_rad": 18750,
+        "joint_vel_rad_s": 0,
+        "joint_torque_nm": 0,
+        "quat_xyzw": 18750,
+        "gyro_rad_s": 18750,
+        "acc_m_s2": 0
+      },
+      "invalid_vector_rows": {
+        "joint_pos_rad": 0,
+        "joint_vel_rad_s": 0,
+        "joint_torque_nm": 0,
+        "quat_xyzw": 0,
+        "gyro_rad_s": 0,
+        "acc_m_s2": 0
+      },
+      "parse_or_timestamp_errors": [],
+      "error_count": 0,
+      "unique_timestamps": 18750,
+      "duplicate_timestamps": 0,
+      "backward_timestamp_steps": 0,
+      "device_time_span_seconds": 387.984,
+      "unique_frame_rate_hz": 48.32415769722463,
+      "median_positive_interval_ms": 20,
+      "quaternion_norm_range": [
+        0.9999999605384663,
+        1.0000000401781963
+      ],
+      "complete_imu_fields_in_every_row": false,
+      "missing_imu_fields": [
+        "acc_m_s2"
+      ],
+      "clock_alignment_verified": false,
+      "navigation_ready": false,
+      "note": "Recorded data only. No SDK initialized. Requires live point cloud, calibrated frames and clock alignment."
+    }
+  ]
+}

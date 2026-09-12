@@ -1,0 +1,99 @@
+{
+  "scope": "synthetic ROS messages, production adapter node, localhost/domain 180",
+  "cases": {
+    "imu_stop": {
+      "passed": true,
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/imu",
+        "detail": "输入完全断流",
+        "monotonic_ns": 94210089749902
+      },
+      "output_samples": 290,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": 0.10119810900000001,
+      "process_exit": 0
+    },
+    "cloud_stop": {
+      "passed": true,
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/points",
+        "detail": "输入完全断流",
+        "monotonic_ns": 94216977058747
+      },
+      "output_samples": 335,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    },
+    "all_stop": {
+      "passed": true,
+      "fault": {
+        "code": "stream_timeout",
+        "stream": "front/imu",
+        "detail": "输入完全断流",
+        "monotonic_ns": 94223474539113
+      },
+      "output_samples": 283,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    },
+    "wrong_frame": {
+      "passed": true,
+      "fault": {
+        "code": "frame_changed",
+        "stream": "front/imu",
+        "detail": "原始坐标名不符",
+        "monotonic_ns": 94230026285626
+      },
+      "output_samples": 281,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    },
+    "publisher_restart": {
+      "passed": true,
+      "fault": {
+        "code": "publisher_changed",
+        "stream": "front/imu",
+        "detail": "ROS 发布者改变，需重新初始化",
+        "monotonic_ns": 94236687286856
+      },
+      "output_samples": 281,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    },
+    "profile_expired": {
+      "passed": true,
+      "fault": {
+        "code": "profile_expired",
+        "stream": "all",
+        "detail": "重新审计时间后重启，不能续用旧定位状态",
+        "monotonic_ns": 94243838552240
+      },
+      "output_samples": 371,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    },
+    "startup_missing": {
+      "passed": true,
+      "fault": {
+        "code": "startup_missing",
+        "stream": "rear/imu",
+        "detail": "启动等待超过 5 秒",
+        "monotonic_ns": 94253369470490
+      },
+      "output_samples": 0,
+      "no_output_after_fault_settle": true,
+      "imu_timeout_latency_s": null,
+      "process_exit": 0
+    }
+  },
+  "passed": true,
+  "motion_outputs": false,
+  "timestamp_unix": 1789227173.836085
+}

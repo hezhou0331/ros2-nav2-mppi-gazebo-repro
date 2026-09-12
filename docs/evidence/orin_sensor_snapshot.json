@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-09-12T17:02:36+0800",
+  "scope": "Read-only snapshot in the selected ROS domain; absence is not proof of no device.",
+  "ros_domain_id": "0",
+  "rmw": "default",
+  "ros_localhost_only": "0",
+  "nodes": [
+    "m1_readonly_observer"
+  ],
+  "topics": {
+    "/parameter_events": [
+      "rcl_interfaces/msg/ParameterEvent"
+    ],
+    "/tf": [
+      "tf2_msgs/msg/TFMessage"
+    ],
+    "/tf_static": [
+      "tf2_msgs/msg/TFMessage"
+    ]
+  },
+  "samples": {},
+  "transforms": {
+    "map <- odom": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "odom <- base_link": {
+      "available": false,
+      "reason": "\"odom\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "map <- base_link": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    }
+  },
+  "hardware_navigation_verified": false
+}

@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-12T09:54:26.180047+00:00",
+  "fresh_checkout_passed": true,
+  "repeat_fetch_passed": true,
+  "repositories": [
+    {
+      "path": "rslidar_sdk",
+      "commit": "8b4b4b7ff910799260347821084c59e1c73d50d5",
+      "cmake_exists": true
+    },
+    {
+      "path": "rslidar_sdk/src/rs_driver",
+      "commit": "897b14d3bdb6186a75df27ba51b65b5bd5557723",
+      "cmake_exists": true
+    },
+    {
+      "path": "rslidar_msg",
+      "commit": "fe8a95cb242bd294cc3d5e3422f2093fb49a56ee",
+      "cmake_exists": true
+    }
+  ],
+  "driver_started": false
+}

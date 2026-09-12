@@ -1,0 +1,1697 @@
+{
+  "timestamp_unix": 1789226716.1774392,
+  "duration_s": 180.0012471,
+  "streams": {
+    "front/points": {
+      "zenoh_count": 1762,
+      "ros_count": 1764,
+      "device_gap_quantiles_s": [
+        0.099997997,
+        0.19999909400000002,
+        0.299994945
+      ],
+      "publisher_ids": [
+        "08bb50530464dba84a4ed97a7f09287d"
+      ],
+      "interior_zenoh_unique": 1695,
+      "not_seen_in_independent_ros_receiver": 4,
+      "event_counts": {
+        "publication_sequence_gap": 35
+      },
+      "events": [
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199992895,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200648932,
+          "receive_gap_s": 0.204726354,
+          "device_ns": 1789226691900012016,
+          "receive_monotonic_ns": 93619432793762,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200003385,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200459133,
+          "receive_gap_s": 0.19612164,
+          "device_ns": 1789226693900027275,
+          "receive_monotonic_ns": 93621428948008,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199988842,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.203976857,
+          "receive_gap_s": 0.208912587,
+          "device_ns": 1789226698900020123,
+          "receive_monotonic_ns": 93626430073036,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999814000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19976114,
+          "receive_gap_s": 0.202343981,
+          "device_ns": 1789226730200005293,
+          "receive_monotonic_ns": 93657725115085,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199996948,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20102397100000002,
+          "receive_gap_s": 0.201125764,
+          "device_ns": 1789226737200012922,
+          "receive_monotonic_ns": 93664723524489,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199991941,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20142832800000002,
+          "receive_gap_s": 0.20697968800000002,
+          "device_ns": 1789226747400000095,
+          "receive_monotonic_ns": 93674928193007,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000410100000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200146719,
+          "receive_gap_s": 0.19834442600000002,
+          "device_ns": 1789226758800007343,
+          "receive_monotonic_ns": 93686319154197,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199986935,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.206024118,
+          "receive_gap_s": 0.199228499,
+          "device_ns": 1789226763699990034,
+          "receive_monotonic_ns": 93691225372463,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200006961,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20162454700000002,
+          "receive_gap_s": 0.20029708400000001,
+          "device_ns": 1789226772600002050,
+          "receive_monotonic_ns": 93700121158610,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19998622000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20060629000000002,
+          "receive_gap_s": 0.20077876400000003,
+          "device_ns": 1789226773599992037,
+          "receive_monotonic_ns": 93701122099187,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20003891000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20067848400000002,
+          "receive_gap_s": 0.203854595,
+          "device_ns": 1789226775000023127,
+          "receive_monotonic_ns": 93702522413350,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000767700000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200749846,
+          "receive_gap_s": 0.19978283500000002,
+          "device_ns": 1789226776000001907,
+          "receive_monotonic_ns": 93703519747544,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.299994945,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.29896293,
+          "receive_gap_s": 0.29870092800000003,
+          "device_ns": 1789226776799988031,
+          "receive_monotonic_ns": 93704319611949,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20003795600000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19988528500000002,
+          "receive_gap_s": 0.20434304900000003,
+          "device_ns": 1789226789000046015,
+          "receive_monotonic_ns": 93716523511958,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999909400000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20117141100000002,
+          "receive_gap_s": 0.199426613,
+          "device_ns": 1789226789500010967,
+          "receive_monotonic_ns": 93717020195865,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200001002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19974070500000002,
+          "receive_gap_s": 0.19776827100000002,
+          "device_ns": 1789226789799997807,
+          "receive_monotonic_ns": 93717318517989,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199984074,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199083786,
+          "receive_gap_s": 0.18991629000000002,
+          "device_ns": 1789226791799992085,
+          "receive_monotonic_ns": 93719319093418,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999909400000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19857790600000003,
+          "receive_gap_s": 0.20309285900000001,
+          "device_ns": 1789226793400007963,
+          "receive_monotonic_ns": 93720923228581,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199996948,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.198072248,
+          "receive_gap_s": 0.204170652,
+          "device_ns": 1789226797500002861,
+          "receive_monotonic_ns": 93725024453265,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200019359,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19672260000000003,
+          "receive_gap_s": 0.200142537,
+          "device_ns": 1789226798000014305,
+          "receive_monotonic_ns": 93725521535720,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199995995,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20123454200000002,
+          "receive_gap_s": 0.190434444,
+          "device_ns": 1789226810599994183,
+          "receive_monotonic_ns": 93738118240902,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000314700000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.19950004000000002,
+          "receive_gap_s": 0.198364126,
+          "device_ns": 1789226814200020313,
+          "receive_monotonic_ns": 93741718783915,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199979067,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20129085500000002,
+          "receive_gap_s": 0.199939849,
+          "device_ns": 1789226815200019121,
+          "receive_monotonic_ns": 93742719493299,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199975967,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.198764494,
+          "receive_gap_s": 0.198781746,
+          "device_ns": 1789226815700006008,
+          "receive_monotonic_ns": 93743217194357,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000505500000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199960683,
+          "receive_gap_s": 0.208999765,
+          "device_ns": 1789226817800009966,
+          "receive_monotonic_ns": 93745327981605,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.29998397800000004,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.300304989,
+          "receive_gap_s": 0.290469794,
+          "device_ns": 1789226821600016832,
+          "receive_monotonic_ns": 93749119851844,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200018883,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.201646076,
+          "receive_gap_s": 0.202022478,
+          "device_ns": 1789226823500034094,
+          "receive_monotonic_ns": 93751021412728,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200003862,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199053151,
+          "receive_gap_s": 0.20081747300000002,
+          "device_ns": 1789226829800012827,
+          "receive_monotonic_ns": 93757323383812,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199992895,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200361229,
+          "receive_gap_s": 0.20027755800000002,
+          "device_ns": 1789226831600008011,
+          "receive_monotonic_ns": 93759119462581,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.200000048,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200190569,
+          "receive_gap_s": 0.207924401,
+          "device_ns": 1789226833500012875,
+          "receive_monotonic_ns": 93761031160885,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199983835,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20025694000000002,
+          "receive_gap_s": 0.189263541,
+          "device_ns": 1789226834800017118,
+          "receive_monotonic_ns": 93762318652932,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999909400000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.198085364,
+          "receive_gap_s": 0.216738963,
+          "device_ns": 1789226845300030947,
+          "receive_monotonic_ns": 93772836978934,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000577,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199717903,
+          "receive_gap_s": 0.199903392,
+          "device_ns": 1789226852700033903,
+          "receive_monotonic_ns": 93780217657928,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000267000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20072346100000002,
+          "receive_gap_s": 0.19548716400000002,
+          "device_ns": 1789226857000034809,
+          "receive_monotonic_ns": 93784520073124,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999408700000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199954966,
+          "receive_gap_s": 0.191707178,
+          "device_ns": 1789226865800020933,
+          "receive_monotonic_ns": 93793317268614,
+          "missing_publications_seen_by_ros": 0
+        }
+      ],
+      "missing_sequence_samples": 37,
+      "missing_sequence_samples_seen_by_ros": 6,
+      "gap_events_seen_by_other_client": 6
+    },
+    "front/imu": {
+      "zenoh_count": 35825,
+      "ros_count": 35927,
+      "device_gap_quantiles_s": [
+        0.004999936,
+        0.005014784,
+        0.045001984
+      ],
+      "publisher_ids": [
+        "a7ef26d5ad3f01d334eca7b4e0359aca"
+      ],
+      "interior_zenoh_unique": 34455,
+      "not_seen_in_independent_ros_receiver": 0,
+      "event_counts": {
+        "publication_sequence_gap": 51
+      },
+      "events": [
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.024998912,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.024793162,
+          "receive_gap_s": 0.026685259000000003,
+          "device_ns": 1789226691093391872,
+          "receive_monotonic_ns": 93618470379657,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014999808000000002,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.014913198,
+          "receive_gap_s": 0.002162292,
+          "device_ns": 1789226691913391872,
+          "receive_monotonic_ns": 93619288499276,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.04000128,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039973186,
+          "receive_gap_s": 0.030693501,
+          "device_ns": 1789226692838414080,
+          "receive_monotonic_ns": 93620228137973,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010004224,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009779449,
+          "receive_gap_s": 4.0543e-05,
+          "device_ns": 1789226693908432128,
+          "receive_monotonic_ns": 93621288263663,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.040002048000000005,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.040017155000000006,
+          "receive_gap_s": 0.025434776000000003,
+          "device_ns": 1789226695338461952,
+          "receive_monotonic_ns": 93622730043294,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.034992896,
+          "sequence_delta": 7,
+          "publisher_gap_s": 0.034385405,
+          "receive_gap_s": 0.023803411,
+          "device_ns": 1789226695933460992,
+          "receive_monotonic_ns": 93623329365115,
+          "missing_publications_seen_by_ros": 6
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.039998208,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039971329,
+          "receive_gap_s": 0.022924018,
+          "device_ns": 1789226697938496000,
+          "receive_monotonic_ns": 93625330828109,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025001216000000003,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.024987153,
+          "receive_gap_s": 0.01745522,
+          "device_ns": 1789226698928514048,
+          "receive_monotonic_ns": 93626304347033,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.044999936000000004,
+          "sequence_delta": 9,
+          "publisher_gap_s": 0.045250587,
+          "receive_gap_s": 0.021101715,
+          "device_ns": 1789226700043547904,
+          "receive_monotonic_ns": 93627432922226,
+          "missing_publications_seen_by_ros": 8
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.039998976000000006,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.04000221,
+          "receive_gap_s": 0.023326053000000003,
+          "device_ns": 1789226700638546944,
+          "receive_monotonic_ns": 93628029870204,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.040001024,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039891231,
+          "receive_gap_s": 0.025889226,
+          "device_ns": 1789226701538566912,
+          "receive_monotonic_ns": 93628931218943,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015002112000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015327485000000002,
+          "receive_gap_s": 0.068376327,
+          "device_ns": 1789226702383584000,
+          "receive_monotonic_ns": 93629813722534,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019998208,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020042052,
+          "receive_gap_s": 0.026351614000000002,
+          "device_ns": 1789226716788827904,
+          "receive_monotonic_ns": 93644169098242,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010001920000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010012162,
+          "receive_gap_s": 0.046113734,
+          "device_ns": 1789226724878965760,
+          "receive_monotonic_ns": 93652288654493,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019997696000000002,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020012355000000003,
+          "receive_gap_s": 0.002311567,
+          "device_ns": 1789226730219071744,
+          "receive_monotonic_ns": 93657596531388,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019995136,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020061125000000003,
+          "receive_gap_s": 0.00035464400000000004,
+          "device_ns": 1789226737219188992,
+          "receive_monotonic_ns": 93664603282379,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020002816,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020071142,
+          "receive_gap_s": 0.002634083,
+          "device_ns": 1789226739089229824,
+          "receive_monotonic_ns": 93666462360260,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020002048,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020126504,
+          "receive_gap_s": 0.050273051000000006,
+          "device_ns": 1789226740689246976,
+          "receive_monotonic_ns": 93668092226027,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020004096000000002,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019537525,
+          "receive_gap_s": 0.009686700000000001,
+          "device_ns": 1789226747419366912,
+          "receive_monotonic_ns": 93674798837349,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010006016000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009965056,
+          "receive_gap_s": 1.3471e-05,
+          "device_ns": 1789226758809563904,
+          "receive_monotonic_ns": 93686181532000,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.02,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.02501986,
+          "receive_gap_s": 0.019107077,
+          "device_ns": 1789226763719640064,
+          "receive_monotonic_ns": 93691103057663,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014998016000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.014814773000000002,
+          "receive_gap_s": 0.0020014670000000003,
+          "device_ns": 1789226772614796032,
+          "receive_monotonic_ns": 93699985805343,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015000832,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.016309376,
+          "receive_gap_s": 0.008382748,
+          "device_ns": 1789226773614812928,
+          "receive_monotonic_ns": 93700992287774,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025001984,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.025194650000000002,
+          "receive_gap_s": 0.054250110000000004,
+          "device_ns": 1789226774094831872,
+          "receive_monotonic_ns": 93701494576162,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999872,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.015159224,
+          "receive_gap_s": 0.051976589000000004,
+          "device_ns": 1789226774379829760,
+          "receive_monotonic_ns": 93701792258175,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010000896,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.016925527000000003,
+          "receive_gap_s": 0.008875371,
+          "device_ns": 1789226776009864704,
+          "receive_monotonic_ns": 93703398001896,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015008,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015556358000000001,
+          "receive_gap_s": 0.005626364,
+          "device_ns": 1789226776714871808,
+          "receive_monotonic_ns": 93704089040745,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015002112000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.016551274,
+          "receive_gap_s": 0.006825394,
+          "device_ns": 1789226776814865920,
+          "receive_monotonic_ns": 93704191683635,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014993152000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.033486593,
+          "receive_gap_s": 0.082522761,
+          "device_ns": 1789226780084933888,
+          "receive_monotonic_ns": 93707522253701,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015001856000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015376225,
+          "receive_gap_s": 0.020389212,
+          "device_ns": 1789226789025090816,
+          "receive_monotonic_ns": 93716406917830,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025000192,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.024759692,
+          "receive_gap_s": 0.011400692,
+          "device_ns": 1789226789825089024,
+          "receive_monotonic_ns": 93717195270971,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010002176,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010035939,
+          "receive_gap_s": 0.009225344,
+          "device_ns": 1789226791810127104,
+          "receive_monotonic_ns": 93719191328796,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014992896,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015053012000000001,
+          "receive_gap_s": 0.023514256,
+          "device_ns": 1789226794185175808,
+          "receive_monotonic_ns": 93721563249614,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019997952000000003,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020176489000000002,
+          "receive_gap_s": 1.4751000000000002e-05,
+          "device_ns": 1789226798010247936,
+          "receive_monotonic_ns": 93725384186431,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014999040000000002,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015035442000000001,
+          "receive_gap_s": 0.051829117,
+          "device_ns": 1789226800585280000,
+          "receive_monotonic_ns": 93727991306416,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019994112,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019447918,
+          "receive_gap_s": 0.037836738,
+          "device_ns": 1789226801820297984,
+          "receive_monotonic_ns": 93729220196565,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009998080000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010748828,
+          "receive_gap_s": 0.00132645,
+          "device_ns": 1789226811880472064,
+          "receive_monotonic_ns": 93739257914706,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009998848000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009882429,
+          "receive_gap_s": 9.792e-06,
+          "device_ns": 1789226815205539840,
+          "receive_monotonic_ns": 93742581397203,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015006208000000002,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.023516256000000003,
+          "receive_gap_s": 0.013450161,
+          "device_ns": 1789226821615650048,
+          "receive_monotonic_ns": 93749000493655,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.034993920000000005,
+          "sequence_delta": 7,
+          "publisher_gap_s": 0.034979829000000004,
+          "receive_gap_s": 0.077247773,
+          "device_ns": 1789226828905764864,
+          "receive_monotonic_ns": 93756315853693,
+          "missing_publications_seen_by_ros": 6
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014994944000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.016880373,
+          "receive_gap_s": 0.008458749,
+          "device_ns": 1789226829815783936,
+          "receive_monotonic_ns": 93757189612704,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009997312000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.031429719,
+          "receive_gap_s": 0.008476412000000001,
+          "device_ns": 1789226831605818112,
+          "receive_monotonic_ns": 93758997381789,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01499392,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.019158309000000002,
+          "receive_gap_s": 0.011360185,
+          "device_ns": 1789226833510851840,
+          "receive_monotonic_ns": 93760893496467,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999872,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009921151000000001,
+          "receive_gap_s": 1.3152e-05,
+          "device_ns": 1789226834805868800,
+          "receive_monotonic_ns": 93762179805386,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010000896,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010067397,
+          "receive_gap_s": 0.028033309000000003,
+          "device_ns": 1789226841305990912,
+          "receive_monotonic_ns": 93768721427042,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010000896,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.017986301,
+          "receive_gap_s": 0.019268587,
+          "device_ns": 1789226850881146880,
+          "receive_monotonic_ns": 93778257449927,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025004288000000003,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.026830233000000002,
+          "receive_gap_s": 1.3280000000000002e-05,
+          "device_ns": 1789226852721185024,
+          "receive_monotonic_ns": 93780105374063,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009998080000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009995458,
+          "receive_gap_s": 1.0464e-05,
+          "device_ns": 1789226857011267840,
+          "receive_monotonic_ns": 93784383160499,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.035002112,
+          "sequence_delta": 7,
+          "publisher_gap_s": 0.035063321,
+          "receive_gap_s": 0.07832692200000001,
+          "device_ns": 1789226863901373952,
+          "receive_monotonic_ns": 93791317661690,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.045001984,
+          "sequence_delta": 9,
+          "publisher_gap_s": 0.044309412,
+          "receive_gap_s": 0.019756893,
+          "device_ns": 1789226865041410816,
+          "receive_monotonic_ns": 93792434355202,
+          "missing_publications_seen_by_ros": 8
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.02,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.025294465000000002,
+          "receive_gap_s": 0.029573069,
+          "device_ns": 1789226866691424000,
+          "receive_monotonic_ns": 93794068998288,
+          "missing_publications_seen_by_ros": 3
+        }
+      ],
+      "missing_sequence_samples": 158,
+      "missing_sequence_samples_seen_by_ros": 102,
+      "gap_events_seen_by_other_client": 26
+    },
+    "rear/points": {
+      "zenoh_count": 1787,
+      "ros_count": 1792,
+      "device_gap_quantiles_s": [
+        0.1,
+        0.10000700000000001,
+        0.30000000000000004
+      ],
+      "publisher_ids": [
+        "a9fd241c4b744a47dbf17431273b9a21"
+      ],
+      "interior_zenoh_unique": 1719,
+      "not_seen_in_independent_ros_receiver": 2,
+      "event_counts": {
+        "publication_sequence_gap": 11
+      },
+      "events": [
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.2,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199358102,
+          "receive_gap_s": 0.212893518,
+          "device_ns": 13409700020160,
+          "receive_monotonic_ns": 93618608141383,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999592000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20015986300000002,
+          "receive_gap_s": 0.179522747,
+          "device_ns": 13435400016000,
+          "receive_monotonic_ns": 93644293653266,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.30000000000000004,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.299805704,
+          "receive_gap_s": 0.29988636100000005,
+          "device_ns": 13457700021160,
+          "receive_monotonic_ns": 93666591261428,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199999,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199883937,
+          "receive_gap_s": 0.203468494,
+          "device_ns": 13512800019240,
+          "receive_monotonic_ns": 93721696162828,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000600000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20049429200000002,
+          "receive_gap_s": 0.199317881,
+          "device_ns": 13530000026160,
+          "receive_monotonic_ns": 93738881825076,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000392,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.20069455500000002,
+          "receive_gap_s": 0.20720141700000003,
+          "device_ns": 13530500022080,
+          "receive_monotonic_ns": 93739394653214,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000492,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199904573,
+          "receive_gap_s": 0.199390224,
+          "device_ns": 13547500024000,
+          "receive_monotonic_ns": 93756380480748,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999992000000003,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200105777,
+          "receive_gap_s": 0.19666574,
+          "device_ns": 13569500020160,
+          "receive_monotonic_ns": 93778384489989,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.19999924000000002,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.196945311,
+          "receive_gap_s": 0.193881301,
+          "device_ns": 13576400020240,
+          "receive_monotonic_ns": 93785300323155,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.20000292,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.199492151,
+          "receive_gap_s": 0.186952649,
+          "device_ns": 13582500022080,
+          "receive_monotonic_ns": 93791381421847,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.199997,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.200687568,
+          "receive_gap_s": 0.19411996,
+          "device_ns": 13585300018240,
+          "receive_monotonic_ns": 93794184744030,
+          "missing_publications_seen_by_ros": 1
+        }
+      ],
+      "missing_sequence_samples": 12,
+      "missing_sequence_samples_seen_by_ros": 7,
+      "gap_events_seen_by_other_client": 7
+    },
+    "rear/imu": {
+      "zenoh_count": 35801,
+      "ros_count": 35912,
+      "device_gap_quantiles_s": [
+        0.005,
+        0.005012001,
+        0.045008
+      ],
+      "publisher_ids": [
+        "8260c08086385e842751b68f57058798"
+      ],
+      "interior_zenoh_unique": 34433,
+      "not_seen_in_independent_ros_receiver": 0,
+      "event_counts": {
+        "publication_sequence_gap": 63
+      },
+      "events": [
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.02501,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.024884941,
+          "receive_gap_s": 0.028102905,
+          "device_ns": 13409723466000,
+          "receive_monotonic_ns": 93618470307628,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014989,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.014854635000000001,
+          "receive_gap_s": 0.0022610720000000003,
+          "device_ns": 13410543456000,
+          "receive_monotonic_ns": 93619288437582,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.040001,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039741049,
+          "receive_gap_s": 0.031512288,
+          "device_ns": 13411468457000,
+          "receive_monotonic_ns": 93620227977179,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009996999000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010141285,
+          "receive_gap_s": 1.2896000000000002e-05,
+          "device_ns": 13412538461999,
+          "receive_monotonic_ns": 93621287331856,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.039999001,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.040017667,
+          "receive_gap_s": 0.025136995000000002,
+          "device_ns": 13413968457000,
+          "receive_monotonic_ns": 93622729929506,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.039991000000000006,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039849629000000004,
+          "receive_gap_s": 0.024135142000000002,
+          "device_ns": 13414568459999,
+          "receive_monotonic_ns": 93623329525941,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.039997000000000005,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.040026915,
+          "receive_gap_s": 0.021837913,
+          "device_ns": 13416568459000,
+          "receive_monotonic_ns": 93625329607160,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.029998,
+          "sequence_delta": 6,
+          "publisher_gap_s": 0.029980609000000002,
+          "receive_gap_s": 0.019992475000000003,
+          "device_ns": 13417563462000,
+          "receive_monotonic_ns": 93626306654888,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.044994000000000006,
+          "sequence_delta": 9,
+          "publisher_gap_s": 0.042000617000000004,
+          "receive_gap_s": 0.021045781000000003,
+          "device_ns": 13418673455999,
+          "receive_monotonic_ns": 93627432752248,
+          "missing_publications_seen_by_ros": 8
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.040010001,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039917087000000004,
+          "receive_gap_s": 0.023326373,
+          "device_ns": 13419268477000,
+          "receive_monotonic_ns": 93628029736705,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.040001001,
+          "sequence_delta": 8,
+          "publisher_gap_s": 0.039956994,
+          "receive_gap_s": 0.025690513,
+          "device_ns": 13420168457000,
+          "receive_monotonic_ns": 93628931093956,
+          "missing_publications_seen_by_ros": 7
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014988999000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015267354,
+          "receive_gap_s": 0.071846668,
+          "device_ns": 13421013455999,
+          "receive_monotonic_ns": 93629813579883,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019999000000000003,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020000161000000002,
+          "receive_gap_s": 0.027814953000000003,
+          "device_ns": 13435418456000,
+          "receive_monotonic_ns": 93644168987557,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015008,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.01500069,
+          "receive_gap_s": 0.047685135000000003,
+          "device_ns": 13443513465000,
+          "receive_monotonic_ns": 93652288802136,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020002000000000002,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019884511,
+          "receive_gap_s": 0.0033553380000000002,
+          "device_ns": 13448848463000,
+          "receive_monotonic_ns": 93657596470078,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.02,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020014211,
+          "receive_gap_s": 0.00047691100000000006,
+          "device_ns": 13455848456000,
+          "receive_monotonic_ns": 93664603253196,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020000001,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020003875,
+          "receive_gap_s": 0.001687237,
+          "device_ns": 13457718457000,
+          "receive_monotonic_ns": 93666461353064,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020004,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020100392,
+          "receive_gap_s": 0.051641803,
+          "device_ns": 13459318467000,
+          "receive_monotonic_ns": 93668092107087,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019999000000000003,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.021182831000000003,
+          "receive_gap_s": 0.009639822000000001,
+          "device_ns": 13466048455999,
+          "receive_monotonic_ns": 93674798767623,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009170052,
+          "receive_gap_s": 1.4207000000000001e-05,
+          "device_ns": 13477438456000,
+          "receive_monotonic_ns": 93686181357638,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.030004999,
+          "sequence_delta": 6,
+          "publisher_gap_s": 0.02857269,
+          "receive_gap_s": 0.019192866000000003,
+          "device_ns": 13482358462999,
+          "receive_monotonic_ns": 93691103186906,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025006,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.025209080000000002,
+          "receive_gap_s": 0.011407122,
+          "device_ns": 13491248463000,
+          "receive_monotonic_ns": 93699994257016,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019999000000000003,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019944641000000003,
+          "receive_gap_s": 0.008411483,
+          "device_ns": 13492248454999,
+          "receive_monotonic_ns": 93700992203233,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.024988001000000003,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.026086074,
+          "receive_gap_s": 0.055475316000000004,
+          "device_ns": 13492723457000,
+          "receive_monotonic_ns": 93701494478342,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010003000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010006338,
+          "receive_gap_s": 0.052708819000000004,
+          "device_ns": 13493008466000,
+          "receive_monotonic_ns": 93701791392125,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019998000000000002,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019871166000000003,
+          "receive_gap_s": 0.008978536,
+          "device_ns": 13494643456000,
+          "receive_monotonic_ns": 93703397920139,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019999000000000003,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.026910168,
+          "receive_gap_s": 0.005888147000000001,
+          "device_ns": 13495338464999,
+          "receive_monotonic_ns": 93704089112134,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019999999,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019821245,
+          "receive_gap_s": 0.007005644,
+          "device_ns": 13495448456999,
+          "receive_monotonic_ns": 93704191771952,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.024994001000000002,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.025101400000000003,
+          "receive_gap_s": 0.054085414000000005,
+          "device_ns": 13498723457000,
+          "receive_monotonic_ns": 93707492446706,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.019996,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.019977635,
+          "receive_gap_s": 0.021366458,
+          "device_ns": 13507663458000,
+          "receive_monotonic_ns": 93716407048609,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009996001000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009706520000000001,
+          "receive_gap_s": 2.5535000000000002e-05,
+          "device_ns": 13508143465000,
+          "receive_monotonic_ns": 93716897414975,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.024995,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.022943884,
+          "receive_gap_s": 0.012351283000000001,
+          "device_ns": 13508453457000,
+          "receive_monotonic_ns": 93717194806379,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009907231,
+          "receive_gap_s": 1.3023e-05,
+          "device_ns": 13510438465000,
+          "receive_monotonic_ns": 93719181343478,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009959169,
+          "receive_gap_s": 1.5552e-05,
+          "device_ns": 13512038456999,
+          "receive_monotonic_ns": 93720783899174,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010004,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.017188832,
+          "receive_gap_s": 0.024998397000000002,
+          "device_ns": 13512808462000,
+          "receive_monotonic_ns": 93721563340587,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010001001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009962849000000001,
+          "receive_gap_s": 1.3696e-05,
+          "device_ns": 13516138457000,
+          "receive_monotonic_ns": 93724882806302,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009855868,
+          "receive_gap_s": 0.011928322,
+          "device_ns": 13516643457000,
+          "receive_monotonic_ns": 93725395966215,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020002999,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.024159252000000003,
+          "receive_gap_s": 0.053310090000000004,
+          "device_ns": 13519218461999,
+          "receive_monotonic_ns": 93727991463786,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.020000001,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.020006881,
+          "receive_gap_s": 0.036622988,
+          "device_ns": 13520448464000,
+          "receive_monotonic_ns": 93729219956573,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010003999000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010096741000000001,
+          "receive_gap_s": 0.0015852890000000001,
+          "device_ns": 13529238465999,
+          "receive_monotonic_ns": 93737982778319,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009874269,
+          "receive_gap_s": 0.011051106000000002,
+          "device_ns": 13530008456000,
+          "receive_monotonic_ns": 93738749206682,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014992001000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.014940145,
+          "receive_gap_s": 0.0013366580000000001,
+          "device_ns": 13530513457000,
+          "receive_monotonic_ns": 93739258009359,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010005,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.00837236,
+          "receive_gap_s": 4.3903e-05,
+          "device_ns": 13532838468000,
+          "receive_monotonic_ns": 93741581785798,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009698167,
+          "receive_gap_s": 1.84e-05,
+          "device_ns": 13533838457000,
+          "receive_monotonic_ns": 93742581278679,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010478706,
+          "receive_gap_s": 0.007717493000000001,
+          "device_ns": 13534338456000,
+          "receive_monotonic_ns": 93743088918561,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010005,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010987717000000001,
+          "receive_gap_s": 1.3984e-05,
+          "device_ns": 13536438468000,
+          "receive_monotonic_ns": 93745180555652,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010019266,
+          "receive_gap_s": 1.3791e-05,
+          "device_ns": 13540138455999,
+          "receive_monotonic_ns": 93748881599193,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.025003001,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.024753323,
+          "receive_gap_s": 0.013444432000000001,
+          "device_ns": 13540253459000,
+          "receive_monotonic_ns": 93749000388794,
+          "missing_publications_seen_by_ros": 4
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009920479000000001,
+          "receive_gap_s": 1.4527000000000002e-05,
+          "device_ns": 13542138455999,
+          "receive_monotonic_ns": 93750881222167,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015002000000000001,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.039148008000000005,
+          "receive_gap_s": 0.078760232,
+          "device_ns": 13547513458000,
+          "receive_monotonic_ns": 93756316148402,
+          "missing_publications_seen_by_ros": 2
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010027939000000001,
+          "receive_gap_s": 0.00824746,
+          "device_ns": 13548443457000,
+          "receive_monotonic_ns": 93757189505155,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.015008001000000002,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015032819000000001,
+          "receive_gap_s": 5.856e-06,
+          "device_ns": 13550243464000,
+          "receive_monotonic_ns": 93758988876130,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009998001000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010064228000000001,
+          "receive_gap_s": 1.7696e-05,
+          "device_ns": 13552138455000,
+          "receive_monotonic_ns": 93760881999455,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.00992163,
+          "receive_gap_s": 1.3024000000000001e-05,
+          "device_ns": 13553438456000,
+          "receive_monotonic_ns": 93762179057764,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.009999000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010010563,
+          "receive_gap_s": 0.029089561000000003,
+          "device_ns": 13559938456000,
+          "receive_monotonic_ns": 93768722303076,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.01,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009911872,
+          "receive_gap_s": 0.007463168,
+          "device_ns": 13563938456000,
+          "receive_monotonic_ns": 93772690095206,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.02,
+          "sequence_delta": 4,
+          "publisher_gap_s": 0.021415511,
+          "receive_gap_s": 0.02118017,
+          "device_ns": 13569518457000,
+          "receive_monotonic_ns": 93778257814651,
+          "missing_publications_seen_by_ros": 3
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.014989999,
+          "sequence_delta": 3,
+          "publisher_gap_s": 0.015285374000000001,
+          "receive_gap_s": 1.8304e-05,
+          "device_ns": 13575638455999,
+          "receive_monotonic_ns": 93784381291731,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010002001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.009883966000000001,
+          "receive_gap_s": 0.024546136000000003,
+          "device_ns": 13576408462000,
+          "receive_monotonic_ns": 93785160894519,
+          "missing_publications_seen_by_ros": 1
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.029999,
+          "sequence_delta": 6,
+          "publisher_gap_s": 0.029980997000000002,
+          "receive_gap_s": 0.029378484000000003,
+          "device_ns": 13582528462000,
+          "receive_monotonic_ns": 93791268823168,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.045008,
+          "sequence_delta": 9,
+          "publisher_gap_s": 0.04534404,
+          "receive_gap_s": 0.020477540000000002,
+          "device_ns": 13583673463000,
+          "receive_monotonic_ns": 93792435114472,
+          "missing_publications_seen_by_ros": 8
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.010003000000000001,
+          "sequence_delta": 2,
+          "publisher_gap_s": 0.010705564,
+          "receive_gap_s": 1.4784000000000001e-05,
+          "device_ns": 13584438468000,
+          "receive_monotonic_ns": 93793185048076,
+          "missing_publications_seen_by_ros": 0
+        },
+        {
+          "kind": "publication_sequence_gap",
+          "device_gap_s": 0.024997001,
+          "sequence_delta": 5,
+          "publisher_gap_s": 0.026797975,
+          "receive_gap_s": 0.023014318000000002,
+          "device_ns": 13585323459000,
+          "receive_monotonic_ns": 93794069071022,
+          "missing_publications_seen_by_ros": 4
+        }
+      ],
+      "missing_sequence_samples": 181,
+      "missing_sequence_samples_seen_by_ros": 111,
+      "gap_events_seen_by_other_client": 26
+    }
+  },
+  "errors": [],
+  "motion_outputs": false,
+  "interpretation": "连续发布序号下设备时间有缺口：缺口已存在于发布前或设备时钟；序号缺口仅定位到发布序号到探针之间，不能单独证明网络丢包。两条独立订阅的差异包含不同客户端/ROS传输。"
+}

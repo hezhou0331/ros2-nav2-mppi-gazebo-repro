@@ -1,0 +1,212 @@
+{
+  "timestamp_unix": 1789227358.5470128,
+  "duration_s": 180.12257933100045,
+  "streams": {
+    "front/points": {
+      "raw_count": 1753,
+      "adapted_count": 1233,
+      "raw_receive_hz": 9.74192977837757,
+      "interior_raw_unique": 1684,
+      "interior_missing_adapted": 499,
+      "source_nonincreasing": 0,
+      "max_source_gap_s": 0.200038195,
+      "bridge_published_delta": 1742,
+      "bridge_error_delta": 0
+    },
+    "front/imu": {
+      "raw_count": 35881,
+      "adapted_count": 25273,
+      "raw_receive_hz": 199.46558656589485,
+      "interior_raw_unique": 34501,
+      "interior_missing_adapted": 10184,
+      "source_nonincreasing": 0,
+      "max_source_gap_s": 0.03501696,
+      "bridge_published_delta": 35648,
+      "bridge_error_delta": 0
+    },
+    "rear/points": {
+      "raw_count": 1788,
+      "adapted_count": 1258,
+      "raw_receive_hz": 9.936913789344267,
+      "interior_raw_unique": 1719,
+      "interior_missing_adapted": 509,
+      "source_nonincreasing": 0,
+      "max_source_gap_s": 0.300004,
+      "bridge_published_delta": 1776,
+      "bridge_error_delta": 0
+    },
+    "rear/imu": {
+      "raw_count": 35864,
+      "adapted_count": 25264,
+      "raw_receive_hz": 199.37198902178065,
+      "interior_raw_unique": 34484,
+      "interior_missing_adapted": 10178,
+      "source_nonincreasing": 0,
+      "max_source_gap_s": 0.034995000000000005,
+      "bridge_published_delta": 35632,
+      "bridge_error_delta": 0
+    }
+  },
+  "input_transport_passed": false,
+  "input_failures": [
+    "front/points: 帧率、逐帧对应或时间连续性未通过",
+    "front/imu: 帧率、逐帧对应或时间连续性未通过",
+    "rear/points: 帧率、逐帧对应或时间连续性未通过",
+    "rear/imu: 帧率、逐帧对应或时间连续性未通过",
+    "解析或适配器时钟保护触发"
+  ],
+  "parse_errors": [],
+  "adapter_status": {
+    "timestamp_unix": 1789227358.233879,
+    "running": true,
+    "counts": {
+      "rear/points": 1258,
+      "rear/imu": 25264,
+      "front/points": 1233,
+      "front/imu": 25273
+    },
+    "accepted": {
+      "front/points": 1234,
+      "front/imu": 25285,
+      "rear/imu": 25273,
+      "rear/points": 1258
+    },
+    "errors": {
+      "rear/points": "设备采样间隔超限"
+    },
+    "clock_fault": "source_gap",
+    "state": "fault",
+    "output_enabled": false,
+    "fault": {
+      "code": "source_gap",
+      "stream": "rear/points",
+      "detail": "设备采样间隔超限",
+      "monotonic_ns": 94386171757879
+    },
+    "stream_age_s": {
+      "front/points": 52.97371075900001,
+      "front/imu": 52.932823070000005,
+      "rear/points": 53.191151288,
+      "rear/imu": 52.898319985
+    },
+    "thresholds": {
+      "startup_grace_s": 5.0,
+      "silence_s": {
+        "imu": 0.1,
+        "points": 0.35
+      },
+      "source_gap_s": {
+        "imu": 0.05,
+        "points": 0.25
+      },
+      "max_age_s": {
+        "imu": 0.25,
+        "points": 0.5
+      }
+    },
+    "hardware_synchronized": false,
+    "extrinsics_verified": false,
+    "navigation_ready": false,
+    "motion_outputs": false
+  },
+  "bridge_status": {
+    "endpoint": "tcp/192.168.168.100:7447",
+    "source_domain_key": 24,
+    "ros_domain": "0",
+    "ros_localhost_only": "1",
+    "running": true,
+    "timestamp_unix": 1789227356.4224389,
+    "streams": {
+      "/m1_sensors/front/points_raw": {
+        "count": 3499,
+        "errors": 0,
+        "stamp_regressions": 0,
+        "duplicate_stamps": 0,
+        "sequence_gaps": 74,
+        "source_gid": "08bb50530464dba84a4ed97a7f09287d",
+        "last_sequence": 141854,
+        "publisher_stamp_ns": 1789227509814231067,
+        "first_receive_monotonic": 94079.997458983,
+        "last_receive_monotonic": 94437.182286289,
+        "last_stamp": 1789227509.700004,
+        "frame_id": "rslidar_head",
+        "device_stamp_age_seconds": -153.330735206604,
+        "seconds_since_receive": 0.06905392699991353,
+        "observed_hz": 9.793249132061378
+      },
+      "/m1_sensors/front/imu_raw": {
+        "count": 71267,
+        "errors": 0,
+        "stamp_regressions": 0,
+        "duplicate_stamps": 0,
+        "sequence_gaps": 189,
+        "source_gid": "a7ef26d5ad3f01d334eca7b4e0359aca",
+        "last_sequence": 2837147,
+        "publisher_stamp_ns": 1789227509895107040,
+        "first_receive_monotonic": 94080.002885333,
+        "last_receive_monotonic": 94437.239794389,
+        "last_stamp": 1789227509.882565,
+        "frame_id": "rslidar_head",
+        "device_stamp_age_seconds": -153.47089004516602,
+        "seconds_since_receive": 0.011545827001100406,
+        "observed_hz": 199.49226463839273
+      },
+      "/m1_sensors/rear/points_raw": {
+        "count": 3548,
+        "errors": 0,
+        "stamp_regressions": 0,
+        "duplicate_stamps": 0,
+        "sequence_gaps": 24,
+        "source_gid": "a9fd241c4b744a47dbf17431273b9a21",
+        "last_sequence": 141851,
+        "publisher_stamp_ns": 1789227509797024956,
+        "first_receive_monotonic": 94080.068118112,
+        "last_receive_monotonic": 94437.163141075,
+        "last_stamp": 14228.300022,
+        "frame_id": "rslidar_tail",
+        "device_stamp_age_seconds": 1789213128.0490055,
+        "seconds_since_receive": 0.08819914099876769,
+        "observed_hz": 9.93293037401856
+      },
+      "/m1_sensors/rear/imu_raw": {
+        "count": 71248,
+        "errors": 0,
+        "stamp_regressions": 0,
+        "duplicate_stamps": 0,
+        "sequence_gaps": 207,
+        "source_gid": "8260c08086385e842751b68f57058798",
+        "last_sequence": 2837140,
+        "publisher_stamp_ns": 1789227509894529036,
+        "first_receive_monotonic": 94080.008703543,
+        "last_receive_monotonic": 94437.239253652,
+        "last_stamp": 14228.498464999,
+        "frame_id": "rslidar_tail",
+        "device_stamp_age_seconds": 1789213127.9122863,
+        "seconds_since_receive": 0.012086563991033472,
+        "observed_hz": 199.44262879605478
+      }
+    },
+    "forwarding_enabled": true,
+    "source_fault": null,
+    "navigation_ready": false,
+    "motion_outputs": false,
+    "note": "Raw source clocks, frames and IMU g-units preserved; calibration pending."
+  },
+  "root_velocity_publishers": {
+    "/cmd_vel": 0,
+    "/cmd_vel_raw": 0,
+    "/cmd_vel_smoothed": 0
+  },
+  "calibration_failures": [
+    "front/base_from_lidar: 缺少已核实标定及来源",
+    "front/imu_from_lidar: 缺少已核实标定及来源",
+    "rear/base_from_lidar: 缺少已核实标定及来源",
+    "rear/imu_from_lidar: 缺少已核实标定及来源"
+  ],
+  "hardware_synchronized": false,
+  "cross_lidar_fusion_ready": false,
+  "mapping_ready": false,
+  "navigation_ready": false,
+  "motion_outputs": false,
+  "note": "不启动建图。传输窗口通过也不证明实际外参或硬件同步；速度话题检查仅限本进程可发现的共享内存 ROS 图，不能证明其他传输或狗内没有控制流。"
+}

@@ -1,0 +1,46 @@
+{
+  "timestamp_unix": 1789229687.4536204,
+  "running": false,
+  "counts": {
+    "rear/points": 1798,
+    "rear/imu": 36065,
+    "front/imu": 36061,
+    "front/points": 1797
+  },
+  "accepted": {
+    "front/points": 1798,
+    "front/imu": 36076,
+    "rear/imu": 36077,
+    "rear/points": 1798
+  },
+  "errors": {},
+  "clock_fault": null,
+  "state": "stopped",
+  "output_enabled": false,
+  "fault": null,
+  "stream_age_s": {
+    "front/points": 0.073505992,
+    "front/imu": 0.0034056510000000004,
+    "rear/points": 0.008380544,
+    "rear/imu": 0.00044761400000000004
+  },
+  "thresholds": {
+    "startup_grace_s": 5.0,
+    "silence_s": {
+      "imu": 0.1,
+      "points": 0.35
+    },
+    "source_gap_s": {
+      "imu": 0.05,
+      "points": 0.25
+    },
+    "max_age_s": {
+      "imu": 0.25,
+      "points": 0.5
+    }
+  },
+  "hardware_synchronized": false,
+  "extrinsics_verified": false,
+  "navigation_ready": false,
+  "motion_outputs": false
+}

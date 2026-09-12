@@ -1,0 +1,122 @@
+{
+  "timestamp": "2026-09-12T17:08:37+0800",
+  "scope": "Read-only snapshot in the selected ROS domain; absence is not proof of no device.",
+  "ros_domain_id": "173",
+  "rmw": "rmw_fastrtps_cpp",
+  "ros_localhost_only": "1",
+  "nodes": [
+    "m1_observer_validation_source",
+    "m1_readonly_observer"
+  ],
+  "topics": {
+    "/m1_test/imu": {
+      "types": [
+        "sensor_msgs/msg/Imu"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_test/odom": {
+      "types": [
+        "nav_msgs/msg/Odometry"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/m1_test/points": {
+      "types": [
+        "sensor_msgs/msg/PointCloud2"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/parameter_events": {
+      "types": [
+        "rcl_interfaces/msg/ParameterEvent"
+      ],
+      "publishers": 2,
+      "subscribers": 0
+    },
+    "/rosout": {
+      "types": [
+        "rcl_interfaces/msg/Log"
+      ],
+      "publishers": 1,
+      "subscribers": 0
+    },
+    "/tf": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 1,
+      "subscribers": 1
+    },
+    "/tf_static": {
+      "types": [
+        "tf2_msgs/msg/TFMessage"
+      ],
+      "publishers": 0,
+      "subscribers": 1
+    }
+  },
+  "samples": {
+    "/m1_test/imu": {
+      "type": "sensor_msgs/msg/Imu",
+      "count": 59,
+      "frame_id": "imu_link",
+      "stamp_age_seconds": 0.0029404163360595703,
+      "observed_hz": 19.339429147178976
+    },
+    "/m1_test/odom": {
+      "type": "nav_msgs/msg/Odometry",
+      "count": 59,
+      "frame_id": "odom",
+      "stamp_age_seconds": 0.0033655166625976562,
+      "child_frame_id": "base_link",
+      "observed_hz": 19.346883781168273
+    },
+    "/m1_test/points": {
+      "type": "sensor_msgs/msg/PointCloud2",
+      "count": 59,
+      "frame_id": "lidar_link",
+      "stamp_age_seconds": 0.0036478042602539062,
+      "fields": [
+        {
+          "name": "x",
+          "datatype": 7,
+          "offset": 0,
+          "count": 1
+        },
+        {
+          "name": "y",
+          "datatype": 7,
+          "offset": 4,
+          "count": 1
+        },
+        {
+          "name": "z",
+          "datatype": 7,
+          "offset": 8,
+          "count": 1
+        }
+      ],
+      "points": 1,
+      "observed_hz": 19.347901283985433
+    }
+  },
+  "transforms": {
+    "map <- odom": {
+      "available": true,
+      "stamp": 1789204117
+    },
+    "odom <- base_link": {
+      "available": true,
+      "stamp": 1789204117
+    },
+    "map <- base_link": {
+      "available": true,
+      "stamp": 1789204117
+    }
+  },
+  "hardware_navigation_verified": false
+}

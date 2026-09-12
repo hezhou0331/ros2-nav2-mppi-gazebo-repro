@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5febf7d..b7d53d6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -5,7 +5,7 @@ project(rslidar_sdk)
+ #=======================================
+ # Custom Point Type (XYZI,XYZIRT, XYZIF, XYZIRTF)
+ #=======================================
+-set(POINT_TYPE XYZI)
++set(POINT_TYPE XYZI CACHE STRING "Point layout: XYZI, XYZIRT, XYZIF, XYZIRTF")
+ 
+ option(ENABLE_TRANSFORM "Enable transform functions" OFF)
+ if(${ENABLE_TRANSFORM})

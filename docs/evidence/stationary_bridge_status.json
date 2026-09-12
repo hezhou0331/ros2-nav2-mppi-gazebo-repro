@@ -1,0 +1,667 @@
+{
+  "endpoint": "tcp/192.168.168.100:7447",
+  "source_domain_key": 24,
+  "ros_domain": "0",
+  "ros_localhost_only": "1",
+  "running": true,
+  "timestamp_unix": 1789230062.7570846,
+  "streams": {
+    "/m1_sensors/front/points_raw": {
+      "count": 5844,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "sequence_gaps": 24,
+      "max_callback_processing_s": 0.022362482995959,
+      "max_publish_s": 0.00450443199952133,
+      "source_gid": "c214ac327fc9c1327432d6a074b5e990",
+      "last_sequence": 19468,
+      "publisher_stamp_ns": 1789230215213552645,
+      "first_receive_monotonic": 96556.789577433,
+      "last_receive_monotonic": 97143.520339189,
+      "last_stamp": 1789230215.1000302,
+      "frame_id": "rslidar_head",
+      "device_stamp_age_seconds": -152.39212083816528,
+      "max_device_gap_s": 0.20002198219299316,
+      "max_receive_gap_s": 0.21118579200992826,
+      "recent_gaps": [
+        {
+          "device_gap_s": 0.19999384880065918,
+          "receive_gap_s": 0.201962912993622,
+          "publisher_gap_s": 0.20015253200000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789229738.600008
+        },
+        {
+          "device_gap_s": 0.20000004768371582,
+          "receive_gap_s": 0.20070170499093365,
+          "publisher_gap_s": 0.20045764500000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789229818.8000162
+        },
+        {
+          "device_gap_s": 0.20000720024108887,
+          "receive_gap_s": 0.21118579200992826,
+          "publisher_gap_s": 0.200154658,
+          "sequence_delta": 2,
+          "device_stamp": 1789229821.9000053
+        },
+        {
+          "device_gap_s": 0.19998908042907715,
+          "receive_gap_s": 0.2028223480010638,
+          "publisher_gap_s": 0.20374730300000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789229885.200012
+        },
+        {
+          "device_gap_s": 0.2000141143798828,
+          "receive_gap_s": 0.1973256329947617,
+          "publisher_gap_s": 0.196324257,
+          "sequence_delta": 2,
+          "device_stamp": 1789229888.000019
+        },
+        {
+          "device_gap_s": 0.20000433921813965,
+          "receive_gap_s": 0.19338817600510083,
+          "publisher_gap_s": 0.200926755,
+          "sequence_delta": 2,
+          "device_stamp": 1789229889.5000103
+        },
+        {
+          "device_gap_s": 0.19999909400939941,
+          "receive_gap_s": 0.20074381299491506,
+          "publisher_gap_s": 0.199366223,
+          "sequence_delta": 2,
+          "device_stamp": 1789229939.800028
+        },
+        {
+          "device_gap_s": 0.20002102851867676,
+          "receive_gap_s": 0.20014934000209905,
+          "publisher_gap_s": 0.199701176,
+          "sequence_delta": 2,
+          "device_stamp": 1789229984.100012
+        },
+        {
+          "device_gap_s": 0.20000386238098145,
+          "receive_gap_s": 0.20191998900554609,
+          "publisher_gap_s": 0.199899391,
+          "sequence_delta": 2,
+          "device_stamp": 1789229986.3000102
+        },
+        {
+          "device_gap_s": 0.1999988555908203,
+          "receive_gap_s": 0.19841472200641874,
+          "publisher_gap_s": 0.20039608,
+          "sequence_delta": 2,
+          "device_stamp": 1789229986.500009
+        },
+        {
+          "device_gap_s": 0.20001697540283203,
+          "receive_gap_s": 0.20584131199575495,
+          "publisher_gap_s": 0.20205197700000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789230007.0000181
+        },
+        {
+          "device_gap_s": 0.1999959945678711,
+          "receive_gap_s": 0.20761231098731514,
+          "publisher_gap_s": 0.19973727000000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789230013.8999853
+        },
+        {
+          "device_gap_s": 0.20000386238098145,
+          "receive_gap_s": 0.19926334999036044,
+          "publisher_gap_s": 0.20020000400000001,
+          "sequence_delta": 2,
+          "device_stamp": 1789230024.6000268
+        },
+        {
+          "device_gap_s": 0.20000195503234863,
+          "receive_gap_s": 0.19840087900229264,
+          "publisher_gap_s": 0.19978066400000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789230072.900019
+        },
+        {
+          "device_gap_s": 0.19998407363891602,
+          "receive_gap_s": 0.20265339101024438,
+          "publisher_gap_s": 0.20039506,
+          "sequence_delta": 2,
+          "device_stamp": 1789230150.799992
+        },
+        {
+          "device_gap_s": 0.1999971866607666,
+          "receive_gap_s": 0.19875433399283793,
+          "publisher_gap_s": 0.199722972,
+          "sequence_delta": 2,
+          "device_stamp": 1789230153.6000013
+        },
+        {
+          "device_gap_s": 0.20001792907714844,
+          "receive_gap_s": 0.19845862399961334,
+          "publisher_gap_s": 0.200093674,
+          "sequence_delta": 2,
+          "device_stamp": 1789230154.0000122
+        },
+        {
+          "device_gap_s": 0.1999950408935547,
+          "receive_gap_s": 0.20082276899483986,
+          "publisher_gap_s": 0.19997235400000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789230183.900002
+        },
+        {
+          "device_gap_s": 0.1999950408935547,
+          "receive_gap_s": 0.20560956200642977,
+          "publisher_gap_s": 0.20011615600000002,
+          "sequence_delta": 2,
+          "device_stamp": 1789230200.900008
+        },
+        {
+          "device_gap_s": 0.19998788833618164,
+          "receive_gap_s": 0.19994318400858901,
+          "publisher_gap_s": 0.200393295,
+          "sequence_delta": 2,
+          "device_stamp": 1789230213.8000152
+        }
+      ],
+      "seconds_since_receive": 0.06563783400633838,
+      "observed_hz": 9.95857108721
+    },
+    "/m1_sensors/front/imu_raw": {
+      "count": 117249,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "sequence_gaps": 106,
+      "max_callback_processing_s": 0.0069428209972102195,
+      "max_publish_s": 0.0009745560091687366,
+      "source_gid": "41ca8ec45fe480950fd06d8014988c91",
+      "last_sequence": 389413,
+      "publisher_stamp_ns": 1789230215276208066,
+      "first_receive_monotonic": 96556.747018249,
+      "last_receive_monotonic": 97143.561866661,
+      "last_stamp": 1789230215.2634199,
+      "frame_id": "rslidar_head",
+      "device_stamp_age_seconds": -152.53016996383667,
+      "max_device_gap_s": 0.030009031295776367,
+      "max_receive_gap_s": 0.05843144700338598,
+      "recent_gaps": [
+        {
+          "device_gap_s": 0.019995927810668945,
+          "receive_gap_s": 0.017937975004315376,
+          "publisher_gap_s": 0.019841914000000002,
+          "sequence_delta": 4,
+          "device_stamp": 1789230072.9209409
+        },
+        {
+          "device_gap_s": 0.010000228881835938,
+          "receive_gap_s": 0.03472113700991031,
+          "publisher_gap_s": 0.010071011000000001,
+          "sequence_delta": 2,
+          "device_stamp": 1789230097.971374
+        },
+        {
+          "device_gap_s": 0.00999903678894043,
+          "receive_gap_s": 0.03656109700386878,
+          "publisher_gap_s": 0.00999056,
+          "sequence_delta": 2,
+          "device_stamp": 1789230105.1065109
+        },
+        {
+          "device_gap_s": 0.014993906021118164,
+          "receive_gap_s": 0.01487164999707602,
+          "publisher_gap_s": 0.014961327000000002,
+          "sequence_delta": 3,
+          "device_stamp": 1789230112.7766337
+        },
+        {
+          "device_gap_s": 0.015002250671386719,
+          "receive_gap_s": 0.009397817004355602,
+          "publisher_gap_s": 0.015350077,
+          "sequence_delta": 3,
+          "device_stamp": 1789230113.9766521
+        },
+        {
+          "device_gap_s": 0.009998083114624023,
+          "receive_gap_s": 0.0031926269875839353,
+          "publisher_gap_s": 0.010201671,
+          "sequence_delta": 2,
+          "device_stamp": 1789230116.171702
+        },
+        {
+          "device_gap_s": 0.01499795913696289,
+          "receive_gap_s": 0.030186209987732582,
+          "publisher_gap_s": 0.015051442000000002,
+          "sequence_delta": 3,
+          "device_stamp": 1789230118.711736
+        },
+        {
+          "device_gap_s": 0.00999903678894043,
+          "receive_gap_s": 0.01293329001055099,
+          "publisher_gap_s": 0.009968127,
+          "sequence_delta": 2,
+          "device_stamp": 1789230119.471755
+        },
+        {
+          "device_gap_s": 0.00999593734741211,
+          "receive_gap_s": 0.002846739997039549,
+          "publisher_gap_s": 0.010020417,
+          "sequence_delta": 2,
+          "device_stamp": 1789230119.971758
+        },
+        {
+          "device_gap_s": 0.009998798370361328,
+          "receive_gap_s": 0.03677306200552266,
+          "publisher_gap_s": 0.010297739,
+          "sequence_delta": 2,
+          "device_stamp": 1789230137.7720668
+        },
+        {
+          "device_gap_s": 0.015002965927124023,
+          "receive_gap_s": 0.030706110992468894,
+          "publisher_gap_s": 0.014970319000000001,
+          "sequence_delta": 3,
+          "device_stamp": 1789230140.077122
+        },
+        {
+          "device_gap_s": 0.009999990463256836,
+          "receive_gap_s": 0.01881713701004628,
+          "publisher_gap_s": 0.010024513,
+          "sequence_delta": 2,
+          "device_stamp": 1789230146.772223
+        },
+        {
+          "device_gap_s": 0.015005826950073242,
+          "receive_gap_s": 0.010592146994895302,
+          "publisher_gap_s": 0.015208280000000001,
+          "sequence_delta": 3,
+          "device_stamp": 1789230150.8122978
+        },
+        {
+          "device_gap_s": 0.01499319076538086,
+          "receive_gap_s": 0.01576326199574396,
+          "publisher_gap_s": 0.020744987000000003,
+          "sequence_delta": 3,
+          "device_stamp": 1789230153.612344
+        },
+        {
+          "device_gap_s": 0.00999903678894043,
+          "receive_gap_s": 0.03837359799945261,
+          "publisher_gap_s": 0.01000736,
+          "sequence_delta": 2,
+          "device_stamp": 1789230176.507743
+        },
+        {
+          "device_gap_s": 0.01000213623046875,
+          "receive_gap_s": 0.0008671320101711899,
+          "publisher_gap_s": 0.009984767,
+          "sequence_delta": 2,
+          "device_stamp": 1789230183.907867
+        },
+        {
+          "device_gap_s": 0.01500701904296875,
+          "receive_gap_s": 0.01854737701069098,
+          "publisher_gap_s": 0.020055047000000003,
+          "sequence_delta": 3,
+          "device_stamp": 1789230203.378219
+        },
+        {
+          "device_gap_s": 0.009999752044677734,
+          "receive_gap_s": 0.00046428600035142154,
+          "publisher_gap_s": 0.009592977,
+          "sequence_delta": 2,
+          "device_stamp": 1789230209.2733169
+        },
+        {
+          "device_gap_s": 0.010000228881835938,
+          "receive_gap_s": 0.042043117005960084,
+          "publisher_gap_s": 0.012678078,
+          "sequence_delta": 2,
+          "device_stamp": 1789230213.673386
+        },
+        {
+          "device_gap_s": 0.009994983673095703,
+          "receive_gap_s": 0.00505569000961259,
+          "publisher_gap_s": 0.009702165,
+          "sequence_delta": 2,
+          "device_stamp": 1789230213.8083858
+        }
+      ],
+      "seconds_since_receive": 0.024110362006467767,
+      "observed_hz": 199.80407843682076
+    },
+    "/m1_sensors/rear/points_raw": {
+      "count": 5834,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "sequence_gaps": 33,
+      "max_callback_processing_s": 0.023579496002639644,
+      "max_publish_s": 0.00421080099476967,
+      "source_gid": "7e23d4dcef15d91c15f6f3fb991d6704",
+      "last_sequence": 19467,
+      "publisher_stamp_ns": 1789230215179066470,
+      "first_receive_monotonic": 96556.837698741,
+      "last_receive_monotonic": 97143.497554518,
+      "last_stamp": 1990.90002116,
+      "frame_id": "rslidar_tail",
+      "device_stamp_age_seconds": 1789228071.7844076,
+      "max_device_gap_s": 0.29999900000007074,
+      "max_receive_gap_s": 0.29932361899409443,
+      "recent_gaps": [
+        {
+          "device_gap_s": 0.2000009199998658,
+          "receive_gap_s": 0.1905674190056743,
+          "publisher_gap_s": 0.19805407800000002,
+          "sequence_delta": 2,
+          "device_stamp": 1664.100023
+        },
+        {
+          "device_gap_s": 0.1999989999999343,
+          "receive_gap_s": 0.19345610900199972,
+          "publisher_gap_s": 0.200415443,
+          "sequence_delta": 2,
+          "device_stamp": 1672.800021
+        },
+        {
+          "device_gap_s": 0.2000030000001516,
+          "receive_gap_s": 0.18828137600212358,
+          "publisher_gap_s": 0.19999888000000002,
+          "sequence_delta": 2,
+          "device_stamp": 1679.40002208
+        },
+        {
+          "device_gap_s": 0.20000000000004547,
+          "receive_gap_s": 0.20084992199554108,
+          "publisher_gap_s": 0.20296059600000002,
+          "sequence_delta": 2,
+          "device_stamp": 1725.000023
+        },
+        {
+          "device_gap_s": 0.19999800000005052,
+          "receive_gap_s": 0.1972884319984587,
+          "publisher_gap_s": 0.200872394,
+          "sequence_delta": 2,
+          "device_stamp": 1725.30002124
+        },
+        {
+          "device_gap_s": 0.199999919999982,
+          "receive_gap_s": 0.19960966899816412,
+          "publisher_gap_s": 0.20009894900000003,
+          "sequence_delta": 2,
+          "device_stamp": 1732.200014
+        },
+        {
+          "device_gap_s": 0.19999699999993936,
+          "receive_gap_s": 0.2016294679924613,
+          "publisher_gap_s": 0.199793147,
+          "sequence_delta": 2,
+          "device_stamp": 1737.60001924
+        },
+        {
+          "device_gap_s": 0.2000030000001516,
+          "receive_gap_s": 0.19761066300270613,
+          "publisher_gap_s": 0.200118022,
+          "sequence_delta": 2,
+          "device_stamp": 1752.500025
+        },
+        {
+          "device_gap_s": 0.1999909999999545,
+          "receive_gap_s": 0.202796010999009,
+          "publisher_gap_s": 0.20011040500000002,
+          "sequence_delta": 2,
+          "device_stamp": 1783.70001508
+        },
+        {
+          "device_gap_s": 0.20000099999992926,
+          "receive_gap_s": 0.19879470999876503,
+          "publisher_gap_s": 0.20025169,
+          "sequence_delta": 2,
+          "device_stamp": 1809.90001824
+        },
+        {
+          "device_gap_s": 0.1999999999998181,
+          "receive_gap_s": 0.19588060700334609,
+          "publisher_gap_s": 0.19979209,
+          "sequence_delta": 2,
+          "device_stamp": 1822.80001716
+        },
+        {
+          "device_gap_s": 0.19999824000001354,
+          "receive_gap_s": 0.2019851499935612,
+          "publisher_gap_s": 0.200126822,
+          "sequence_delta": 2,
+          "device_stamp": 1865.20002124
+        },
+        {
+          "device_gap_s": 0.19999700000016674,
+          "receive_gap_s": 0.20053052599541843,
+          "publisher_gap_s": 0.20179107400000001,
+          "sequence_delta": 2,
+          "device_stamp": 1888.600018
+        },
+        {
+          "device_gap_s": 0.19999800000005052,
+          "receive_gap_s": 0.20156930699886288,
+          "publisher_gap_s": 0.20047394000000002,
+          "sequence_delta": 2,
+          "device_stamp": 1889.80001624
+        },
+        {
+          "device_gap_s": 0.19999699999993936,
+          "receive_gap_s": 0.1959323050105013,
+          "publisher_gap_s": 0.20107312700000002,
+          "sequence_delta": 2,
+          "device_stamp": 1892.00001808
+        },
+        {
+          "device_gap_s": 0.2000029999999242,
+          "receive_gap_s": 0.20791311899665743,
+          "publisher_gap_s": 0.199704023,
+          "sequence_delta": 2,
+          "device_stamp": 1895.30002408
+        },
+        {
+          "device_gap_s": 0.20000600000003033,
+          "receive_gap_s": 0.20208117499714717,
+          "publisher_gap_s": 0.2006294,
+          "sequence_delta": 2,
+          "device_stamp": 1895.80002408
+        },
+        {
+          "device_gap_s": 0.1999989999999343,
+          "receive_gap_s": 0.20346766100556124,
+          "publisher_gap_s": 0.201073839,
+          "sequence_delta": 2,
+          "device_stamp": 1922.60001316
+        },
+        {
+          "device_gap_s": 0.199999919999982,
+          "receive_gap_s": 0.1961165459943004,
+          "publisher_gap_s": 0.200929778,
+          "sequence_delta": 2,
+          "device_stamp": 1979.20002208
+        },
+        {
+          "device_gap_s": 0.19999824000001354,
+          "receive_gap_s": 0.19522531700204127,
+          "publisher_gap_s": 0.198653042,
+          "sequence_delta": 2,
+          "device_stamp": 1985.10002424
+        }
+      ],
+      "seconds_since_receive": 0.08842250499583315,
+      "observed_hz": 9.942729066188535
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "count": 117256,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "sequence_gaps": 99,
+      "max_callback_processing_s": 0.0064340870012529194,
+      "max_publish_s": 0.0006660779908997938,
+      "source_gid": "70f79cc8b8e90a07cedd872be50d5007",
+      "last_sequence": 389412,
+      "publisher_stamp_ns": 1789230215276689907,
+      "first_receive_monotonic": 96556.745564046,
+      "last_receive_monotonic": 97143.562261476,
+      "last_stamp": 1991.099428999,
+      "frame_id": "rslidar_tail",
+      "device_stamp_age_seconds": 1789228071.6342397,
+      "max_device_gap_s": 0.024999999000101525,
+      "max_receive_gap_s": 0.05891688400879502,
+      "recent_gaps": [
+        {
+          "device_gap_s": 0.015006999999968684,
+          "receive_gap_s": 0.041977108994615264,
+          "publisher_gap_s": 0.015117684000000001,
+          "sequence_delta": 3,
+          "device_stamp": 1821.714436
+        },
+        {
+          "device_gap_s": 0.010001999999985856,
+          "receive_gap_s": 0.0016541369986953214,
+          "publisher_gap_s": 0.009945055000000001,
+          "sequence_delta": 2,
+          "device_stamp": 1822.809436
+        },
+        {
+          "device_gap_s": 0.020001000999855023,
+          "receive_gap_s": 0.017909399000927806,
+          "publisher_gap_s": 0.019841915,
+          "sequence_delta": 4,
+          "device_stamp": 1848.759435
+        },
+        {
+          "device_gap_s": 0.009999000999869168,
+          "receive_gap_s": 0.03983954699651804,
+          "publisher_gap_s": 0.01006045,
+          "sequence_delta": 2,
+          "device_stamp": 1873.809429
+        },
+        {
+          "device_gap_s": 0.010001000000102067,
+          "receive_gap_s": 0.04249806399457157,
+          "publisher_gap_s": 0.010263273,
+          "sequence_delta": 2,
+          "device_stamp": 1880.94443
+        },
+        {
+          "device_gap_s": 0.014993000000004031,
+          "receive_gap_s": 0.0026735249994089827,
+          "publisher_gap_s": 0.014489151,
+          "sequence_delta": 3,
+          "device_stamp": 1888.614429
+        },
+        {
+          "device_gap_s": 0.01499599999988277,
+          "receive_gap_s": 0.015953886002535,
+          "publisher_gap_s": 0.01486318,
+          "sequence_delta": 3,
+          "device_stamp": 1889.809429
+        },
+        {
+          "device_gap_s": 0.010000999000112643,
+          "receive_gap_s": 0.003200723003828898,
+          "publisher_gap_s": 0.009973951,
+          "sequence_delta": 2,
+          "device_stamp": 1892.009429999
+        },
+        {
+          "device_gap_s": 0.014998999999988882,
+          "receive_gap_s": 0.039323229008005,
+          "publisher_gap_s": 0.01533814,
+          "sequence_delta": 3,
+          "device_stamp": 1894.549429999
+        },
+        {
+          "device_gap_s": 0.009999000999869168,
+          "receive_gap_s": 0.00844610900094267,
+          "publisher_gap_s": 0.011280365,
+          "sequence_delta": 2,
+          "device_stamp": 1895.309429
+        },
+        {
+          "device_gap_s": 0.010001000000102067,
+          "receive_gap_s": 0.0022598949872190133,
+          "publisher_gap_s": 0.009995104000000001,
+          "sequence_delta": 2,
+          "device_stamp": 1895.80943
+        },
+        {
+          "device_gap_s": 0.015004999999973734,
+          "receive_gap_s": 0.031897242995910347,
+          "publisher_gap_s": 0.014327641,
+          "sequence_delta": 3,
+          "device_stamp": 1915.914433999
+        },
+        {
+          "device_gap_s": 0.010003999999980806,
+          "receive_gap_s": 0.01719861599849537,
+          "publisher_gap_s": 0.009826682,
+          "sequence_delta": 2,
+          "device_stamp": 1922.609434999
+        },
+        {
+          "device_gap_s": 0.009999999999990905,
+          "receive_gap_s": 0.001343545998679474,
+          "publisher_gap_s": 0.010703001,
+          "sequence_delta": 2,
+          "device_stamp": 1926.644429999
+        },
+        {
+          "device_gap_s": 0.01999799999998686,
+          "receive_gap_s": 0.017053079995093867,
+          "publisher_gap_s": 0.020380206,
+          "sequence_delta": 4,
+          "device_stamp": 1929.454429
+        },
+        {
+          "device_gap_s": 0.009999999999990905,
+          "receive_gap_s": 0.02954835499986075,
+          "publisher_gap_s": 0.00997984,
+          "sequence_delta": 2,
+          "device_stamp": 1952.344429
+        },
+        {
+          "device_gap_s": 0.00999299900013284,
+          "receive_gap_s": 0.0018425519956508651,
+          "publisher_gap_s": 0.010755995,
+          "sequence_delta": 2,
+          "device_stamp": 1959.744428999
+        },
+        {
+          "device_gap_s": 0.01000200000021323,
+          "receive_gap_s": 0.01266794599359855,
+          "publisher_gap_s": 0.011555802,
+          "sequence_delta": 2,
+          "device_stamp": 1979.20943
+        },
+        {
+          "device_gap_s": 0.009999999999990905,
+          "receive_gap_s": 0.012406570996972732,
+          "publisher_gap_s": 0.019954334,
+          "sequence_delta": 2,
+          "device_stamp": 1985.109428999
+        },
+        {
+          "device_gap_s": 0.010001999999985856,
+          "receive_gap_s": 0.029457987009664066,
+          "publisher_gap_s": 0.011993446000000001,
+          "sequence_delta": 2,
+          "device_stamp": 1989.509429999
+        }
+      ],
+      "seconds_since_receive": 0.02371554699493572,
+      "observed_hz": 199.81537763585
+    }
+  },
+  "forwarding_enabled": true,
+  "source_fault": null,
+  "navigation_ready": false,
+  "motion_outputs": false,
+  "note": "Raw source clocks, frames and IMU g-units preserved; calibration pending."
+}

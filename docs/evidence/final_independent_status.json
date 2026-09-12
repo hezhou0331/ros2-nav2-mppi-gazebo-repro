@@ -1,0 +1,18 @@
+{
+  "timestamp_unix": 1789226016.3311565,
+  "receiver_running": true,
+  "status_age_s": 1.6795539855957031,
+  "latest_sample_age_s": {
+    "/m1_sensors/front/points_raw": 0.043423909999546595,
+    "/m1_sensors/front/imu_raw": 0.007586802006699145,
+    "/m1_sensors/rear/points_raw": 0.0845239229965955,
+    "/m1_sensors/rear/imu_raw": 0.00941552099538967
+  },
+  "errors": {
+    "/m1_sensors/front/points_raw": 0,
+    "/m1_sensors/front/imu_raw": 0,
+    "/m1_sensors/rear/points_raw": 0,
+    "/m1_sensors/rear/imu_raw": 0
+  },
+  "hardware_preflight_complete": false
+}
