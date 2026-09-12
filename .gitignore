@@ -1,23 +1,42 @@
-# ROS 2 / colcon
 build/
 install/
 log/
-
-# Runtime output
+artifacts/
+third_party/genisom_roamerx_open/
+__pycache__/
+*.pyc
+.pytest_cache/
 *.bag
 *.db3
 *.mcap
-*.log
-*.pyc
-__pycache__/
-.pytest_cache/
-artifacts/
-maps/*.pgm
-maps/*.yaml
-maps/*_cleanup.json
-
-# Editors and OS
 .vscode/
 .idea/
 .DS_Store
-*~
+
+build_preflight/
+install_preflight/
+log_preflight/
+
+third_party/rslidar_sdk/
+third_party/rslidar_msg/
+sensors/
+
+# Private ABI-matched navigation dependencies
+build_cv_bridge/
+log_cv_bridge/
+deps_src/
+
+deps/
+
+# Generated AIRY builds; vendor source inputs are included for handoff
+/build_airy/
+/install_airy/
+/log_airy/
+/src_airy/
+
+# Generated upstream workspace link
+/src
+
+/handoff-assets/
+/handoff-data/
+/handoff_20260913/

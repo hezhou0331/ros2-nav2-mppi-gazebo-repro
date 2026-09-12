@@ -1,0 +1,37 @@
+[
+  {
+    "package": "liblcm-dev",
+    "version": "1.3.1+repack1-2.3",
+    "architecture": "arm64",
+    "filename": "liblcm-dev_1.3.1+repack1-2.3_arm64.deb",
+    "sha256": "2873e00ec977bd75c15ec9f402d26b296754b749fe1bc77b3750f81f978e481c"
+  },
+  {
+    "package": "liblcm1",
+    "version": "1.3.1+repack1-2.3",
+    "architecture": "arm64",
+    "filename": "liblcm1_1.3.1+repack1-2.3_arm64.deb",
+    "sha256": "7044592d6162724dde4959e4d6c677aabfb33ae7c17b08d0577f0005b09238b6"
+  },
+  {
+    "package": "libopencv-dev",
+    "version": "4.8.0-1-g6371ee1",
+    "architecture": "arm64",
+    "filename": "libopencv-dev_4.8.0-1-g6371ee1_arm64.deb",
+    "sha256": "09ad91e63b38fa432fb77b7a34ea956e4ac6c9a7d7ae00ad3a74591604ac1385"
+  },
+  {
+    "package": "libopencv",
+    "version": "4.8.0-1-g6371ee1",
+    "architecture": "arm64",
+    "filename": "libopencv_4.8.0-1-g6371ee1_arm64.deb",
+    "sha256": "a43ac2a2f1fa7579fe526314bf04692ed6eca05ceb49447486e3ed46c3c85b67"
+  },
+  {
+    "package": "ros-humble-pcl-ros",
+    "version": "2.4.5-2jammy.20260804.200049",
+    "architecture": "arm64",
+    "filename": "ros-humble-pcl-ros_2.4.5-2jammy.20260804.200049_arm64.deb",
+    "sha256": "c56f6d224a7ea2acc08051ace4085c36c1661a0c8eeb2e4deb2b7bb7e440d816"
+  }
+]

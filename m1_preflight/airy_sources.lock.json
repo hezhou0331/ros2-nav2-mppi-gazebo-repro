@@ -1,0 +1,25 @@
+{
+  "purpose": "AIRY driver build only; runtime network/extrinsics not configured",
+  "repositories": [
+    {
+      "path": "rslidar_sdk",
+      "url": "https://github.com/RoboSense-LiDAR/rslidar_sdk.git",
+      "commit": "8b4b4b7ff910799260347821084c59e1c73d50d5"
+    },
+    {
+      "path": "rslidar_sdk/src/rs_driver",
+      "url": "https://github.com/RoboSense-LiDAR/rs_driver.git",
+      "commit": "897b14d3bdb6186a75df27ba51b65b5bd5557723"
+    },
+    {
+      "path": "rslidar_msg",
+      "url": "https://github.com/RoboSense-LiDAR/rslidar_msg.git",
+      "commit": "fe8a95cb242bd294cc3d5e3422f2093fb49a56ee"
+    }
+  ],
+  "patch": "patches/rslidar_point_type.patch",
+  "cmake_options": {
+    "POINT_TYPE": "XYZIRT",
+    "ENABLE_IMU_DATA_PARSE": "ON"
+  }
+}

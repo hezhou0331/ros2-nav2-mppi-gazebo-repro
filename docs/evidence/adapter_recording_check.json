@@ -1,0 +1,41 @@
+{
+  "counts": {
+    "/m1_sensors/front/imu_raw": 1307,
+    "/m1_sensors/rear/imu_raw": 1295,
+    "/m1_sensors/front/points_raw": 60,
+    "/m1_sensors/rear/points_raw": 62
+  },
+  "max_relative_point_time_error_seconds": 4.76837158203125e-07,
+  "raw_input_preserved": true,
+  "orientation_unavailable_marked": true,
+  "hardware_synchronization_verified": false,
+  "navigation_ready": false,
+  "sensors": {
+    "front": {
+      "imu_accel_norm_m_s2_quantiles": [
+        9.556675235028685,
+        9.82657838757942,
+        10.136751327020896
+      ],
+      "imu_regressions": 0,
+      "cloud_frames": 60,
+      "cloud_finite_points_min": 9432,
+      "clouds_with_recorded_imu_coverage": 60,
+      "boundary_clouds": 0,
+      "imu_samples_per_covered_scan_min": 18
+    },
+    "rear": {
+      "imu_accel_norm_m_s2_quantiles": [
+        9.581992498902272,
+        9.795309782952787,
+        10.008629368110325
+      ],
+      "imu_regressions": 0,
+      "cloud_frames": 62,
+      "cloud_finite_points_min": 16974,
+      "clouds_with_recorded_imu_coverage": 62,
+      "boundary_clouds": 0,
+      "imu_samples_per_covered_scan_min": 18
+    }
+  }
+}

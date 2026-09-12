@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-09-12T09:48:11.540858+00:00",
+  "full_build_event_log": "/mnt/nvme/workspace/ljy/navigation/log_preflight/build_2026-09-12_17-35-49/events.log",
+  "packages": {
+    "fast_gicp": 0,
+    "navigo_util": 0,
+    "ndt_omp": 0,
+    "robots_dog_msgs": 0,
+    "localization": 0,
+    "navigo_behavior_tree": 0,
+    "navigo_map_server": 0,
+    "navigo_velocity_optimizer": 0,
+    "robot_slam": 0,
+    "navigo_costmap_2d": 0,
+    "navigo_collision_monitor": 0,
+    "navigo_core": 0,
+    "navigo_behaviors": 0,
+    "navigo_bt_navigator": 0,
+    "navigo_mppi_controller": 0,
+    "navigo_navfn_planner": 0,
+    "navigo_path_controller": 0,
+    "navigo_path_planner": 0,
+    "navigo_waypoint_follower": 0,
+    "robot_navigo": 0
+  },
+  "full_stack_built": true,
+  "opencv": "4.8.0",
+  "cv_bridge": "3.2.1 private build",
+  "dynamic_links": {
+    "mapping": {
+      "missing": [],
+      "opencv": [
+        "libopencv_imgcodecs.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_imgcodecs.so.408 (0x0000ffff8f710000)",
+        "libopencv_core.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_core.so.408 (0x0000ffff8f400000)",
+        "libopencv_imgproc.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_imgproc.so.408 (0x0000ffff8df50000)"
+      ],
+      "pcap": [
+        "libpcap.so.0.8 => /mnt/nvme/workspace/ljy/navigation/sensors/deps/usr/lib/aarch64-linux-gnu/libpcap.so.0.8 (0x0000ffff8d960000)"
+      ]
+    },
+    "photo_at_waypoint": {
+      "missing": [],
+      "opencv": [
+        "libopencv_imgcodecs.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_imgcodecs.so.408 (0x0000ffff9b460000)",
+        "libopencv_imgproc.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_imgproc.so.408 (0x0000ffff9b090000)",
+        "libopencv_core.so.408 => /mnt/nvme/workspace/ljy/navigation/deps/usr/lib/libopencv_core.so.408 (0x0000ffff9ad80000)"
+      ],
+      "pcap": []
+    },
+    "airy_driver": {
+      "missing": [],
+      "opencv": [],
+      "pcap": [
+        "libpcap.so.0.8 => /mnt/nvme/workspace/ljy/navigation/sensors/deps/usr/lib/aarch64-linux-gnu/libpcap.so.0.8 (0x0000ffffa1210000)"
+      ]
+    }
+  },
+  "airy_point_layout": "XYZIRT",
+  "airy_imu_parse": true,
+  "hardware_navigation_verified": false
+}

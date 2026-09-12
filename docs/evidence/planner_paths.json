@@ -1,0 +1,27 @@
+{
+  "scope": "synthetic obstacle map; real RoamerX ComputePathToPose; no controller/hardware",
+  "passed": true,
+  "cases": {
+    "detour": {
+      "status": 4,
+      "points": 292,
+      "collisions": 0,
+      "length_m": 14.654815667219562,
+      "max_y": 8.361895876555081,
+      "goal_error_m": 0.0,
+      "passed": true
+    },
+    "blocked_goal": {
+      "status": 6,
+      "points": 0,
+      "passed": true
+    }
+  },
+  "motion_outputs": false,
+  "root_velocity_publishers": {
+    "/cmd_vel": 0,
+    "/cmd_vel_raw": 0,
+    "/cmd_vel_smoothed": 0
+  },
+  "timestamp_unix": 1789225490.7949476
+}

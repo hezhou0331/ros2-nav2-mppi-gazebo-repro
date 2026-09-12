@@ -1,0 +1,4 @@
+scenario,found,points,length_m,min_clearance_m,collision_free,expected_found
+0,1,326,16.3754,1.80337,1,1
+1,1,349,17.5301,1.19961,1,1
+2,0,0,0,0,1,0

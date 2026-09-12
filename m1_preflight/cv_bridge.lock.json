@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/ros-perception/vision_opencv.git",
+  "commit": "9800f67cea477c44cfb64e349854bcb6a09dc9ce",
+  "package": "cv_bridge",
+  "version": "3.2.1",
+  "opencv_version": "4.8.0",
+  "scope": "Private Humble C++ dependency for this navigation workspace; no system package replacement"
+}

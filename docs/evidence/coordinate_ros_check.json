@@ -1,0 +1,29 @@
+{
+  "scope": "synthetic nonzero extrinsics; isolated ROS domain 179",
+  "samples": 401,
+  "all_transforms_correct": true,
+  "static_edges": [
+    [
+      "base_link",
+      "rslidar_head"
+    ],
+    [
+      "rslidar_head",
+      "rslidar_head_imu"
+    ]
+  ],
+  "invalid_time_rejected": true,
+  "node_status": {
+    "published": 401,
+    "errors": [
+      "尚无局部里程计",
+      "global: 时间重复或回退"
+    ],
+    "error_count": 2,
+    "hardware_tf_verified": false,
+    "motion_outputs": false
+  },
+  "hardware_tf_verified": false,
+  "motion_outputs": false,
+  "passed": true
+}

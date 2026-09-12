@@ -1,0 +1,65 @@
+{
+  "endpoint": "tcp/192.168.168.100:7447",
+  "source_domain_key": 24,
+  "ros_domain": "0",
+  "ros_localhost_only": "1",
+  "running": true,
+  "timestamp_unix": 1789213984.2654018,
+  "streams": {
+    "/m1_sensors/front/points_raw": {
+      "count": 4689,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "first_receive_monotonic": 80591.254239482,
+      "last_receive_monotonic": 81065.075581978,
+      "last_stamp": 1789214137.5000181,
+      "frame_id": "rslidar_head",
+      "device_stamp_age_seconds": -153.2443985939026,
+      "seconds_since_receive": 0.018738320999545977,
+      "observed_hz": 9.894024560617169
+    },
+    "/m1_sensors/front/imu_raw": {
+      "count": 94658,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "first_receive_monotonic": 80591.185151934,
+      "last_receive_monotonic": 81065.089823227,
+      "last_stamp": 1789214137.638026,
+      "frame_id": "rslidar_head",
+      "device_stamp_age_seconds": -153.3769633769989,
+      "seconds_since_receive": 0.004497072004596703,
+      "observed_hz": 199.73848272425394
+    },
+    "/m1_sensors/rear/points_raw": {
+      "count": 4730,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "first_receive_monotonic": 80591.290310595,
+      "last_receive_monotonic": 81065.01628521,
+      "last_stamp": 856.300018,
+      "frame_id": "rslidar_tail",
+      "device_stamp_age_seconds": 1789213127.9028406,
+      "seconds_since_receive": 0.07803508899814915,
+      "observed_hz": 9.982564295409816
+    },
+    "/m1_sensors/rear/imu_raw": {
+      "count": 94656,
+      "errors": 0,
+      "stamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "first_receive_monotonic": 80591.188613421,
+      "last_receive_monotonic": 81065.093378131,
+      "last_stamp": 856.498467,
+      "frame_id": "rslidar_tail",
+      "device_stamp_age_seconds": 1789213127.7661445,
+      "seconds_since_receive": 0.0009421680006198585,
+      "observed_hz": 199.7342230942204
+    }
+  },
+  "navigation_ready": false,
+  "motion_outputs": false,
+  "note": "Raw source clocks, frames and IMU g-units preserved; calibration pending."
+}

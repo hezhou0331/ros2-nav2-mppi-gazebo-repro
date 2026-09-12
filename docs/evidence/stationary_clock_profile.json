@@ -1,0 +1,19 @@
+{
+  "created_unix": 1789229506.3249342,
+  "audit_timestamp_unix": 1789229506.0279527,
+  "valid_for_seconds": 600,
+  "method": "fixed per-device offset; board offset bounded by read-only RPC response time; rear relative epoch estimated from publisher timestamps",
+  "local_minus_board_interval_s": [
+    -152.58355238000001,
+    -152.58178777400002
+  ],
+  "board_mapping_half_width_ms": 0.8823029999973642,
+  "offset_ns": {
+    "front": -152582670077,
+    "rear": 1789228071571526659
+  },
+  "hardware_synchronized": false,
+  "cross_lidar_fusion_ready": false,
+  "rear_estimator_systematic_error_bound_ms": null,
+  "note": "仅供隔离输入验证；不能把小的网络抖动解释为小的传感器同步误差。过期、回退和跳变均停止输出。"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-13",
+  "pinned_source_restore_clean_directory": true,
+  "prepare_workspace_offline_first_run": true,
+  "prepare_workspace_offline_second_run": true,
+  "vendor_files_verified": 101,
+  "release_archives_hash_verified": true,
+  "fresh_extracted_orin_data_tests": {
+    "adapter": 11,
+    "coordinates": 6,
+    "difop": 4,
+    "fault_replay": 20,
+    "bag_messages": 12264,
+    "passed": true
+  },
+  "clean_os_install_and_full_rebuild_repeated": false,
+  "scope_note": "本次交接在新目录恢复固定源码、重复准备，并在原 ROS Humble 系统中使用重新解压的 Release 数据测试。此前 20 包完整构建证据保留；没有声称已从全新操作系统重装并重建。",
+  "hardware_navigation_ready": false
+}

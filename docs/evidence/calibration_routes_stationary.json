@@ -1,0 +1,41 @@
+{
+  "timestamp_unix": 1789228914.5793664,
+  "tf_cached": [],
+  "tf_live": [
+    {
+      "transforms": [
+        {
+          "header": {
+            "stamp": {
+              "sec": 0,
+              "nanosec": 0
+            },
+            "frame_id": "map"
+          },
+          "child_frame_id": "odom",
+          "transform": {
+            "translation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "calibration_state": [
+    {
+      "payload_bytes": 21,
+      "schema_available": false
+    }
+  ],
+  "errors": [],
+  "motion_outputs": false
+}

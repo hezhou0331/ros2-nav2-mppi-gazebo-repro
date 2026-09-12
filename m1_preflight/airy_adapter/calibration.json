@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "robot": "M1",
+  "units": "metres; right-handed rotation matrix; p_parent = R_parent_child * p_child + t_parent_child",
+  "source_note": "本机厂商位置表只提供标称平移；URDF collision 的零旋转不是传感器标定。",
+  "front": {
+    "lidar_frame": "rslidar_head",
+    "imu_frame": "rslidar_head_imu",
+    "base_from_lidar": {"translation_m": [0.4043, 0.0, -0.0377], "rotation": null, "verified": false, "evidence": null},
+    "imu_from_lidar": {"translation_m": null, "rotation": null, "verified": false, "evidence": null}
+  },
+  "rear": {
+    "lidar_frame": "rslidar_tail",
+    "imu_frame": "rslidar_tail_imu",
+    "base_from_lidar": {"translation_m": [-0.4043, 0.0, -0.0377], "rotation": null, "verified": false, "evidence": null},
+    "imu_from_lidar": {"translation_m": null, "rotation": null, "verified": false, "evidence": null}
+  }
+}

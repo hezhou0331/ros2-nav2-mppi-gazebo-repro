@@ -1,0 +1,11 @@
+{
+  "24/front_lidar/imu/sensor_msgs::msg::dds_::Imu_/TypeHashNotSupported": 2,
+  "24/odom/slam_odom/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": 2,
+  "24/odom/current_pose/history/nav_msgs::msg::dds_::Path_/TypeHashNotSupported": 2,
+  "24/odom/localization_odom/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": 2,
+  "24/odom/current_pose/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": 2,
+  "24/rear_lidar/sensor_msgs::msg::dds_::PointCloud2_/TypeHashNotSupported": 2,
+  "24/odom/mc_odom/nav_msgs::msg::dds_::Odometry_/TypeHashNotSupported": 2,
+  "24/rear_lidar/imu/sensor_msgs::msg::dds_::Imu_/TypeHashNotSupported": 2,
+  "24/front_lidar/sensor_msgs::msg::dds_::PointCloud2_/TypeHashNotSupported": 2
+}

@@ -1,0 +1,30 @@
+{
+  "tag": "m1-preflight-20260913",
+  "files": [
+    {
+      "name": "m1-arm64-dependency-cache-20260913.tar.gz",
+      "bytes": 26056612,
+      "sha256": "90ff761e71be5cd44cf729a7782adea858edf211856f71802bb405657ed7bc14"
+    },
+    {
+      "name": "m1-host-evidence-20260913.tar.gz",
+      "bytes": 31431179,
+      "sha256": "385881577b2dc4cef3c48455f55c0328deca0717900c0de41dec8fa344528117"
+    },
+    {
+      "name": "m1-orin-evidence-20260913.tar.gz",
+      "bytes": 378658491,
+      "sha256": "dac6a159c0c642daed486811b8276344c809902272f1749ad5f48a942afe9926"
+    },
+    {
+      "name": "m1-pinned-sources-20260913.tar.gz",
+      "bytes": 92543147,
+      "sha256": "17f3a2714dd68463ffbfee0feac5da2664eb392dad43049ee6cf744d3850e806"
+    },
+    {
+      "name": "orin-packages-20260913.tsv",
+      "bytes": 114362,
+      "sha256": "a580f29d755fd62d4348481b28464d4ea17f1eff8de5a538de20907c7b3ba195"
+    }
+  ]
+}

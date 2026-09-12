@@ -1,0 +1,4 @@
+{"input":"artifacts/real_sensors/24_front_lidar.cdr","finite_points":20710,"first_ms":0.0855922699,"last_ms":99.9889374,"schema_rejection":true,"timestamp_rejection":true}
+{"input":"artifacts/real_sensors/24_rear_lidar.cdr","finite_points":21684,"first_ms":0.432247996,"last_ms":94.3220062,"schema_rejection":true,"timestamp_rejection":true}
+{"input":"artifacts/real_sensors/front_adapted.cdr","finite_points":21301,"first_ms":0.0922679901,"last_ms":99.98703,"schema_rejection":true,"timestamp_rejection":true}
+{"input":"artifacts/real_sensors/rear_adapted.cdr","finite_points":20929,"first_ms":0.0925064087,"last_ms":99.9903717,"schema_rejection":true,"timestamp_rejection":true}

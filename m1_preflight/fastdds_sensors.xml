@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <!-- 本机 AIRY 点云大于默认 512 KiB 共享区；只启用 SHM，不向网络暴露 ROS 数据。 -->
+  <transport_descriptors>
+    <transport_descriptor>
+      <transport_id>m1_sensor_shm</transport_id>
+      <type>SHM</type>
+      <maxMessageSize>8388608</maxMessageSize>
+      <segment_size>67108864</segment_size>
+      <port_queue_capacity>2048</port_queue_capacity>
+    </transport_descriptor>
+  </transport_descriptors>
+  <participant profile_name="m1_local_sensor_participant" is_default_profile="true">
+    <rtps>
+      <userTransports><transport_id>m1_sensor_shm</transport_id></userTransports>
+      <useBuiltinTransports>false</useBuiltinTransports>
+    </rtps>
+  </participant>
+</profiles>

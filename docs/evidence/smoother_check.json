@@ -1,0 +1,13 @@
+{
+  "test_scope": "upstream smoother with synthetic commands in localhost-only domain 175",
+  "samples": 50,
+  "max_vx": 0.2,
+  "max_wz": 0.3,
+  "final_twist": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "root_cmd_vel_publishers": 0,
+  "hardware_commands_sent": false
+}

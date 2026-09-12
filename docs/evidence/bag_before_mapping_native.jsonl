@@ -1,0 +1,2 @@
+{"input":"artifacts/real_sensors/bag_before_mapping_30s_check_cdr/front_adapted.cdr","finite_points":25986,"first_ms":0.0855922699,"last_ms":99.9803543,"schema_rejection":true,"timestamp_rejection":true}
+{"input":"artifacts/real_sensors/bag_before_mapping_30s_check_cdr/rear_adapted.cdr","finite_points":24865,"first_ms":0.0855922699,"last_ms":99.9889374,"schema_rejection":true,"timestamp_rejection":true}

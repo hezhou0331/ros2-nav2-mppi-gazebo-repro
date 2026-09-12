@@ -1,17 +1,6 @@
-ATEC A2 + P7 Navigation Simulation
+M1 / ORIN Navigation Workspace
 Copyright 2026 hezhou
 
-The active ATEC navigation configuration is
-`src/independent_nav_bringup/config/nav2_atec_a2_p7.yaml`.
-
-The Unitree A2 model in
-`建模/sim_src/src/atec_a2_p7_description` was imported from the Unitree
-`unitree_ros` project at commit
-`aa0f5c68b5aba347bad409e71b6430407da758d7`. Its BSD-3-Clause license is
-included at `建模/sim_src/src/atec_a2_p7_description/docs/UNITREE_LICENSE`.
-
-Nav2 is developed by Open Navigation LLC and contributors and is distributed
-under the Apache License 2.0.
-
-The active navigation configuration is A2 + P7 specific. No TurtleBot3 or
-Fishbot configuration is part of the active reproduction entry point.
+Original workspace code is covered by LICENSE.
+Vendor SDKs and robot assets retain their supplied licensing terms.
+The independent genisom_roamerx_open checkout retains its upstream license.
